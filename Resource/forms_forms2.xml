@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/SchemaForms.xsd">
+  <FormGroup>
+    <Name>R - Check</Name>
+    <Form Type="HTMLQuery" FilePath="NewForms">BoatInquiry</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">FreeFormInquiry</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">GunCheck</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">HazmatInquiry</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">PersonCheck</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">PropertyCheck</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">VehicleCheck</Form>
+  </FormGroup>
+  <FormGroup>
+    <Name>Misc</Name>
+    <Form Type="HTMLQuery" FilePath="NewForms">Login</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">Logout</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">ModifyLogon</Form>
+  </FormGroup>
+  <FormGroup>
+    <Name>ThirdParty</Name>
+    <Form Type="HTMLQuery" FilePath="NewForms">Pictometry</Form>
+  </FormGroup>
+  <FormGroup>
+    <Name>CAD</Name>
+    <Form Type="HTMLQuery" FilePath="NewForms" SupervisorOnly="true">addincidentcomment</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">ActiveIncidents</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">AddActivityLogComment</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">AlliedAgencies</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">AtDestination</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">AtScene2ndLocation</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">ChangeLocation</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">ClearCall</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">ClearAllUnits</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">DivisionUnitQuery</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">EnhancedVehicle</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">GetIncident</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">GetIncidentPersonnel</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">GetPersonnelRadios</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">GetPremiseInfo</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="3600">IncidentAddressUpdate</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" SupervisorOnly="false">IncidentSearch</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">IncidentSummaryQuery</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">LocalArea</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">NatureUnknown</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">OnSite</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">OutOfService</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">PendingIncidents</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" SupervisorOnly="false">PersonnelSearch</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="3600">PositionUpdate</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">PrimaryUnitRequest</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" SupervisorOnly="false">RadiusSearch</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">RemoveC4</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">RequestCaseNumber</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">Responding2ndLocation</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">ReversePhoneSearch</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" SupervisorOnly="true">SendPage</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="3600">SetIncidentDisposition</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">SpecificUnitStatus</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">StationViewer</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">SubjectStop</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">TrafficStop</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">Transport</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">UnitHistory</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">UnitStatus</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms" AckExpirationTime="5400">ViewIncident</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">VehicleSearch</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">SetUnitTimeStamp</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">InQuarters</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">EnrouteToPost</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">ChangeProblemNature</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">CardFileSearch</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">LocationCheck</Form>
+    <Form Type="HTMLQuery" FilePath="NewForms">TowRequest</Form>
+  </FormGroup>
+</Forms>

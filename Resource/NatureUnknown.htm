@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<TITLE>VisiNET Mobile - Nature Unknown</TITLE>
+		<LINK href="bigstyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body>
+		<TABLE class="base" cellPadding="10" align="center" border="0" ID="Table1">
+			<TBODY>
+				<TR>
+					<TD vAlign="top">
+						<H4 align="center">
+							<input type="button" name="Query" id="Query" value="Submit" onkeypress="validatepage()"
+								onclick="validatepage()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Nature Unknown</H4>
+						<form action="Form.aspx?queryfile=natureunknown.qry" method="post" id="Form"
+							name="Form">
+							<table ID="Table2">
+								<tr>
+									<td valign="top"><b>Problem:</b></td>
+									<td width="300">
+										<select id="ProblemNature" name="ProblemNature" size="1"
+											<option selected>On Hold</option>
+											<option selected>Nature Problem Delete Test P</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top"><b>Location:</b></td>
+								</tr>
+								<tr>
+									<td align="right">Current<input type="radio" class="bigradio" name="location" id="currentlocation" value="currentlocation"
+											executefunction="ReverseGeoCode" parameters="Latitude=curlat&amp;Longitude=curlong&amp;Address=Address&amp;City=City"></td>
+									<td width="300"><span id="curlat" name="curlat" formvalue="true"></span></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td width="300"><span id="curlong" name="curlong" formvalue="true"></span></td>
+								</tr>
+								<tr>
+									<td align="right">Selected<input type="radio" class="bigradio" name="location" id="selectedlocation" value="selectedlocation"
+											executefunction="ReverseGeoCode" parameters="Latitude=sellat&amp;Longitude=sellong&amp;Address=Address&amp;City=City"></td>
+									<td>Lat.&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sellat" name="sellat" fillbutton="selectbutton" size="9">&nbsp;&nbsp;<INPUT type="image" align="absMiddle" enablefill="true" value="Select from map" alt="Select from map"
+											src="map.gif" id="selectbutton" name="selectbutton" simulateclickcontrolid="selectedlocation"></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>Long.&nbsp;<input type="text" id="sellong" name="sellong" fillbutton="selectbutton" size="9"></td>
+								</tr>
+								<tr>
+									<td align="right">Address<input type="radio" class="bigradio" name="location" id="addresslocation" value="addresslocation"></td>
+									<td width="300"><input type="text" name="Address" id="Address"></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td width="300">City:&nbsp;&nbsp;<input type="text" name="City" id="City" size="15"></td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td valign="top"><b>Comment:</b></td>
+									<td width="300"><textarea name="Comment" id="Comment" rows="8" onkeyup="CheckTextAreaLength(this.form.Comment,200);"></textarea></td>
+								</tr>
+							</table>
+							<br>
+							<input type="hidden" name="CallTaking_Performed_By" id="CallTaking_Performed_By">
+							<input type="hidden" name="SelfAssign" id="SelfAssign" value="true" size="10"> <input type="hidden" name="Lat" id="Lat" size="10">
+							<input type="hidden" name="Long" id="Long" size="10">&nbsp; <input style="WIDTH:0px" TABINDEX="-1" type="submit" name="Submit" id="Submit" value="Submit">
+						</form>
+					</TD>
+				</TR>
+			</TBODY></TABLE>
+		<script src="clientutilities.js"></script>
+		<script language="javascript">
+
+		function window.onload()
+	{
+		Form.Comment.focus();
+		window.setTimeout("if (!Form.currentlocation.checked && !Form.selectedlocation.checked && !Form.addresslocation.checked) Form.currentlocation.click()", 1000);
+		}
+	function window.validatepage()
+	{
+		if (Form.currentlocation.checked)
+		{
+			if (curlat != null)
+			{
+				if (curlat.innerText == null)
+					Form.Lat.value = '';
+				else
+					Form.Lat.value = curlat.innerText;
+            		}
+			else
+				Form.Lat.value = '';
+
+			if (curlong != null)
+			{
+				if (curlong.innerText == null)
+					Form.Long.value = '';
+				else
+					Form.Long.value = curlong.innerText;
+			}
+			else
+				Form.Long.value = '';
+
+			// Form.Address.value = '';
+		}
+		else if (Form.selectedlocation.checked)
+		{
+			Form.Lat.value = Form.sellat.value;
+			Form.Long.value = Form.sellong.value;
+			// Form.Address.value = '';
+		}
+		else if (Form.addresslocation.checked)
+		{
+			Form.Lat.value = '';
+			Form.Long.value = '';
+		}
+
+		if ((Form.selectedlocation.checked || Form.currentlocation.checked) && ((Form.Lat.value == 0) ||(Form.Long.value == 0)))
+		{
+			alert ("Latitude/Longitude cannot be zero");
+			//Set focus
+			if (Form.Lat.value == 0 )
+			{
+				Form.sellat.focus();
+			}
+			else
+			{
+				Form.sellong.focus();
+			}
+		}
+		else if ((Form.addresslocation.checked) && (Form.Address.value.length <= 0))
+		{
+			alert("Please enter a location / address.");
+			Form.Address.focus();
+		}
+		else
+			Form.Submit.click();
+	}
+
+		</script>
+	</body>
+</HTML>

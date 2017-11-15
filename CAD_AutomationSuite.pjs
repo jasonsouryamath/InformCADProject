@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="12.0" key="{2C4F0C9E-4182-4C3D-8EE0-F2931945F98B}">
+	<children>
+		<child name="InformCadProject" key="{39EAAC64-0524-4AF7-8587-4B31D359F6B9}" type="Project" typeId="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}" pluginName="">
+			<data path="InformCadProject\InformCadProject.mds" />
+		</child>
+	</children>
+	<folders />
+	<testItems key="{354A7DE0-5D2E-4F02-B4AA-FFC3F3A7A0C3}">
+		<children>
+			<testItem key="{39EAAC64-0524-4AF7-8587-4B31D359F6B9}" enabled="True" timeout="0" stopOnError="True" description="" />
+		</children>
+	</testItems>
+	<variables key="{8457FAC7-D72A-480A-B343-F97E54349273}">
+		<data Version="3" />
+	</variables>
+	<analysis key="{B137A003-C9B1-4EE0-B039-958DC8505D27}" />
+	<scc key="{C900492B-D218-429C-9AA0-264B7D78CA88}" name="Git Plugin">
+		<data />
+	</scc>
+	<extender key="{1A3FC97E-9A66-4716-B166-35D10B4146E0}" />
+</Root>

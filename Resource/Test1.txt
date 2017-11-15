@@ -1,0 +1,132 @@
+
+					<Longitude>-117.15</Longitude>
+				</NewCenter>				
+			</ButtonZoomToPreset>
+			<Button>
+
+<ButtonLayerToggle>
+                  				<Type>RecenterTool</Type>
+		<Caption>Center</Caption>
+		<IconID>2</IconID>
+		<FKeyNumber>11</FKeyNumber>
+		<HoldAltKey>true</HoldAltKey>
+		<HoldCtrlKey>false</HoldCtrlKey>
+		<HoldShiftKey>false</HoldShiftKey>
+		<BackColorRed>255</BackColorRed>
+		<BackColorGreen>255</BackColorGreen>
+		<BackColorBlue>255</BackColorBlue>
+		<ForeColorRed>0</ForeColorRed>
+		<ForeColorGreen>0</ForeColorGreen>
+		<ForeColorBlue>0</ForeColorBlue>
+		<IsHidden>false</IsHidden>
+	</Button>
+				
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				<ForeColorRed>0</ForeColorRed>
+				<ForeColorGreen>0</ForeColorGreen>
+				<ForeColorBlue>0</ForeColorBlue>
+				<IsHidden>false</IsHidden>
+				<ScalePercent>0.3333333333333</ScalePercent>
+			</ButtonZoomToPreset>
+		</MapButtonPanel>
+	</Button>
+	<Button>
+		<Type>Toolbar</Type>
+		<Caption>Layers</Caption>
+		<MapButtonPanel>
+                  <ButtonLayerToggle>
+                  		<Caption>Aerial On\Off</Caption> 
+				<FKeyNumber>12</FKeyNumber>
+				<HoldAltKey>true</HoldAltKey>
+				<HoldCtrlKey>false</HoldCtrlKey>
+				<HoldShiftKey>false</HoldShiftKey>
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				<ForeColorRed>0</ForeColorRed>
+				<ForeColorGreen>0</ForeColorGreen>
+				<ForeColorBlue>0</ForeColorBlue>
+				<LayerName>Aerial Photo</LayerName>					
+		</ButtonLayerToggle>
+<ButtonLayerToggle>
+                  		<Caption>FIRE RESP On\Off</Caption> 
+				<FKeyNumber>12</FKeyNumber>
+				<HoldAltKey>true</HoldAltKey>
+				<HoldCtrlKey>false</HoldCtrlKey>
+				<HoldShiftKey>false</HoldShiftKey>
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				<ForeColorRed>0</ForeColorRed>
+				<ForeColorGreen>0</ForeColorGreen>
+				<ForeColorBlue>0</ForeColorBlue>
+				<LayerName>RESP Areas</LayerName>					
+			</ButtonLayerToggle>
+<ButtonLayerToggle>
+                  		<Caption>FIRE RESP 50mi On\Off</Caption> 
+				<FKeyNumber>12</FKeyNumber>
+				<HoldAltKey>true</HoldAltKey>
+				<HoldCtrlKey>false</HoldCtrlKey>
+				<HoldShiftKey>false</HoldShiftKey>
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				<ForeColorRed>0</ForeColorRed>
+				<ForeColorGreen>0</ForeColorGreen>
+				<ForeColorBlue>0</ForeColorBlue>
+				<LayerName>RESP Areas Generlized</LayerName>					
+			</ButtonLayerToggle>
+<ButtonLayerToggle>
+                  		<Caption>BRUSH HAZ On\Off</Caption> 
+				<FKeyNumber>12</FKeyNumber>
+				<HoldAltKey>true</HoldAltKey>
+				<HoldCtrlKey>false</HoldCtrlKey>
+				<HoldShiftKey>false</HoldShiftKey>
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				<ForeColorRed>0</ForeColorRed>
+				<ForeColorGreen>0</ForeColorGreen>
+				<ForeColorBlue>0</ForeColorBlue>
+				<LayerName>BRSH_03</LayerName>					
+			</ButtonLayerToggle>
+<ButtonLayerToggle>
+                  		<Caption>CITIES On\Off</Caption> 
+				<FKeyNumber>12</FKeyNumber>
+				<HoldAltKey>true</HoldAltKey>
+				<HoldCtrlKey>false</HoldCtrlKey>
+				<HoldShiftKey>false</HoldShiftKey>
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				<ForeColorRed>0</ForeColorRed>
+				<ForeColorGreen>0</ForeColorGreen>
+				<ForeColorBlue>0</ForeColorBlue>
+				<LayerName>CITIES</LayerName>					
+			</ButtonLayerToggle>
+                                                <ButtonLayerToggle>
+                                                               <Caption>HOSP On/Off</Caption> 
+				<FKeyNumber>11</FKeyNumber>
+				<HoldAltKey>true</HoldAltKey>
+				<HoldCtrlKey>false</HoldCtrlKey>
+				<HoldShiftKey>false</HoldShiftKey>
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				<ForeColorRed>0</ForeColorRed>
+				<ForeColorGreen>0</ForeColorGreen>
+				<ForeColorBlue>0</ForeColorBlue>
+				<LayerName>HOSPITALS</LayerName>					
+			</ButtonLayerToggle>
+			<ButtonLayerToggle>
+				<Caption>PARCEL On/Off</Caption> 
+				<FKeyNumber>11</FKeyNumber>
+				<HoldAltKey>true</HoldAltKey>
+				<HoldCtrlKey>false</HoldCtrlKey>
+				<HoldShiftKey>false</HoldShiftKey>
+				<BackColorRed>255</BackColorRed>
+				<BackColorGreen>255</BackColorGreen>
+				<BackColorBlue>255</BackColorBlue>
+				

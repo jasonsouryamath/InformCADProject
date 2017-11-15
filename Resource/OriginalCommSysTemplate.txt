@@ -1,0 +1,5 @@
+Sample NCIC HyperLink: OLN Query for B1234567
+
+
+Actual Return Text:
+[$TEXT]

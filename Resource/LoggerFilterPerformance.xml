@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LoggerFilter>
+	<Category>MAILERROR</Category>
+	<Category>MAILCCWERROR</Category>
+	<Category>EVENTERROR</Category>
+	<Category>CONNECTORERROR</Category>
+	<Category>Performance Instrumentation</Category>
+</LoggerFilter>
