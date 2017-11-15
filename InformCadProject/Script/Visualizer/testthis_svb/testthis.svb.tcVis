@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{42D2222C-ACA2-405F-8E67-05D5C42EB839}" version="2">
+	<data key="{647EA080-D4E0-4CFC-AA1A-8CDACEEEC878}">
+		<item typeId="{87B03792-E854-4F5D-9F33-165F1F874209}" version="2" lineNo="3" kind="0" dateTime="43042.2259837963" objectName="Aliases.InformCadProc.ConfigurationWindow.windowWorkspace.TabControl.ListViewUnits" objectLeft="161" objectTop="110" objectRight="801" objectBottom="647" clickPointX="-1" clickPointY="-1" imageFileName="tcvi5009973440080.png" storageFileName="" needUpdate="False" rectColor="255" />
+		<item typeId="{87B03792-E854-4F5D-9F33-165F1F874209}" version="2" lineNo="4" kind="0" dateTime="43042.2260648148" objectName="Aliases.InformCadProc.ConfigurationWindow.windowWorkspace.TabControl.ListViewUnits.ListViewItem" objectLeft="163" objectTop="132" objectRight="799" objectBottom="151" clickPointX="-1" clickPointY="-1" imageFileName="tcvi5010640640086.png" storageFileName="" needUpdate="False" rectColor="255" />
+	</data>
+</Root>

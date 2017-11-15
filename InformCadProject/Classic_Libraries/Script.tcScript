@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="child list">
+			<Node name="cadcomcacherelatedfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="CadComCacheRelatedFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{E1C8AB07-99E9-423F-88B2-EB7662831688}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="cautionnote">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="CautionNote.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{7B0C981D-3E0C-4F53-B786-3CE9C8A95CE3}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="commonfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="CommonFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{02123728-BFA0-42C1-92D7-0028B7734635}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="databaserelatedfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="DataBaseRelatedFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{7B731F41-E40F-4D60-9F63-521932BA8F00}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="ectandincidentviewer">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="EctAndIncidentViewer.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{DD8826C7-3650-49C5-81D2-A1E0B51C2AF3}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="eventshandler">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="EventsHandler.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{5209AEE3-DEF5-486A-8B3A-803A846F5E3B}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="generalfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="GeneralFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{CC16EAD7-5439-487A-ABA8-A15C797871EA}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="globalvariables">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="GlobalVariables.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{D999D8AA-5E07-4CDC-85BE-8275DBF9C437}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="keywordfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="KeyWordFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{D2306894-8DDB-4B85-B35C-D659AEC55033}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="logicalnavigationkeys">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="LogicalNavigationKeys.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{C59FAB87-C99A-4B9B-9461-710EE519704B}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="logicalobjects">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="LogicalObjects.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{5E7983D5-BAD5-443E-A9BC-0C68DCA90325}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="messages">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Messages.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{3AFF7FC3-33CD-4FCF-ACFB-FD8B5EEAF22F}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="navigation">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Navigation.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{66F1F4C4-587A-4B52-A9D5-FBB9C2B166E8}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="ocrrelated">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="OCRRelated.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{AC2F1308-6559-40FF-AAE3-8A3D7FBD528F}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="operations">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Operations.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{5715227C-D622-4628-BC79-25BAB21B27CD}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="prerequisite">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Prerequisite.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{6CBF3DA7-9672-4BFC-9DDC-3E9E2A8257E9}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="product_administration">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Product_Administration.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{20E79F98-224C-4D39-BE3A-E92173EEB749}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="propertyholderlibrary">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="PropertyHolderLibrary.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{A50E6522-3711-4FD6-9C7A-D0F4E68716E2}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="recommendations">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Recommendations.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{6DC3D7CF-0A6B-4446-9E74-F087335A8FE7}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="schedulecalltaking">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="ScheduleCallTaking.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{1BF78490-6621-4583-BECD-BEE6FFA369B0}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="si_utility">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="SI_Utility.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{FD1C870B-E33E-4843-A588-F21009EF7601}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="standardinterface">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="StandardInterface.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{E7FAFB74-98F6-4C95-BBEF-6284102DE426}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="standardinterface_iq">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="StandardInterFace_IQ.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{4E2C5D73-E07C-4050-907C-38BCAD7B2996}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="supplimentinformation">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="SupplimentInformation.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{3AAF3689-B0AD-483B-B481-3F262E256754}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="test">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="Test.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{314D1BBE-DFA2-4393-B472-DC4B4D9D8069}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="testcasehelper">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="TestCaseHelper.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{8019D7F4-CB17-4433-96E7-8CB4DAC21F77}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="testcases">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="TestCases.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{888B6377-9DCB-4999-B780-CDDB3F0B57F6}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="unitandincidentmanagement">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="UnitandIncidentManagement.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{3D2F33EF-503B-47CC-8551-B4DEA6E85767}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="utilityfunctions">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="UtilityFunctions.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{D243F251-C0B7-4558-BB11-48796D5B4983}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="visicadbrowser">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="VisiCadBrowser.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{A73C7D8F-036E-44B0-A9B1-B5FEDB962F9C}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="visinetmobileclient">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="VisiNetMobileClient.svb"/>
+				</Node>
+				<Prp name="key" type="S" value="{987176ED-E2F2-4424-B0EA-37B5DD1D98A5}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+		</Node>
+		<Node name="folders">
+			<Node name="featurespecific">
+				<Node name="folders"/>
+				<Node name="references">
+					<Prp name="{1bf78490-6621-4583-becd-bee6ffa369b0}" type="S" value=""/>
+					<Prp name="{20e79f98-224c-4d39-be3a-e92173eeb749}" type="S" value=""/>
+					<Prp name="{3aaf3689-b0ad-483b-b481-3f262e256754}" type="S" value=""/>
+					<Prp name="{3aff7fc3-33cd-4fcf-acfb-fd8b5eeaf22f}" type="S" value=""/>
+					<Prp name="{3d2f33ef-503b-47cc-8551-b4dea6e85767}" type="S" value=""/>
+					<Prp name="{4e2c5d73-e07c-4050-907c-38bcad7b2996}" type="S" value=""/>
+					<Prp name="{5715227c-d622-4628-bc79-25bab21b27cd}" type="S" value=""/>
+					<Prp name="{6dc3d7cf-0a6b-4446-9e74-f087335a8fe7}" type="S" value=""/>
+					<Prp name="{7b0c981d-3e0c-4f53-b786-3ce9c8a95ce3}" type="S" value=""/>
+					<Prp name="{987176ed-e2f2-4424-b0ea-37b5dd1d98a5}" type="S" value=""/>
+					<Prp name="{a73c7d8f-036e-44b0-a9b1-b5fedb962f9c}" type="S" value=""/>
+					<Prp name="{dd8826c7-3650-49c5-81d2-a1e0b51c2af3}" type="S" value=""/>
+					<Prp name="{e7fafb74-98f6-4c95-bbef-6284102de426}" type="S" value=""/>
+					<Prp name="{fd1c870b-e33e-4843-a588-f21009ef7601}" type="S" value=""/>
+				</Node>
+				<Prp name="caption" type="S" value="FeatureSpecific"/>
+				<Prp name="description" type="S" value="A logical folder that is used to organize project items and elements."/>
+				<Prp name="moniker" type="S" value=""/>
+			</Node>
+		</Node>
+		<Node name="settings"/>
+		<Prp name="settingsversion" type="S" value="9.20"/>
+		<Prp name="signature" type="S" value="{9252F941-DB23-4FCA-AA50-858B33BB4A19}"/>
+		<Prp name="version" type="S" value="11.0"/>
+	</Node>
+</Nodes>

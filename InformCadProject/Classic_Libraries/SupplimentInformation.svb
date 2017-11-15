@@ -1,0 +1,2294 @@
+'USEUNIT CadComCacheRelatedFunctions
+'USEUNIT CautionNote
+'USEUNIT CommonFunctions
+'USEUNIT DataBaseRelatedFunctions
+'USEUNIT EctAndIncidentViewer
+
+'USEUNIT GeneralFunctions
+'USEUNIT GlobalVariables
+'USEUNIT KeyWordFunctions
+'USEUNIT LogicalNavigationKeys
+'USEUNIT LogicalObjects
+'USEUNIT Messages
+'USEUNIT Navigation
+'USEUNIT OCRRelated
+'USEUNIT PropertyHolderLibrary
+'USEUNIT ScheduleCallTaking
+
+'USEUNIT UtilityFunctions
+
+'---------------------------------------------------------------------------------------------
+' Function Name : FnFillSupplementWndPropertyTab()
+' Parameters : Textfield value,Property value,serial number value
+' Details/Define :  Tis function fills all the data for the property field
+' Author Name with Date: Preethi 27/08/2013
+
+Function AddSupplementWindowPropertyData(byval strFindText,byval strPropText,byval SerialNumTxt)
+  'Creating the object reference for PropertyHolder class 
+  set ptyObj = Project.Variables.PropertyHolder
+  If(Aliases.WPFProcess.IncidentSupplementForm.Exists) then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right][Right]")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      'adds the serial number
+      Set SerialObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SerialNumberTxtPty, ptyObj.SerialNumberTxtPtyVal, 115)
+      Call FnSetDataText(SerialObj, SerialNumTxt)
+      
+      'add the article name
+      Set ArticleObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.ArticleTxtPty, ptyObj.ArticleTxtPtyVal, 115)
+      Call FnSetDataText(ArticleObj, strFindText)
+      
+      'add brand name
+      set BrandObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.BrandTxtPty, ptyObj.BrandTxtPtyVal, 115)
+      Call FnSetDataText(BrandObj, strFindText)
+      
+      'add the propertyname
+      set PropertyNameObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertyDropdownPty, ptyObj.PropertyDropdownPtyVal, 115)
+      Call FnSetDataClickItem(PropertyNameObj,strPropText)
+      
+      set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SaveRecordCheckBtnPty,ptyObj.SaveRecordCheckBtnPtyVal, 115)
+      Call FnSetDataClick(saveRecordObj)
+      
+    If(strPropText = "") Then
+      If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+        Set okbutton2Obj = Aliases.WpfProcess.ExceptionCaptured.Window("Button", "OK", 1)
+        Call FnSetDataClick(okbutton2Obj)
+        Call FnRecordResults("[The Exception message occured","Pass","") 
+      Else
+        Call FnRecordResults("[The Exception message expected NOT displayed","Pass","")
+      End If 
+      
+      End If
+      
+      
+      If(strPropText = "Bike") Then
+        If(Aliases.RecordsCheck.dlgRecordsCheck.Exists) Then
+        set ErrorokBtnObj = Aliases.RecordsCheck.dlgRecordsCheck.Window("Button", "&OK", 2)
+        Call FnSetDataClick(ErrorokBtnObj)
+        Call FnRecordResults("[The Error message] Expected Exists","Pass","") 
+      Else
+        Call FnRecordResults("[The Error message] Expected NOT Exists","Fail","")
+       End If
+      End If
+      
+      
+      
+      set VerifyDataPresentTabObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertyValueSuppWindowPty,ptyObj.PropertyValueSuppWindowPtyVal, 115)
+      PropertyName = fnVerifyTextFromImage(VerifyDataPresentTabObj,strFindText)
+        
+           If(PropertyName = true) then
+                   call FnRecordResults("[OCR][SupplementWindow] text "&strFindText&" is present","Pass","")
+           Else
+                   call FnRecordResults("[OCR][SupplementWindow] data is not present","Fail","")
+           End If
+       
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+        call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+      set EctExitSaveButtonObj = Aliases.InformCadProc.FindChild(ptyObj.CallTakingIncedentExitBtnPty, ptyObj.CallTakingIncedentExitBtnPtyVal,5)
+        Call FnSetDataClick(EctExitSaveButtonObj) 
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+      set SupplementWindowTabObj = nothing
+     set  addBtnObj = nothing
+     set  SerialObj = nothing
+     set  ArticleObj = nothing
+     set  BrandObj = nothing
+     set  PropertyNameObj = nothing
+     set  saveRecordObj = nothing
+     set  VerifyDataPresentTabObj = nothing
+     set SupplementWindowTabObj = nothing
+     set SupplementWindowExitButtonObj = nothing
+     set  EctExitSaveButtonObj = nothing
+End Function
+
+' Function Name : FnVerifyRecordResults
+' Parameters :  RecordCheckType, SerialNo
+' Details/Define : 
+' Author Name with Date: Anuradha 04/09/2013
+'Modified by:Preethi 05/09/2013
+Function VerifyResultsInRecordInquiryResults(Byval RecordCheckType, Byval SerialNo,byval presence)
+
+  set ptyObj = Project.Variables.PropertyHolder
+  If WaitTillObjExists(14000,Aliases.RecordsCheck.InquiryResults) = 1 then
+      Aliases.RecordsCheck.InquiryResults.SetFocus
+      call FnMoveWindowToStandardPosition("RecordCheck")
+      'result tab of Records inquiry result window
+      set resultsTabObj = Aliases.RecordsCheck.InquiryResults.FindChild(ptyObj.resultTabPty,ptyObj.resultTabPtyVal,15,true)
+      RowCount = resultsTabObj.wItemCount
+      ColumnCount = resultsTabObj.wColumnCount
+      ValCheck1 = False
+      ValCheck2 = False
+      For i = 0 to RowCount-1
+           For j = 0 to ColumnCount-1
+              item = resultsTabObj.wItem(i,j)
+                  If (strComp(Trim(item),RecordCheckType,1)=0) And ValCheck1 = False then
+                        RecordCheckTypeVal = item
+                        ValCheck1 = True
+                  elseif (instr(1,Trim(item),RecordCheckType,1)>0) And ValCheck1 = False then
+                        RecordCheckTypeVal = item
+                        ValCheck1 = True
+                  End If 
+    
+                  If (strComp(Trim(item),SerialNo,1)=0) And ValCheck2 = False then
+                      SerilNoVal =item
+                      ValCheck2 = True
+                  elseif (instr(1,Trim(item),SerialNo,1)>0) And ValCheck2 = False then
+                      SerilNoVal =item
+                      ValCheck2 = True
+                  End if
+           Next
+      Next
+      If(presence = "YES") then
+        If (strComp(Trim( RecordCheckTypeVal),RecordCheckType,1)=0) and (strComp(Trim(SerilNoVal),SerialNo,1)=0)  Then
+            Call FnRecordResults("[Records Inquiry Results] found with records : " & RecordCheckTypeVal & "and " &SerilNoVal&"","Pass","")
+        Elseif (strComp(Trim( RecordCheckTypeVal),RecordCheckType,1)=0) and (instr(1,Trim(SerilNoVal),SerialNo,1)>0) then    
+            Call FnRecordResults("[Records Inquiry Results] found with records : " & RecordCheckTypeVal & "and " &SerilNoVal&"","Pass","")
+        Else
+            Call FnRecordResults("[Records Inquiry Results] not found with records : " & RecordCheckTypeVal & "and " &SerilNoVal&"","Fail","")
+        End if
+      Else
+          If (strComp(Trim( RecordCheckTypeVal),RecordCheckType,1)=0) and (strComp(Trim(SerilNoVal),SerialNo,1)=0)  Then
+              Call FnRecordResults("[Records Inquiry Results] found with records : " & RecordCheckTypeVal & "and " &SerilNoVal&"","Fail","")
+          Else
+              Call FnRecordResults("[Records Inquiry Results] Not found","Pass","")
+          End if
+      End If
+                  
+                
+       
+      set ExitBtnObj = Aliases.RecordsCheck.InquiryResults.FindChild(ptyObj.GeneralExitBtnPty,ptyObj.GeneralExitBtnPtyVal,15,true)
+      call FnSetDataClickButton(ExitBtnObj)
+      
+  Else
+    Call FnRecordResults("[Records Inquiry Results window] not found","Fail","")
+  End If
+  
+  set resultsTabObj = nothing
+  set ExitBtnObj = nothing
+  
+End Function
+
+Function AddSupplementWindowWeaponData(byval SerialNumTxt,byval MakeText,byval CaliberTxt,byval WeaponTypeLst )
+  'Creating the object reference for PropertyHolder class 
+  set ptyObj = Project.Variables.PropertyHolder
+  If(Aliases.WPFProcess.IncidentSupplementForm.Exists) then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right]")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      'adds the serial number
+      
+      Set SerialObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponSerialNumberPty,ptyObj.SupplementWindowWeaponSerialNumberPtyVal,115)
+      Call FnSetDataText(SerialObj, SerialNumTxt)
+      
+      'add the Make name
+      
+      Set MakeObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponMakerPty,ptyObj.SupplementWindowWeaponMakerPtyVal,115)
+      Call FnSetDataText(MakeObj, MakeText)
+      
+      'add Caliber
+      
+      set CaliberObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponCaliberPty,ptyObj.SupplementWindowWeaponCaliberPtyVal,115)
+      Call FnSetDataText(CaliberObj, CaliberTxt)
+      
+      'add the WeaponType
+      
+      set WeaponTypeObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponTypePty,ptyObj.SupplementWindowWeaponTypePtyVal,115)
+      Call FnSetDataClickItem(WeaponTypeObj,WeaponTypeLst)
+      
+      set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponSaveAndSubmitRCPty,ptyObj.SupplementWindowWeaponSaveAndSubmitRCPtyVal,115)
+      Call FnSetDataClick(saveRecordObj)
+      
+      If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+        Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+        Call FnSetDataClick(okbutton2Obj)
+        Call FnRecordResults("[The Exception message occured","Pass","") 
+        End If
+        WeaponType=trim(WeaponTypeLst)
+      If( (strcomp( WeaponType, WeaponTypeLst,1)) =0) then
+                   call FnRecordResults("[OCR][SupplementWindow] text "&WeaponTypeLst&" is present","Pass","")
+           Else
+                   call FnRecordResults("[OCR][SupplementWindow] data is not present","Fail","")
+           End If
+
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+        call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+      set EctExitSaveButtonObj = Aliases.InformCadProc.FindChild(ptyObj.CallTakingIncedentExitBtnPty, ptyObj.CallTakingIncedentExitBtnPtyVal,5)
+        Call FnSetDataClick(EctExitSaveButtonObj) 
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+      set SupplementWindowTabObj = nothing
+     set  addBtnObj = nothing
+     set  SerialObj = nothing
+     set  MakeObj = nothing
+     set  CaliberObj = nothing
+     set  WeaponTypeObj = nothing
+     set  saveRecordObj = nothing
+     set SupplementWindowTabObj = nothing
+     set SupplementWindowExitButtonObj = nothing
+     set  EctExitSaveButtonObj = nothing
+End Function
+
+' Function Name : AddSupplementWindowPersonData()
+' Parameters : firstname,lastname,DOB,OLN
+' Details/Define :  Tis function  fills in required data for the person field
+' Author Name with Date: Parikshith 13/09/2013
+
+Function AddSupplementWindowPersonData(byval strFisrtName,byval strLastName,byVal strDOB, byVal strOLN,byval strPhoneno)
+  'Creating the object reference for PropertyHolder class 
+  set ptyObj = Project.Variables.PropertyHolder
+  'call WaitTillObjectExists(5000,Aliases.WPFProcess.IncidentSupplementForm)
+  If Aliases.WPFProcess.IncidentSupplementForm.Exists then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right]")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      Set involvementTypeObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonInvolvementTypePty,ptyObj.SIPersonInvolvementTypePtyVal,7)          
+           If (involvementTypeObj.wText) = "" Then
+         
+              Call FnRecordResults("[Invovlement Type] drop down is default blank","Pass","")
+             Else
+    
+              Call FnRecordResults("[Invovlement Type] drop down is not blank by default","Fail","")
+           End IF
+      
+      If strLastName<>"" Then     
+        Set lastnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonLastNamePty,ptyObj.SIPersonLastNamePtyVal,7)
+        Call FnSetDataText(lastnameObj, strLastName)
+      End If
+      
+      If strFisrtName<>"" Then
+        Set fnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonFirstNamePty,ptyObj.SIPersonFirstNamePtyVal,7)
+        Call FnSetDataText(fnameObj, strFisrtName)
+      End If
+      
+      If strDOB<>"" Then
+        set dobObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonDOBPty,ptyObj.SIPersonDOBPtyVal,7)
+        Call FnSetDataKeys(dobObj, strDOB)
+      End If
+      
+      If strOLN<>"" Then
+        set OLNObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonOLNBoxPty,ptyObj.SIPersonOLNBoxPtyVal,7)
+        Call FnSetDataText(OLNObj, strOLN)
+      End If
+      
+      If strPhoneno <>"" Then
+        set Phonenoobj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonPhonenoTxtPty,ptyObj. SIPersonPhonenoTxtPtyVal,17)
+        Call FnSetDataText(Phonenoobj, strPhoneno)
+      End If
+
+      
+      set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SaveRecordCheckBtnPty,ptyObj.SaveRecordCheckBtnPtyVal, 115)
+      Call FnSetDataClick(saveRecordObj)
+      
+       If(Aliases.RecordsCheck.dlgRecordsCheck.Exists) Then
+
+           Call FnRecordResults("[The Error message] Last Name Missing Exists","Pass","")
+           set errorWndOkBtn = Aliases.RecordsCheck.dlgRecordsCheck.FindChild(ptyObj.SIErrorOKBtnPty,ptyObj.SIErrorOKBtnPtyVal,7)
+           call FnSetDataClickButton(errorWndOkBtn)  
+       End If
+
+      
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+        call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+      set EctExitSaveButtonObj = Aliases.InformCadProc.FindChild(ptyObj.CallTakingIncedentExitBtnPty, ptyObj.CallTakingIncedentExitBtnPtyVal,5)
+        Call FnSetDataClick(EctExitSaveButtonObj) 
+
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  
+  set ptyObj = Nothing
+  Set involvementTypeObj = Nothing
+  Set lastnameObj = Nothing
+  Set fnameObj = Nothing
+  set dobObj = Nothing
+  set OLNObj = Nothing
+  set saveRecordObj = Nothing
+  set errorWndOkBtn = Nothing
+  set SupplementWindowTabObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing
+  set EctExitSaveButtonObj = Nothing
+
+End Function
+
+' Function Name : AddSupplementWindowPersonData()
+' Parameters : firstname,lastname,DOB,OLN
+' Details/Define :  Tis function  fills in required data for the person field
+' Author Name with Date: Parikshith 13/09/2013
+
+Function VerifyPlateNoInSupplementInfo(byVal strPlateNo)
+  set ptyObj = Project.Variables.PropertyHolder
+  
+  If WaitTillObjExists(1000,Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      set supplementwndObj =  Aliases.WPFProcess.IncidentSupplementForm 
+      Aliases.WPFProcess.IncidentSupplementForm.Activate
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+  
+      set vehicleGridObj =  SupplementWindowTabObj.FindChild(ptyObj.SIVehicleGridPty,ptyObj.SIVehicleGridPtyVal,8)      
+      
+      RowCount = vehicleGridObj.wRowCount
+      ColumnCount = vehicleGridObj.wColumnCount
+      For i = 0 to RowCount-1
+           For j = 0 to ColumnCount-1
+              strCellText = vehicleGridObj.wValue(i,j)
+                  If (strComp(Trim(lcase(strCellText)), Trim(lcase(strPlateNo)),1)=0) then
+                        PlateNoVal = strCellText
+                  End If 
+
+           Next
+      Next
+      
+      If (strComp(Trim(lcase(PlateNoVal)),Trim(lcase(strPlateNo)),1)=0)  Then
+   
+          Call FnRecordResults("[Vehicle Plate number] found in the Supplement form : " &PlateNoVal& "","Pass","")
+        Else
+       
+          Call FnRecordResults("[Vehicle Plate number] not found","Fail","")
+      End if
+     
+     
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+      call FnSetDataClickButton(SupplementWindowExitButtonObj)  
+ 
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  
+  set ptyObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing
+  set supplementwndObj = Nothing
+  set vehicleGridObj = Nothing   
+
+End Function
+
+
+
+
+' Function Name : VerifySupplementWindowPersonData ()
+' Parameters : firstname,lastname,DOB,OLN,Phone No
+' Details/Define :  Tis function  Verfies the required data for the person fields
+' Author Name with Date: Anuradha 21/09/2013
+
+Function VerifySupplementWindowPersonData(byval strLastName,byval strFisrtName,byVal strDOB, byVal strOLN,byVal strPhoneno)
+  'Creating the object reference for PropertyHolder class 
+  set ptyObj = Project.Variables.PropertyHolder
+  'call WaitTillObjectExists(5000,Aliases.WPFProcess.IncidentSupplementForm)
+  If Aliases.WPFProcess.IncidentSupplementForm.Exists then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right]")
+      End If
+      
+    'verify Last Name Value with expected value  
+    If strLastName<>"" Then     
+        Set lastnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonLastNamePty,ptyObj.SIPersonLastNamePtyVal,7)            
+        lastnameval= lastnameObj.wText
+        
+        'Call CompareString(strLastName,lastnameval)
+            If (strcomp(trim(strLastName),trim(lastnameval),1)=0) then
+                Call FnRecordResults("[Supplement Window persons Last name"&lastnameval& "is equal to expected value" & strLastName&"] ","Pass","")
+            Elseif (instr(1,Trim(lcase(strLastName)),trim(lcase(lastnameval)),1)>0) then
+                Call FnRecordResults("[Supplement Window persons Last name"&lastnameval& "is equal to expected value" & strLastName&"] ","Pass","")
+            Else
+                Call FnRecordResults("[Supplement Window persons Last name"&lastnameval& "is not equal to expected value" & strLastName&"] ","Fail","")
+        End If  
+      End If
+      'verify First Name Value with expected value 
+      If strFisrtName<>"" Then
+        Set fnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonFirstNamePty,ptyObj.SIPersonFirstNamePtyVal,7)
+
+        fnameval= fnameObj.wText
+            If (strcomp(trim(strFisrtName),trim(fnameval),1)=0) then
+                Call FnRecordResults("[Supplement Window persons First name"&fnameval& " is equal to expected value" & strFisrtName&"] ","Pass","")
+            Elseif (instr(1,Trim(lcase(strFisrtName)),trim(lcase(fnameval)),1)>0) then
+                Call FnRecordResults("[Supplement Window persons Last name"&lastnameval& "is equal to expected value" & strLastName&"] ","Pass","")
+            Else
+                Call FnRecordResults("[Supplement Window persons First name"&fnameval& " is not equal to expected value" & strFisrtName&"] ","Fail","")
+        End If  
+      End If
+      
+   'verify DOB Name Value with expected value
+      
+      If strDOB<>"" Then
+        set dobObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonDOBPty,ptyObj.SIPersonDOBPtyVal,7)
+        dobval= dobObj.wText
+            If (strcomp(trim(strDOB),trim(dobval),1)=0) then
+                Call FnRecordResults("[Supplement Window persons DOB "&dobval& "is equal to expected value" & strDOB&"] ","Pass","")
+            Else
+              Call FnRecordResults("[Supplement Window persons DOB  is not equal to expected value] ","Fail","")
+        End If  
+      End If
+    'verify OLN Name Value with expected value
+      If strOLN<>"" Then
+        set OLNObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonOLNBoxPty,ptyObj.SIPersonOLNBoxPtyVal,7)
+        OLNval= OLNObj.wText
+            If (strcomp(trim(strOLN),trim(OLNval),1)=0) then
+                Call FnRecordResults("[Supplement Window persons OLN name is equal to expected value] ","Pass","")
+            Else
+              Call FnRecordResults("[Supplement Window persons OLN name is not equal to expected value] ","Fail","")
+        End If  
+      End If
+      
+    
+'verify Phone no Value with expected value
+      If strPhoneno <>"" Then
+        set Phonenoobj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonPhonenoTxtPty,ptyObj. SIPersonPhonenoTxtPtyVal,17)
+         Phonenoval= Phonenoobj.wText
+         ' Call CompareString(strPhoneno,Phonenoval)
+            If (strcomp(trim(strPhoneno),trim(Phonenoval),1)=0) then
+                Call FnRecordResults("[Supplement Window persons Phoneno "&Phonenoval&"is equal to expected value" &strPhoneno&"] ","Pass","")
+            Else
+              Call FnRecordResults("[Supplement Window persons Phoneno  is not equal to expected value] ","Fail","")
+        End If  
+      End If
+
+      
+     set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+        call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+      set EctExitSaveButtonObj = Aliases.InformCadProc.FindChild(ptyObj.CallTakingIncedentExitBtnPty, ptyObj.CallTakingIncedentExitBtnPtyVal,5)
+        Call FnSetDataClick(EctExitSaveButtonObj) 
+
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  
+  set ptyObj = Nothing
+  Set involvementTypeObj = Nothing
+  Set lastnameObj = Nothing
+  Set fnameObj = Nothing
+  set dobObj = Nothing
+  set OLNObj = Nothing
+ 
+  set SupplementWindowTabObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing
+  set EctExitSaveButtonObj = Nothing
+
+End Function
+
+
+'Deletes the Existing Person data from the suppliment window
+'Author Anuradha 25/9/2013
+Function DeletePersonData()
+  'Creating the object reference for PropertyHolder class 
+  set ptyObj = Project.Variables.PropertyHolder
+
+  If (Aliases.WPFProcess.IncidentSupplementForm.Exists) then
+    
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+            call FnSetDataKeys(SupplementWindowTabObj,"[Right]")
+      End IF
+    
+    set DeleteObj = Aliases.WPFProcess.IncidentSupplementForm.WinFormsObject("groupBoxEdit").WinFormsObject("buttonDelete")
+    FnSetDataClickButton(DeleteObj)
+    
+    set OkBtnobj = Aliases.WPFProcess.FindChild(ptyObj.SIPersonDeleteOkBtnPty,ptyObj.SIPersonDeleteOkBtnPtyVal,15)
+    FnSetDataClickButton(OkBtnobj)
+    
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+    set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+    call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+     set EctExitSaveButtonObj = Aliases.InformCadProc.FindChild(ptyObj.CallTakingIncedentExitBtnPty, ptyObj.CallTakingIncedentExitBtnPtyVal,5)
+     Call FnSetDataClick(EctExitSaveButtonObj) 
+  
+  Else
+      Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  set EctExitSaveButtonObj=nothing
+  set SupplementWindowExitButtonObj=nothing
+  set SupplementWindowTabObj=nothing
+  set OkBtnobj = nothing
+  set DeleteObj= nothing
+  set ptyObj=nothing
+  
+End Function
+
+'SendRecordCheckForPerson
+'function enters the first name last name , selects the look up and DOB and incident number in '
+'record check window 
+ 
+Function  EnterDetailsInRecordcheckWindowPersonTab(byval Strlic,ByVal strLastName,ByVal strFirstName,ByVal strDOB,ByVal LookupItemsTobeChecked,ByVal strIncidentNumber)
+   set ptyObj = Project.Variables.PropertyHolder
+
+    If WaitTillObjExists(5000, Aliases.RecordsCheck.VBObject("frmMain")) = 1 then
+       
+        Set RecordsCheckObj = Aliases.RecordsCheck.RecordsCheckForm
+        RecordsCheckObj.Activate
+        RecordsCheckObj.SetFocus
+        set LastNameobj = Aliases.RecordsCheck.FindChild(ptyObj.RecordCheckPersonLastNamePty,ptyObj.RecordCheckPersonLastNamePtyVal,10)
+        Call FnSetDataKeys(LastNameobj, strLastName)
+     
+        set FirstNameobj = Aliases.RecordsCheck.FindChild(ptyObj.RecordCheckPersonFirstNamePty,ptyObj.RecordCheckPersonFirstNamePtyVal,10)
+        Call FnSetDataKeys(FirstNameobj, strFirstName)
+  
+        set DOBobj = Aliases.RecordsCheck.FindChild(ptyObj.RecordCheckPersonDOBPty,ptyObj.RecordCheckPersonDOBPtyVal,10)
+        Call FnSetDataKeys(DOBobj, strDOB)
+  
+        set licenseObj =  Aliases.RecordsCheck.FindChild(ptyObj.RecordCheckPersonLicensePty,ptyObj.RecordCheckPersonLicensePtyVal,10)
+        Call FnSetDataKeys(licenseObj, Strlic)
+        
+        set LookUpObj = Aliases.RecordsCheck.FindChild(ptyObj.RecordCheckLookUpPty,ptyObj.RecordCheckLookUpPtyVal,20)
+         LookupItemsArray = Split(LookupItemsTobeChecked,"|")
+ 
+    For j = 0 to (LookUpObj.wItemCount - 1)
+       found =0
+        for k= 0 to ubound(LookupItemsArray)
+            If LookUpObj.wItem(j) = LookupItemsArray(k) Then
+              found= 1
+              exit for 
+            end if    
+        next     
+        If LookUpObj.Selected(j) = False and found = 1 Then
+            'select it
+            LookUpObj.DblClickItem(LookUpObj.wItem(j))
+        elseif LookUpObj.Selected(j) = True and found = 0 then
+           'unselect
+            LookUpObj.DblClickItem(LookUpObj.wItem(j))       
+        end if    
+    Next
+      
+        set RecordIncidentObj = Aliases.RecordsCheck.FindChild(ptyObj.RecordIncidentNumberPty,ptyObj.RecordIncidentNumberPtyVal,20)
+        Call FnSetDataKeys(RecordIncidentObj, strIncidentNumber)
+ 
+        set SendBtnObj =  Aliases.RecordsCheck.RecordsCheckForm.VBObject("cmdSend")
+        SendBtnObj.DblClick
+                
+        Set ExitBtnObj = RecordsCheckObj.FindChild(ptyObj.RecordCheckExitBtnPty,ptyObj.RecordCheckExitBtnPtyVal,5)
+        Call FnSetDataClickButton(ExitBtnObj)
+        
+         
+         
+    Else
+        Call FnRecordResults("[Record check Window] not found","Fail","")
+    End If
+    set ExitBtnObj = nothing
+    set SendBtnObj = nothing
+    set RecordIncidentObj = nothing
+    set LookUpObj = nothing
+    set DOBobj = nothing
+    set FirstNameobj = nothing
+    set LastNameobj = nothing
+    set ptyObj = nothing
+End Function
+
+' Function Name : EnterAndSavePersonSupplementInfo()
+' Parameters : invovlementtype,firstname,lastname,DOB,OLN,phone number
+' Details/Define :  Tis function  fills in required data for the person field and saves without records check
+' Author Name with Date: Parikshith 10/10/2013
+Function EnterAndSavePersonSupplementInfo(byVal strInvolvement,byVal strLastName,byVal strFisrtName,byVal strDOB,byVal strOLN,byVal strPhoneno)
+set ptyObj = Project.Variables.PropertyHolder
+  'call WaitTillObjectExists(5000,Aliases.WPFProcess.IncidentSupplementForm)
+  If WaitTillObjExists(7000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+    set SupplementWindowTabObj =  Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right]")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      If strInvolvement <> "" Then
+        Set involvementTypeObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonInvolvementTypePty,ptyObj.SIPersonInvolvementTypePtyVal,7)          
+        Call FnSetDataClickItem(involvementTypeObj,strInvolvement)   
+      End If
+        
+      If strLastName <> "" Then     
+        Set lastnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonLastNamePty,ptyObj.SIPersonLastNamePtyVal,7)
+        Call FnSetDataText(lastnameObj, strLastName)
+      End If
+      
+      If strFisrtName <> "" Then
+        Set fnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonFirstNamePty,ptyObj.SIPersonFirstNamePtyVal,7)
+        Call FnSetDataText(fnameObj, strFisrtName)
+      End If
+      
+      If strDOB <> "" Then
+        set dobObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonDOBPty,ptyObj.SIPersonDOBPtyVal,7)
+        Call FnSetDataKeys(dobObj, strDOB)
+      End If
+      
+      If strOLN <> "" Then
+        set OLNObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonOLNBoxPty,ptyObj.SIPersonOLNBoxPtyVal,7)
+        Call FnSetDataText(OLNObj, strOLN)
+      End If
+      
+      If strPhoneno <> "" Then
+        set Phonenoobj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonPhonenoTxtPty,ptyObj. SIPersonPhonenoTxtPtyVal,17)
+        Call FnSetDataText(Phonenoobj, strPhoneno)
+      End If
+      
+      set SupplementWindowTabObj =  Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set savebtnObj = SupplementWindowTabObj.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10)
+      Call FnSetDataClick(savebtnObj)
+      
+      Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonGridPty,ptyObj.SIPersonGridPtyVal,10)          
+      flag = CheckStringInGrid (GridObj, strFisrtName)                              
+       If flag = 0 then
+       Call FnRecordResults ("Info " &strFisrtName& " not found in Person Tab", "Fail" , "")
+       End if
+         
+      set SupplementWindowExitButtonObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+       call FnSetDataClickButton(SupplementWindowExitButtonObj)
+        
+       Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  
+  set ptyObj = Nothing
+  Set involvementTypeObj = Nothing
+  Set lastnameObj = Nothing
+  Set fnameObj = Nothing
+  set dobObj = Nothing
+  set OLNObj = Nothing
+  set saveRecordObj = Nothing
+  set SupplementWindowTabObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing
+End Function
+
+
+' Function Name : SupplementInfoSubmitRecordsCheck()
+' Parameters : type of tab, strinfo - one of the field values that was saved
+' Details/Define :  Tis function  searchs for the supplement info saved in the respective tab and submits records check
+' Author Name with Date: Parikshith 10/10/2013
+Function SupplementInfoSubmitRecordsCheck(byVal strTab,byVal strInfo)
+    set ptyObj = Project.Variables.PropertyHolder
+    done = False
+    If WaitTillObjExists(7000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      
+      Select Case strTab
+      
+      Case "Person"
+             
+             If(SupplementWindowTabObj.Exists) Then
+                call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+                call FnSetDataKeys(SupplementWindowTabObj,"[Right]") 
+          
+                Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonGridPty,ptyObj.SIPersonGridPtyVal,10)
+          
+                  For RowId = 0 To GridObj.wRowCount-1
+                    For RowCellsCount = 0 To GridObj.Rows.Item(RowId).Cells.Count-1
+                      If (GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).clrclassname) <> "DataGridViewImageCell" Then
+                         If Not(GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value Is Nothing) Then
+                            If (GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value.OleValue = strInfo) Then
+                             ColumnName = GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).OwningColumn.HeaderText.OleValue
+                             Call GridObj.ClickCell(RowId,ColumnName)
+                             Call FnRecordResults ("Info " &strInfo& " found in Grid", "Pass" , "")
+                             done = True
+                             Set GridObj = Nothing 
+                             Exit For
+                            End if
+                          End if
+                       End if
+                     Next
+                     If done then Exit For
+                   Next              
+              
+             
+                  Set PersonSubmitBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PersonSubmitRecordsCheckBtnPty,ptyObj.PersonSubmitRecordsCheckBtnPtyVal,7)
+                   If PersonSubmitBtnObj.Enabled = True then
+                      call FnSetDataClickButton(PersonSubmitBtnObj) 
+                    Else 
+                       Call FnRecordResults("Records Check Submit Button is Disabled ","Fail","")
+                   End If 
+                   
+                Else
+                 Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+               End If
+       
+       Case "Vehicle"
+       
+              If(SupplementWindowTabObj.Exists) Then
+                call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+          
+                Set VehicleGridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleGridPty,ptyObj.SIVehicleGridPtyVal,10)
+          
+                  For RowId = 0 To VehicleGridObj.wRowCount-1
+                    For RowCellsCount = 0 To VehicleGridObj.Rows.Item(RowId).Cells.Count-1
+                      If (VehicleGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).clrclassname) <> "DataGridViewImageCell" Then
+                         If Not(VehicleGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value Is Nothing) Then
+                            If (VehicleGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value.OleValue = strInfo) Then
+                             ColumnName = VehicleGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).OwningColumn.HeaderText.OleValue
+                             Call VehicleGridObj.ClickCell(RowId,ColumnName)
+                             Call FnRecordResults ("Supplement Info " &strInfo& " found in Grid", "Pass" , "")
+                             done = True
+                             Set VehicleGridObj = Nothing 
+                             Exit For
+                            End if
+                          End if
+                       End if
+                     Next
+                     If done then Exit For
+                   Next              
+              
+             
+                  Set VehicleSubmitBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.VehicleSubmitRecordsCheckBtnPty,ptyObj.VehicleSubmitRecordsCheckBtnPtyVal,10)
+                   If VehicleSubmitBtnObj.Enabled = True then
+                      call FnSetDataClickButton(VehicleSubmitBtnObj) 
+                    Else 
+                       Call FnRecordResults("Records Check Submit Button is Disabled ","Fail","")
+                   End If 
+                   
+                Else
+                 Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+               End If
+       
+       Case "Weapon"
+       
+          If(SupplementWindowTabObj.Exists) Then
+               call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+               call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right]")
+               
+           
+            
+               set WeaponGridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIWeaponGridPty,ptyObj.SIWeaponGridPtyVal, 115)
+               
+                 For RowId = 0 To WeaponGridObj.wRowCount-1
+                    For RowCellsCount = 0 To WeaponGridObj.Rows.Item(RowId).Cells.Count-1
+                      If (WeaponGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).clrclassname) <> "DataGridViewImageCell" Then
+                         If Not(WeaponGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value Is Nothing) Then
+                            If (WeaponGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value.OleValue = strInfo) Then
+                             ColumnName = WeaponGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).OwningColumn.HeaderText.OleValue
+                             Call WeaponGridObj.ClickCell(RowId,ColumnName)
+                             Call FnRecordResults ("Info " &strInfo& " found in Grid", "Pass" , "")
+                             done = True
+                             Set WeaponGridObj = Nothing 
+                             Exit For
+                            End if
+                          End if
+                       End if
+                     Next
+                     If done then Exit For
+                   Next   
+                 
+                Set WeaponSubmitBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.WeaponSubmitRecordsCheckBtnPty,ptyObj.WeaponSubmitRecordsCheckBtnPtyVal,7)
+                 If WeaponSubmitBtnObj.Enabled = True then
+                       call FnSetDataClickButton(WeaponSubmitBtnObj) 
+                 Else 
+                       Call FnRecordResults("Records Check Submit Button is Disabled ","Fail","")
+                 End If 
+                 
+                 If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+                     Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+                     Call FnSetDataClick(okbutton2Obj)
+                     Call FnRecordResults("[The Exception message occured","Pass","") 
+                 End If
+            
+             Else
+              Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+           End if
+       
+       Case "Property"
+       
+              If(SupplementWindowTabObj.Exists) Then
+                 call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+                 call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right][Right]") 
+                 
+                 set PropertyGridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertyValueSuppWindowPty,ptyObj.PropertyValueSuppWindowPtyVal, 115)
+                 
+                 For RowId = 0 To PropertyGridObj.wRowCount-1
+                    For RowCellsCount = 0 To PropertyGridObj.Rows.Item(RowId).Cells.Count-1
+                      If (PropertyGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).clrclassname) <> "DataGridViewImageCell" Then
+                         If Not(PropertyGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value Is Nothing) Then
+                            If (PropertyGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value.OleValue = strInfo) Then
+                             ColumnName = PropertyGridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).OwningColumn.HeaderText.OleValue
+                             Call PropertyGridObj.ClickCell(RowId,ColumnName)
+                             Call FnRecordResults ("Info " &strInfo& " found in Grid", "Pass" , "")
+                             done = True
+                             Set PropertyGridObj = Nothing 
+                             Exit For
+                            End if
+                          End if
+                       End if
+                     Next
+                     If done then Exit For
+                   Next   
+                 
+                  Set PropertySubmitBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertySubmitRecordsCheckBtnPty,ptyObj.PropertySubmitRecordsCheckBtnPtyVal,7)
+                   If PropertySubmitBtnObj.Enabled = True then
+                      call FnSetDataClickButton(PropertySubmitBtnObj) 
+                    Else 
+                       Call FnRecordResults("Records Check Submit Button is Disabled ","Fail","")
+                   End If  
+                   
+                    If WaitTillObjExists(4000,Aliases.WPFProcess.ExceptionCaptured) = 1 then
+                      Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+                      Call FnSetDataClick(okbutton2Obj)
+                      Call FnRecordResults("[The Exception message occured","Pass","") 
+                    End If
+                   
+                    If WaitTillObjExists(4000,Aliases.RecordsCheck.dlgRecordsCheck) = 1 Then
+                       Call FnRecordResults("[The Error message] Exists: Cat type 'Bike' is not present","Pass","") 
+                    End If
+                 
+                Else
+              
+               Call FnRecordResults("[Supplement Window not found] ","Fail","")
+              
+              End If
+     
+     End Select
+     
+     Else
+      Call FnRecordResults("[Supplement Window not found] ","Fail","")
+    End If 
+    Set SupplementWindowTabObj = Nothing
+    Set PersonSubmitBtnObj = Nothing
+    Set GridObj = Nothing
+End Function
+
+
+ 'Tis function  fills in required data for the property field and saves without records check
+ 'Author name : Parikshith
+Function EnterAndSavePropertySupplementInfo(byval strFindText,byval strPropText,byval SerialNumTxt)
+  set ptyObj = Project.Variables.PropertyHolder
+  If WaitTillObjExists(5000,Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right][Right]")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      Set SerialObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SerialNumberTxtPty, ptyObj.SerialNumberTxtPtyVal, 115)
+      Call FnSetDataText(SerialObj, SerialNumTxt)
+      
+      Set ArticleObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.ArticleTxtPty, ptyObj.ArticleTxtPtyVal, 115)
+      Call FnSetDataText(ArticleObj, strFindText)
+      
+      set BrandObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.BrandTxtPty, ptyObj.BrandTxtPtyVal, 115)
+      Call FnSetDataText(BrandObj, strFindText)
+      
+      set PropertyNameObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertyDropdownPty, ptyObj.PropertyDropdownPtyVal, 115)
+      Call FnSetDataClickItem(PropertyNameObj,strPropText)
+      
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set savebtnObj = SupplementWindowTabObj.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10)
+      Call FnSetDataClick(savebtnObj)
+  
+      
+      If WaitTillObjExists(4000,Aliases.WPFProcess.ExceptionCaptured) = 1 then
+        Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+        Call FnSetDataClick(okbutton2Obj)
+        Call FnRecordResults("[The Exception message occured","Pass","") 
+      End If
+    
+      If WaitTillObjExists(4000,Aliases.RecordsCheck.dlgRecordsCheck) = 1 Then
+        Call FnRecordResults("[The Error message] Expected Exists","Pass","") 
+      End If
+      
+       set GridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertyValueSuppWindowPty,ptyObj.PropertyValueSuppWindowPtyVal, 115)                 
+        flag = CheckStringInGrid (GridObj, SerialNumTxt)   
+       
+        If flag = 0 then
+         Call FnRecordResults ("Info " &SerialNumTxt& " not found in Property Tab", "Fail" , "")
+        End if
+      
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+      call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+    Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+     set  SupplementWindowTabObj = nothing
+     set  addBtnObj = nothing
+     set  SerialObj = nothing
+     set  ArticleObj = nothing
+     set  BrandObj = nothing
+     set  PropertyNameObj = nothing
+     set  SupplementWindowExitButtonObj = nothing
+     set  savebtnObj = nothing
+End Function
+
+
+'Tis function  fills in required data for the weapon field and saves without records check
+'Author name : Parikshith
+Function EnterAndSaveWeaponSupplementInfo(byval SerialNumTxt,byval MakeText,byval CaliberTxt,byval WeaponTypeLst)
+  set ptyObj = Project.Variables.PropertyHolder
+   If WaitTillObjExists(5000,Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right]")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      
+      Set SerialObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponSerialNumberPty,ptyObj.SupplementWindowWeaponSerialNumberPtyVal,115)
+      Call FnSetDataText(SerialObj, SerialNumTxt)
+      
+      
+      Set MakeObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponMakerPty,ptyObj.SupplementWindowWeaponMakerPtyVal,115)
+      Call FnSetDataText(MakeObj, MakeText)
+      
+      
+      set CaliberObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponCaliberPty,ptyObj.SupplementWindowWeaponCaliberPtyVal,115)
+      Call FnSetDataText(CaliberObj, CaliberTxt)
+      
+      
+      set WeaponTypeObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponTypePty,ptyObj.SupplementWindowWeaponTypePtyVal,115)
+      Call FnSetDataClickItem(WeaponTypeObj,WeaponTypeLst)
+          
+      set savebtnObj = SupplementWindowTabObj.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10)
+      Call FnSetDataClick(savebtnObj)
+      
+      If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+        Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+        Call FnSetDataClick(okbutton2Obj)
+        Call FnRecordResults("[The Exception message occured","Pass","") 
+      End If
+      
+             
+      set GridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIWeaponGridPty,ptyObj.SIWeaponGridPtyVal, 115)              
+      flag = CheckStringInGrid (GridObj, SerialNumTxt)           
+      If flag = 0 then
+         Call FnRecordResults ("Info " &SerialNumTxt& " not found in Weapon Tab", "Fail" , "")
+      End if
+
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+        call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+     Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+     set SupplementWindowTabObj = nothing
+     set  addBtnObj = nothing
+     set  SerialObj = nothing
+     set  MakeObj = nothing
+     set  CaliberObj = nothing
+     set  WeaponTypeObj = nothing
+     set  savebtnObj = nothing
+     set SupplementWindowExitButtonObj = nothing
+End Function
+
+'this function searches for string in the grid object
+Function  CheckStringInGrid(byref GridObj, byval strSearch)
+  CheckStringInGrid = 0
+  if GridObj.exists Then
+    For RowId = 0 To GridObj.wRowCount-1
+      For RowCellsCount = 0 To GridObj.Rows.Item(RowId).Cells.Count-1
+        If (GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).clrclassname) <> "DataGridViewImageCell" Then
+           If Not(GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value Is Nothing) Then
+              If (GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value.OleValue = strSearch) Then
+               ColumnName = GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).OwningColumn.HeaderText.OleValue
+               Call GridObj.ClickCell(RowId,ColumnName)
+               Call FnRecordResults ("Supplement Info with " &ColumnName& " : " &strSearch& " found ", "Pass" , "")            
+               CheckStringInGrid = 1              
+               Exit Function
+              End if
+            End if
+         End if
+       Next    
+     Next    
+  else
+      Call FnRecordResults ("Supplement Info tab Grid Object not found" , "Fail" , "")
+  end if 
+End Function
+
+
+' Function Name : EnterAndSaveVehicleSupplementInfo()
+' Parameters : necessary fileds- make year, model, LicensePlate no,state, VIN
+' Details/Define :  This function adds the vehicle  supplement info and saves it without records check 
+' Author Name with Date: Parikshith 15/10/2013
+Function EnterAndSaveVehicleSupplementInfo(byval strMakeYear,byval strMake,byval strLicensePlate,byVal strState,byVal strVIN)
+  set ptyObj = Project.Variables.PropertyHolder
+   If WaitTillObjExists(5000,Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      Set makeYearObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleMakeYearPty,ptyObj.SIVehicleMakeYearPtyVal,115)
+      Call FnSetDataText(makeYearObj, strMakeYear)
+      
+      Set makeBoxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleMakePty,ptyObj.SIVehicleMakePtyVal,115)
+      Call FnSetDataClickItem(makeBoxObj, strMake)
+      
+      Set modelObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleModelPty,ptyObj.SIVehicleModelPtyVal,115)
+      Call FnSetDataText(modelObj, strMake)
+      
+      Set licensePlateObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlatePty,ptyObj.SIVehicleLicensePlatePtyVal,115)
+      Call FnSetDataText(licensePlateObj, strLicensePlate)
+      
+      Set stateBoxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicenseStatePty,ptyObj.SIVehicleLicenseStatePtyVal,115)
+      Call FnSetDataClickItem(stateBoxObj, strState)
+      
+      Set VINboxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleVINPty,ptyObj.SIVehicleVINPtyVal,115)
+      Call FnSetDataText(VINboxObj, strVIN)
+      
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5) 
+      Set savebtnObj = SupplementWindowTabObj.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10)
+      Call FnSetDataClick(savebtnObj)
+      
+      Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleGridPty,ptyObj.SIVehicleGridPtyVal,10)
+      flag = CheckStringInGrid (GridObj, strLicensePlate)                                            
+      If flag = 0 then
+      Call FnRecordResults ("Info " &strLicensePlate& " not found in Vehicle Tab", "Fail" , "")
+      End if
+      
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+      Call FnSetDataClickButton(SupplementWindowExitButtonObj)
+      
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  set ptyObj = Nothing
+  set SupplementWindowTabObj = Nothing
+  Set addBtnObj = Nothing
+  Set makeYearObj = Nothing
+  Set makeBoxObj = Nothing
+  Set modelObj = Nothing
+  Set licensePlateObj = Nothing
+  Set stateBoxObj = Nothing
+  Set VINboxObj = Nothing
+  Set savebtnObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing 
+End Function
+
+' Function Name : SelectRecordAndVerifyResultsViewerInRecordCheckWnd()
+' Parameters : item to be selected in the queue,text for search in the results viewer field
+' Details/Define :  this function selects the result in Records Check window and verifies text in Results Viewer field
+' Author Name with Date: Parikshith 16/10/2013
+
+Function SelectRecordAndVerifyResultsViewerInRecordCheckWnd(strSelectItem,StrFindText)
+   set ptyObj =  project.Variables.PropertyHolder
+   If WaitTillObjExists(5000,Aliases.RecordsCheck.InquiryResults) = 1 then
+        call FnMoveWindowToStandardPosition("RecordCheck")
+        set listobj = Aliases.RecordsCheck.InquiryResults.FindChild(ptyObj.resultTabPty,ptyObj.resultTabPtyVal,15,true)
+        done = false
+        rowValue = listobj.wItemCount
+        colValue = listobj.wColumnCount
+        For RowID = 0 to rowValue - 1
+            For ColumnID = 0 to colValue - 1
+             If listobj.wItem(RowID,ColumnID) = strSelectItem Then
+                Call listobj.ClickItem(RowID,ColumnID)
+                done = true
+                Exit For
+             End If
+            Next
+           If done = true then Exit For 
+        Next
+
+        If done = false then
+          Call FnRecordResults("Text "&strSelectItem&" not found in the Records Inquiry list","Fail","")         
+          set ExitBtnObj = Aliases.RecordsCheck.InquiryResults.FindChild(ptyObj.GeneralExitBtnPty,ptyObj.GeneralExitBtnPtyVal,15,true)
+          call FnSetDataClickButton(ExitBtnObj)
+          Exit Function
+        End If
+
+        flag = 0
+          Aliases.RecordsCheck.InquiryResults.RefreshMappingInfo
+          set ResultsViewerObj = Aliases.RecordsCheck.InquiryResults.FindChild(ptyObj.RecordsCheckResultsViewerPty,ptyObj.RecordsCheckResultsViewerPtyVal,5,true)
+          set DocumentObj = ResultsViewerObj.FindChild(ptyObj.RecordsCheckResultsViewerPagePty,ptyObj.RecordsCheckResultsViewerPagePtyVal,10,true)          
+          FrameObj = DocumentObj.FindAllChildren("TagName", "Frame", 7,True)    
+          if Ubound(FrameObj) = - 1 Then    
+              TableArrayObj= DocumentObj.FindAllChildren("TagName","Table", 5,True)        
+                for tbl = 0 to Ubound(TableArrayObj)  
+                   TableContent = TableArrayObj(tbl).contentText 
+                   if instr(1, TableContent,  StrFindText, 1) > 0  then         
+                       flag = 1 
+                       exit for
+                    else 
+                         flag = 0
+                    End if              
+                Next   
+          End IF  
+           for i=0 to Ubound(FrameObj)    
+                TableArrayObj =  FrameObj(i).FindAllChildren("TagName","Table", 5,True)       
+                for tbl = 0 to Ubound(TableArrayObj)  
+                   TableContent = TableArrayObj(tbl).contentText 
+                   if instr(1, TableContent,  StrFindText, 1) > 0  then        
+                       flag = 1 
+                       exit for
+                    else 
+                         flag = 0
+                    End if   
+                Next   
+                 if flag Then
+                  exit for
+                 End If   
+           Next  
+                      
+         if flag = 1 Then
+             call FnRecordResults ("Supplement Information "& StrFindText &" found in the Results Viewer Field", "Pass","")
+         Else
+             call FnRecordResults ("Supplement Information "& StrFindText &" is not found in Results Viewer Field", "Fail","")
+         End If
+           
+         set ExitBtnObj = Aliases.RecordsCheck.InquiryResults.FindChild(ptyObj.GeneralExitBtnPty,ptyObj.GeneralExitBtnPtyVal,15,true)
+         call FnSetDataClickButton(ExitBtnObj) 
+   Else
+   
+      call FnRecordResults ("[Record Results] window not found", "Fail","")
+   End If
+   Set ptyObj = Nothing
+   set ResultsViewerObj = Nothing
+   set DocumentObj = Nothing
+   set FrameObj = nothing
+   set ExitBtnObj = Nothing             
+End Function 
+
+' Function Name : VerifySupplementInfoInSupplementWnd()
+' Parameters : tab to be verified, supplement info to be verified in the specified tab
+' Details/Define :  this function verifies whether the particular supplement information is present in the given tab
+' Author Name with Date: Parikshith 17/10/2013
+Function VerifySupplementInfoInSupplementWnd(byVal strTab,byVal strInfo)
+    set ptyObj = Project.Variables.PropertyHolder 
+    If WaitTillObjExists(70000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      delay(6000)
+      Select Case strTab
+      
+      Case "Person"            
+             If(SupplementWindowTabObj.Exists) Then
+                call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+                call FnSetDataKeys(SupplementWindowTabObj,"[Right]") 
+                flag = 0 
+                Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonGridPty,ptyObj.SIPersonGridPtyVal,10)                                
+                Else
+                 Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+               End If
+       
+       Case "Vehicle"
+       
+              If(SupplementWindowTabObj.Exists) Then
+                  call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")         
+                  Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleGridPty,ptyObj.SIVehicleGridPtyVal,10)                                   
+                  flag = 0
+                Else
+                 Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+               End If
+       
+       Case "Weapon"       
+          If(SupplementWindowTabObj.Exists) Then
+               call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+               call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right]")        
+               set GridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIWeaponGridPty,ptyObj.SIWeaponGridPtyVal, 115)
+               flag = 0
+             Else
+              Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+           End if
+       
+       Case "Property"       
+              If(SupplementWindowTabObj.Exists) Then
+                 call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+                 call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right][Right]") 
+                 flag = 0
+                 set GridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertyValueSuppWindowPty,ptyObj.PropertyValueSuppWindowPtyVal, 115)                                  
+                Else             
+               Call FnRecordResults("[Supplement Window not found] ","Fail","")              
+              End If
+     
+     End Select
+     
+                  For RowId = 0 To GridObj.wRowCount-1
+                    For RowCellsCount = 0 To GridObj.Rows.Item(RowId).Cells.Count-1
+                      If (GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).clrclassname) <> "DataGridViewImageCell" Then
+                         If Not(GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value Is Nothing) Then
+                            If (GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).Value.OleValue = strInfo) Then
+                             ColumnName = GridObj.Rows.Item(RowId).Cells.Item(RowCellsCount).OwningColumn.HeaderText.OleValue
+                             Call FnRecordResults ("Supplement Info with " &ColumnName& " : " &strInfo& " found in "&strTab&" Tab", "Pass" , "")
+                             flag = 1 
+                             Exit For
+                            End if
+                          End if
+                       End if
+                     Next
+                     If flag = 1 then Exit For
+                   Next         
+                   
+                   If flag = 0 then
+                   Call FnRecordResults ("Info " &strInfo& " not found in "&strTab&" Tab", "Fail" , "")
+                   End if 
+     
+     set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+     Call FnSetDataClickButton(SupplementWindowExitButtonObj)
+     
+     Else
+      Call FnRecordResults("[Supplement Window not found] ","Fail","")
+    End If 
+    Set SupplementWindowTabObj = Nothing
+    Set GridObj = Nothing
+    Set SupplementWindowExitButtonObj = Nothing
+End Function
+
+' Function Name : VerifyRegistrationInfoOnVehicleTab()
+' Parameters : License Plate No, State, Year and Type
+' Details/Define :  This function Verifies Registration Info Details With Expected values
+' Author Name with Date: Manjunath 18/10/2013
+
+Function VerifyRegistrationInfoOnVehicleTab(byval StrLicencePlateNo , byval StrLicensePlateState ,byval StrLicensePlateYear,byval StrLicensePlateType)
+  set ptyObj =  project.Variables.PropertyHolder
+ If WaitTillObjExists(70000, Aliases.WPFProcess.IncidentSupplementForm) = 1 Then
+      Set licensePlateNoObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlatePty,ptyObj.SIVehicleLicensePlatePtyVal,10)
+      Set licensePlateStateObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicenseStatePty,ptyObj.SIVehicleLicenseStatePtyVal,10)
+      Set licensePlateYearObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlateYearPty,ptyObj.SIVehicleLicensePlateYearPtyVal,10)
+      Set licensePlateTypeObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlateTypePty,ptyObj.SIVehicleLicensePlateTypePtyVal,10)
+        If (licensePlateNoObj.wText = StrLicencePlateNo and licensePlateStateObj.wText = StrLicensePlateState and licensePlateYearObj.wText = StrLicensePlateYear and licensePlateTypeObj.wText = StrLicensePlateType) = True Then
+            call FnRecordResults ("Actual Plate Registration Information are Matching with the Expected Values" , "Pass","")
+        Else
+          call FnRecordResults ("Actual Plate Registration Information are  Not Matching with the Expected Values" , "Fail","")
+        End If      
+  
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  set ptyObj = Nothing
+  set licensePlateNoObj = Nothing
+  Set licensePlateStateObj = Nothing
+  Set licensePlateYearObj = Nothing
+  Set licensePlateTypeObj = Nothing
+  
+    
+End Function
+
+
+' Function Name : VerifyBoloEntryDetailsViaSuppementalInfo()
+' Parameters : Supplemental Tab Name,lastname,firstname,DL OR Year , make Or model,Plate No, Vin No
+' Details/Define :  This function Verifies Supplemental Info Details on BOLO Entry Window 
+' Author Name with Date: Manjunath 22/10/2013
+Function VerifyBoloEntryDetailsViaSuppementalInfo(Byval SupplementalInfoTab,Byval StrVal1,Byval StrVal2,Byval StrVal3,Byval StrVal4)
+ set ptyObj =  project.Variables.PropertyHolder
+  If WaitTillObjExists(70000, Aliases.WPFProcess.IncidentSupplementForm) = 1  Then
+      Select Case SupplementalInfoTab
+              Case "PersonTabBOLO"
+                  Set LastNameObj = Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLOLastNamePty,ptyObj.BOLOLastNamePtyVal,5,True)
+                  Set firstNameObj =Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLOFirstNamePty,ptyObj.BOLOFirstNamePtyVal,5,True)
+                  Set BoloDOBObj =Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLODOBTxtPty,ptyObj.BOLODOBTxtPtyVal,5,True)
+                  Set BOLoDLObj =Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLODLTxtPty,ptyObj.BOLODLTxtPtyVal,5,True)
+            
+              If (LastNameObj.wText = StrVal1 and firstNameObj.wText = StrVal2 and BOLoDLObj.wText = StrVal3) = True Then
+                  call FnRecordResults ("Actual BOLO Entry Details are Matching with the Expected Values" , "Pass","")
+              Else
+                call FnRecordResults ("Actual BOLO Entry Details are  Not Matching with the Expected Values" , "Fail","")
+              End If  
+              
+            set LastNameObj = Nothing
+            Set firstNameObj = Nothing
+            Set BoloDOBObj = Nothing
+            Set BOLoDLObj = Nothing   
+         
+          Case "VehicleTabBOLO"
+                  Set VIYearObj = Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLOVehicleYearTxtPty,ptyObj.BOLOVehicleYearTxtPtyVal,5,True)
+                  Set VIMakeObj =Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLOVehicleMakeTxtPty,ptyObj.BOLOVehicleMakeTxtPtyVal,5,True)
+                  Set VIModelObj =Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLOVehicleModelTxtPty,ptyObj.BOLOVehicleModelTxtPtyVal,5,True)
+                  Set VIPlateObj =Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLOVehicleLicenseTxtPty,ptyObj.BOLOVehicleLicenseTxtPtyVal,5,True)
+                  Set VIVINObj =Aliases.BOLO.BOLOEntryForm.FindChild(ptyObj.BOLOVehicleVINTxtPty,ptyObj.BOLOVehicleVINTxtPtyVal,5,True)
+              If (VIYearObj.wText = StrVal1 and VIMakeObj.wText = StrVal2 and VIModelObj.Text = StrVal2 and VIPlateObj.wText = StrVal3 and VIVINObj.wText = StrVal4) = True Then
+                  call FnRecordResults ("Actual Vehicle Information on  BOLO Entry Window are Matching with the Expected Values" , "Pass","")
+              Else
+                 call FnRecordResults ("Actual Vehicle Information on  BOLO Entry Window are Not Matching with the Expected Values" , "Fail","")
+              End If  
+              
+            set VIYearObj = Nothing
+            Set VIMakeObj = Nothing
+            Set VIModelObj = Nothing
+            Set VIPlateObj = Nothing
+            Set VIVINObj = Nothing  
+     Case Else 
+          Call FnRecordResults("[Case : "&SupplementalInfoTab&"] Declaration Not found ", "Fail", "")
+         
+      End Select
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  set ptyObj = Nothing
+             
+End Function
+
+' Function Name : EnterVehicleDataInRecordsCheckWnd()
+' Parameters : licnse, state, VIN, Make and model, year, masterincident ID, lookup value
+' Details/Define : this function addsVehicle information in Records Check Form and send to an incident
+' Author Name with Date: Parikshith 24/10/2013
+
+Function  EnterVehicleDataInRecordsCheckWnd(ByVal strLicense,ByVal strState,ByVal strVIN,ByVal strMake,ByVal strYear,Byval MasterIncNumb,ByVal LookupItemsTobeChecked)
+   set ptyObj = Project.Variables.PropertyHolder
+
+If WaitTillObjExists(10000, Aliases.RecordsCheck.RecordsCheckForm) = 1 then
+    Set RecordsCheckObj = Aliases.RecordsCheck.RecordsCheckForm
+    RecordsCheckObj.Activate
+    RecordsCheckObj.SetFocus
+        
+    Keysvalue = GetNavigationKeys("VehicleTabRecordsCheck")       
+    RecordsCheckObj.Keys(Keysvalue)
+        
+    Set VehicleTabObj = Aliases.RecordsCheck.RecordsCheckForm.VBObject("fraPanel_3")'.VBObject("fraPanel")
+        
+    Set LicensePlateObj = RecordsCheckObj.FindChild(ptyObj.RCLicenseNoPty,ptyObj.RCLicenseNoPtyVal,5)
+    call FnSetDataKeys(LicensePlateObj,strLicense) 
+       
+    Set StateObj = VehicleTabObj.FindChild(ptyObj.RCVehicleStatePty,ptyObj.RCVehicleStatePtyVal,5)
+    Call FnSetDataClickItem(StateObj,strState)
+        
+    Set VINObj = RecordsCheckObj.FindChild(ptyObj.RCVINNoPty,ptyObj.RCVINNoPtyVal,5)
+    call FnSetDataKeys(VINObj,strVIN) 
+        
+    Set VehMakeObj = RecordsCheckObj.FindChild(ptyObj.RCVehicleMakePty,ptyObj.RCVehicleMakePtyVal,5)
+    Call FnSetDataClickItem(VehMakeObj,strMake)
+        
+    Set VehModelObj = RecordsCheckObj.FindChild(ptyObj.RCVehicleModelPty,ptyObj.RCVehicleModelPtyVal,5)
+    call FnSetDataKeys(VehModelObj,strMake) 
+        
+    Set LicenseYearObj = RecordsCheckObj.FindChild(ptyObj.RCLicenseYearPty,ptyObj.RCLicenseYearPtyVal,5)
+    call FnSetDataKeys(LicenseYearObj,strYear) 
+        
+    Set VehicleYearObj = VehicleTabObj.FindChild(ptyObj.RCVehicleYearPty,ptyObj.RCVehicleYearPtyVal,5)
+    call FnSetDataKeys(VehicleYearObj,strYear)        
+       
+        'set LookUpObj = VehicleTabObj.FindChild(ptyObj.RCVehicleLookUpPty,ptyObj.RCVehicleLookUpPtyVal,5)
+        set LookUpObj = Aliases.RecordsCheck.RecordsCheckForm.VBObject("fraPanel_3").VBObject("fraLookups_3").VBObject("lstLookups_3")
+         LookupItemsArray = Split(LookupItemsTobeChecked,"|")
+ 
+    For j = 0 to (LookUpObj.wItemCount - 1)
+       found =0
+        for k= 0 to ubound(LookupItemsArray)
+            If LookUpObj.wItem(j) = LookupItemsArray(k) Then
+              found= 1
+              exit for 
+            end if    
+        next     
+        If LookUpObj.Selected(j) = False and found = 1 Then
+            'select it
+            LookUpObj.DblClickItem(LookUpObj.wItem(j))
+        elseif LookUpObj.Selected(j) = True and found = 0 then
+           'unselect
+            LookUpObj.DblClickItem(LookUpObj.wItem(j))       
+        end if    
+    Next 
+      
+        set RecordIncidentObj = RecordsCheckObj.FindChild(ptyObj.RecordIncidentNumberPty,ptyObj.RecordIncidentNumberPtyVal,5)
+        Call FnSetDataKeys(RecordIncidentObj, MasterIncNumb)
+        
+        set SendBtnObj =  Aliases.RecordsCheck.RecordsCheckForm.VBObject("cmdSend")
+        SendBtnObj.DblClick
+                
+        Set ExitBtnObj = RecordsCheckObj.FindChild(ptyObj.RecordCheckExitBtnPty,ptyObj.RecordCheckExitBtnPtyVal,5)
+            Call FnSetDataClickButton(ExitBtnObj)
+        
+     Else
+        Call FnRecordResults("[Record Check Window] not found","Fail","")
+    End If
+    set ExitBtnObj = nothing
+    set SendBtnObj = nothing
+    set LookUpObj = nothing  
+    set ptyObj = nothing
+    set LicensePlateObj = nothing
+    set StateObj = nothing
+    set VINObj = nothing
+    set VehMakeObj = nothing
+    set VehModelObj = nothing
+    set LicenseYearObj = nothing
+    set VehicleYearObj = nothing
+    set VehicleTabObj = nothing
+    set RecordsCheckObj = nothing
+    set RecordIncidentObj = nothing
+End Function
+
+' Function Name : SupplementInfoCheckPriorsOperation()
+' Parameters : tab, supplement info, master incident ID, document window search, click on ID Yes/No
+' Details/Define : this function clicks on Check priors buttn in supplement infor tab and verifies contents in the document window
+' Author Name with Date: Parikshith 25/10/2013
+
+Function SupplementInfoCheckPriorsOperation(byVal strTab,byVal strInfo,byVal strMasterIncidentID,byVal strSearch,byVal ClickOnIncident)
+    set ptyObj = Project.Variables.PropertyHolder 
+    
+    If WaitTillObjExists(7000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+         set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+         If(SupplementWindowTabObj.Exists) Then
+           call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           
+                Select Case strTab
+ 
+                   Case "Vehicle"                   
+          
+                          Set VehicleGridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleGridPty,ptyObj.SIVehicleGridPtyVal,5)
+                        
+                          call CheckStringInGrid(VehicleGridObj,strInfo)            
+                               
+                          Set VehicleCheckPriorsBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.VehicleCheckPriorsBtnPty,ptyObj.VehicleCheckPriorsBtnPtyVal,5)
+                           If VehicleCheckPriorsBtnObj.Enabled = True then
+                              call FnSetDataClickButton(VehicleCheckPriorsBtnObj) 
+                            Else 
+                               Call FnRecordResults("Check Priors Button is Disabled ","Fail","")
+                           End If 
+               
+                           call FnCheckWindowExistenceAndWindowTitle("powerLineSearch","<1>")
+               
+                           call VerifyAnyTextInDocument(strSearch)
+                           call VerifyAnyTextInDocument(strMasterIncidentID)
+               
+                           If ClickOnIncident = "Yes" Then
+                                call FnClickOnMasterIncidentNum(strMasterIncidentID) 
+                                call VerifyAnyTextInDocument(strMasterIncidentID)
+                           End If
+               
+                           call CloseallDocumentWindow()
+                            
+                     Case "Person" 
+                                       
+                          call FnSetDataKeys(SupplementWindowTabObj,"[Right]") 
+              
+                          Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonGridPty,ptyObj.SIPersonGridPtyVal,7)
+                          call CheckStringInGrid(GridObj,strInfo)  
+              
+                          Set PersonCheckPriorsBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PersonCheckPriorsBtnPty,ptyObj.PersonCheckPriorsBtnPtyVal,7)
+                          If PersonCheckPriorsBtnObj.Enabled = True then
+                              call FnSetDataClickButton(PersonCheckPriorsBtnObj) 
+                            Else 
+                               Call FnRecordResults("Check Priors Button is Disabled ","Fail","")
+                           End If 
+               
+                           call FnCheckWindowExistenceAndWindowTitle("powerLineSearch","<1>")
+               
+                           call VerifyAnyTextInDocument(strSearch)
+                           call VerifyAnyTextInDocument(strMasterIncidentID)
+               
+                            If ClickOnIncident = "Yes" Then
+                                call FnClickOnMasterIncidentNum(strMasterIncidentID) 
+                                call VerifyAnyTextInDocument(strMasterIncidentID)
+                            End If
+               
+                           call CloseallDocumentWindow()
+                  
+                      Case "Weapon"
+                                    
+                          call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right]")
+              
+                          set weapontabObj = Aliases.WPFProcess.IncidentSupplementForm.WinFormsObject("tabControlLists").WinFormsObject("tabPageWeapon") 
+              
+                          Set WeaponCheckPriorsBtnObj  = weapontabObj.FindChild(ptyObj.WeaponCheckPriorsBtnPty,ptyObj.WeaponCheckPriorsBtnPtyVal,7)
+                          If WeaponCheckPriorsBtnObj.Exists = False then
+                            Call FnRecordResults("[Check Priors Button] not found in Weapon tab","Pass","") 
+                           Else
+                            Call FnRecordResults("[Check Priors Button] found in Weapon tab","Fail","")
+                          End If             
+                
+                      Case "Property"
+                              
+                          call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right][Right]") 
+              
+                          set propertytabObj = Aliases.WPFProcess.IncidentSupplementForm.WinFormsObject("tabControlLists").WinFormsObject("tabPageProperty")
+              
+                          Set PropertyCheckPriorsBtnObj  = propertytabObj.FindChild(ptyObj.PropertyCheckPriorsBtnPty,ptyObj.PropertyCheckPriorsBtnPtyVal,7)
+                          If PropertyCheckPriorsBtnObj.Exists = False then
+                            Call FnRecordResults("[Check Priors Button] not found in Property tab","Pass","") 
+                           Else
+                            Call FnRecordResults("[Check Priors Button] found in Property tab","Fail","")
+                          End If             
+              
+                 End Select
+               set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+               set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+               Call FnSetDataClickButton(SupplementWindowExitButtonObj)
+             Else
+               Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+          End If
+     Else
+      Call FnRecordResults("[Supplement Window not found] ","Fail","")
+    End If
+    Set ptyObj = Nothing
+    Set SupplementWindowTabObj = Nothing
+    Set GridObj = Nothing
+    Set SupplementWindowExitButtonObj = Nothing
+    Set weapontabObj = Nothing
+    Set propertytabObj = Nothing
+    Set PropertyCheckPriorsBtnObj = Nothing
+    Set WeaponCheckPriorsBtnObj = Nothing
+    Set PersonCheckPriorsBtnObj = Nothing
+    Set VehicleCheckPriorsBtnObj = Nothing
+    Set VehicleGridObj = Nothing
+End Function
+
+
+
+
+' Function Name : VerifySupplementWindowPersonData ()
+' Parameters : firstname,lastname,DOB,OLN,Phone No
+' Details/Define :  Tis function  Verfies the required data for the person fields
+' Author Name with Date: Anuradha 21/09/2013
+
+Function VerifySuppWndPersonDataOLN(byVal strOLN)
+  'Creating the object reference for PropertyHolder class 
+  set ptyObj = Project.Variables.PropertyHolder
+  'call WaitTillObjectExists(5000,Aliases.WPFProcess.IncidentSupplementForm)
+  If WaitTillObjExists(1000,Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right]")
+      End If
+      
+    
+    'verify OLN Name Value with expected value
+      If strOLN<>"" Then
+        set OLNObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonOLNBoxPty,ptyObj.SIPersonOLNBoxPtyVal,7)
+        OLNval= OLNObj.wText
+            If (strcomp(trim(strOLN),trim(OLNval),1)=0) then
+                Call FnRecordResults("[Supplement Window persons OLN name is equal to expected value] ","Pass","")
+            Else
+              Call FnRecordResults("[Supplement Window persons OLN name is not equal to expected value] ","Fail","")
+        End If  
+      End If
+      
+      set SupplementWindowIncidentNumberObj = SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowIncidentNumberLinkPty,ptyObj.SupplementWindowIncidentNumberLinkPtyVal,5)
+      call WaitTillObjExists(60000, SupplementWindowIncidentNumberObj)
+      If(SupplementWindowIncidentNumberObj.Exists) Then
+           Call FnRecordResults("[Supplement Window person Tab Incident Number Found] ","Pass","")
+      End If
+
+      
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+        call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+      set EctExitSaveButtonObj = Aliases.InformCadProc.FindChild(ptyObj.CallTakingIncedentExitBtnPty, ptyObj.CallTakingIncedentExitBtnPtyVal,5)
+        Call FnSetDataClick(EctExitSaveButtonObj)
+
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  
+End Function
+
+Function EditExistingSupplementInfo(byVal strTab,byVal strInfo, byVal strEdit, byVal strDelete, byVal strFill)
+set ptyObj = Project.Variables.PropertyHolder
+   If WaitTillObjExists(70000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+         set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+         If(SupplementWindowTabObj.Exists) Then
+           call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           
+           Select Case strTab
+            
+             Case "Person"
+                  call FnSetDataKeys(SupplementWindowTabObj,"[Right]") 
+              
+                  Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonGridPty,ptyObj.SIPersonGridPtyVal,7)
+                  call CheckStringInGrid(GridObj,strInfo)  
+                  
+                  set editbtnObj = GetLogicalObject("SupplementInfoEditButton")
+                  call FnSetDataClickButton(editbtnObj)
+                       
+                   Set lastnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonLastNamePty,ptyObj.SIPersonLastNamePtyVal,7)                               
+                   Set fnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonFirstNamePty,ptyObj.SIPersonFirstNamePtyVal,7)                             
+                   set dobObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonDOBPty,ptyObj.SIPersonDOBPtyVal,7)                                    
+                   set OLNObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonOLNBoxPty,ptyObj.SIPersonOLNBoxPtyVal,7)                                     
+                   set Phonenoobj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonPhonenoTxtPty,ptyObj. SIPersonPhonenoTxtPtyVal,17)
+                   set savebtnObj = SupplementWindowTabObj.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10) 
+                   set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponSaveAndSubmitRCPty,ptyObj.SupplementWindowWeaponSaveAndSubmitRCPtyVal,115)
+                   call WaittillPropertyChange(lastnameObj,"Enabled","True","7000")
+                   
+                   If (lastnameObj.Enabled = True And fnameObj.Enabled = True And dobObj.Enabled = True And OLNObj.Enabled = True And Phonenoobj.Enabled = True) Then                   
+                    Call FnRecordResults("[Person Tab] fields are enabled and editable ","Pass","")                    
+                    Else
+                    Call FnRecordResults("[Person Tab] fields are not enabled","Fail","")
+                   End If
+                    
+                   If (savebtnObj.Enabled = False And saveRecordObj.Enabled = False) Then
+                    Call FnRecordResults("Save and Save with Records Check Buttons are disabled","Pass","")
+                    Else
+                    Call FnRecordResults("Save and Save with Records Check Buttons are enabled","Fail","")
+                   End If
+                   
+                   If strDelete= "Yes" Then
+                     
+                       lastnameObj.Keys("[End]")
+                       lastnameObj.Keys("![Home][Del]")
+                     
+                       fnameObj.Keys("[End]")
+                       fnameObj.Keys("![Home][Del]")
+                     
+                       OLNObj.Keys("[End]")
+                       OLNObj.Keys("![Home][Del]")
+                       Call FnSetDataClick(saveRecordObj)
+                     
+                       If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+                          Call FnRecordResults("[The Exception Captured] message pop up window occured","Pass","") 
+                          Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+                          Call FnSetDataClick(okbutton2Obj)                        
+                       End If 
+                   
+                       ElseIf strFill = "Yes" Then
+                     
+                            lastnameObj.Keys(strEdit)
+                            fnameObj.Keys(strEdit)
+                            OLNObj.Keys("12345678")
+                            Call FnSetDataClick(saveRecordObj)
+                            call CheckStringInGrid(GridObj,strEdit)
+                           
+                            Else
+                   
+                             lastnameObj.Keys("[End]")
+                             lastnameObj.Keys("![Home][Del]")
+                             lastnameObj.Keys(strEdit)
+                             Call FnSetDataClick(savebtnObj)
+                             call CheckStringInGrid(GridObj,strEdit)
+                     End If
+              
+              
+               Case "Vehicle"                   
+          
+                  Set VehicleGridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleGridPty,ptyObj.SIVehicleGridPtyVal,5)                       
+                  call CheckStringInGrid(VehicleGridObj,strInfo)  
+          
+                  set editbtnObj = GetLogicalObject("SupplementInfoEditButton")
+                  call FnSetDataClickButton(editbtnObj)
+                  
+                 Set makeYearObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleMakeYearPty,ptyObj.SIVehicleMakeYearPtyVal,115)                   
+                 Set makeBoxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleMakePty,ptyObj.SIVehicleMakePtyVal,115)     
+                 Set modelObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleModelPty,ptyObj.SIVehicleModelPtyVal,115)     
+                 Set licensePlateObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlatePty,ptyObj.SIVehicleLicensePlatePtyVal,115)     
+                 Set stateBoxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicenseStatePty,ptyObj.SIVehicleLicenseStatePtyVal,115)      
+                 Set VINboxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleVINPty,ptyObj.SIVehicleVINPtyVal,115)
+                 set savebtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10) 
+                 set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponSaveAndSubmitRCPty,ptyObj.SupplementWindowWeaponSaveAndSubmitRCPtyVal,115)
+                    
+                 call WaittillPropertyChange(makeYearObj,"Enabled","True","7000")
+                 
+                 If (makeYearObj.Enabled = True And makeBoxObj.Enabled = True And modelObj.Enabled = True And licensePlateObj.Enabled = True And stateBoxObj.Enabled = True And VINboxObj.Enabled = True) Then                   
+                    Call FnRecordResults("[Vehicle Tab] fields are enabled and editable ","Pass","")                    
+                    Else
+                    Call FnRecordResults("[Vehicle Tab] fields are not enabled","Fail","")
+                 End If
+                 
+                 Set VehicleSubmitBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.VehicleSubmitRecordsCheckBtnPty,ptyObj.VehicleSubmitRecordsCheckBtnPtyVal,10)
+                 If VehicleSubmitBtnObj.Enabled = False then
+                      Call FnRecordResults("Submit Records Check Button is disabled","Pass","")
+                    Else 
+                       Call FnRecordResults("Submit Records Check Button is enabled","Fail","")
+                 End If    
+                 
+                 If strDelete= "Yes" Then
+                     
+                       licensePlateObj.Keys("[End]")
+                       licensePlateObj.Keys("![Home][Del]")
+                     
+                       VINboxObj.Keys("[End]")
+                       VINboxObj.Keys("![Home][Del]")
+                                      
+                       Call FnSetDataClick(saveRecordObj)
+                     
+                       If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+                          Call FnRecordResults("[The Exception Captured] message pop up window occured","Pass","") 
+                          Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+                          Call FnSetDataClick(okbutton2Obj)                        
+                       End If 
+                   
+                       ElseIf strFill = "Yes" Then '    Call FnSetDataText(SerialObj, SerialNumTxt)
+                     
+                            licensePlateObj.Keys(strEdit)
+                            VINboxObj.Keys(strEdit)                
+                            Call FnSetDataClick(saveRecordObj)
+                            'call CheckStringInGrid(VehicleGridObj,strEdit)
+                           
+                            Else
+                   
+                             licensePlateObj.Keys("[End]")
+                             licensePlateObj.Keys("![Home][Del]")
+                             licensePlateObj.Keys(strEdit)
+                             Call FnSetDataClick(savebtnObj)
+                             call CheckStringInGrid(VehicleGridObj,strEdit)
+                 End If
+                 
+            Case "Weapon"
+                                    
+                call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right]") 
+                
+                set WeaponGridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIWeaponGridPty,ptyObj.SIWeaponGridPtyVal, 115)             
+                call CheckStringInGrid(WeaponGridObj,strInfo)  
+                
+                set weapontabObj = Aliases.WPFProcess.IncidentSupplementForm.WinFormsObject("tabControlLists").WinFormsObject("tabPageWeapon") 
+                 
+                set editbtnObj = GetLogicalObject("SupplementInfoEditButton")
+                call FnSetDataClickButton(editbtnObj)    
+                Set SerialObj  = weapontabObj.FindChild(ptyObj.SupplementWindowWeaponSerialNumberPty,ptyObj.SupplementWindowWeaponSerialNumberPtyVal,115)     
+                Set MakeObj = weapontabObj.FindChild(ptyObj.SupplementWindowWeaponMakerPty,ptyObj.SupplementWindowWeaponMakerPtyVal,115)            
+                set CaliberObj =  weapontabObj.FindChild(ptyObj.SupplementWindowWeaponCaliberPty,ptyObj.SupplementWindowWeaponCaliberPtyVal,115)     
+                set WeaponTypeObj = weapontabObj.FindChild(ptyObj.SupplementWindowWeaponTypePty,ptyObj.SupplementWindowWeaponTypePtyVal,115)
+                set savebtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10) 
+                set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponSaveAndSubmitRCPty,ptyObj.SupplementWindowWeaponSaveAndSubmitRCPtyVal,115)
+                call WaittillPropertyChange(SerialObj,"Enabled","True","7000") 
+                  
+                If (SerialObj.Enabled = True And MakeObj.Enabled = True And CaliberObj.Enabled = True And WeaponTypeObj.Enabled = True) Then                   
+                    Call FnRecordResults("[Weapon Tab] fields are enabled and editable ","Pass","")                    
+                    Else
+                    Call FnRecordResults("[Weapon Tab] fields are not enabled","Fail","")
+                End If
+                
+                Set WeaponSubmitBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.WeaponSubmitRecordsCheckBtnPty,ptyObj.WeaponSubmitRecordsCheckBtnPtyVal,7)
+                If WeaponSubmitBtnObj.Enabled = False then
+                      Call FnRecordResults("Submit Records Check Button is disabled","Pass","")
+                    Else 
+                       Call FnRecordResults("Submit Records Check Button is enabled","Fail","")
+                 End If 
+                
+                 If strDelete= "Yes" Then
+                     
+                       SerialObj.Keys("[End]")
+                       SerialObj.Keys("![Home][Del]")
+            
+                       Call FnSetDataClick(saveRecordObj)
+                     
+                       If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+                          Call FnRecordResults("[The Exception Captured] message pop up window occured","Pass","") 
+                          Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+                          Call FnSetDataClick(okbutton2Obj)                        
+                       End If 
+                   
+                       ElseIf strFill = "Yes" Then '    Call FnSetDataText(SerialObj, SerialNumTxt)
+                     
+                            SerialObj.Keys(strEdit)                               
+                            Call FnSetDataClick(saveRecordObj)
+                            call CheckStringInGrid(WeaponGridObj,strEdit)
+                           
+                            Else
+                   
+                             SerialObj.Keys("[End]")
+                             SerialObj.Keys("![Home][Del]")
+                             SerialObj.Keys(strEdit)
+                             Call FnSetDataClick(savebtnObj)
+                             call CheckStringInGrid(WeaponGridObj,strEdit)
+                  End If 
+                 
+            Case "Property"
+                              
+              call FnSetDataKeys(SupplementWindowTabObj,"[Right][Right][Right]")              
+              set propertytabObj = Aliases.WPFProcess.IncidentSupplementForm.WinFormsObject("tabControlLists").WinFormsObject("tabPageProperty")
+              set PropertyGridObj =  Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertyValueSuppWindowPty,ptyObj.PropertyValueSuppWindowPtyVal, 115)
+              call CheckStringInGrid(PropertyGridObj,strInfo)
+              
+              set editbtnObj = GetLogicalObject("SupplementInfoEditButton")
+                call FnSetDataClickButton(editbtnObj) 
+                
+              Set SerialObj  = propertytabObj.FindChild(ptyObj.SerialNumberTxtPty, ptyObj.SerialNumberTxtPtyVal, 115)      
+              Set ArticleObj = propertytabObj.FindChild(ptyObj.ArticleTxtPty, ptyObj.ArticleTxtPtyVal, 115)      
+              set BrandObj =  propertytabObj.FindChild(ptyObj.BrandTxtPty, ptyObj.BrandTxtPtyVal, 115)      
+              set PropertyNameObj =  propertytabObj.FindChild(ptyObj.PropertyDropdownPty, ptyObj.PropertyDropdownPtyVal, 115)
+              set savebtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10) 
+              set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SupplementWindowWeaponSaveAndSubmitRCPty,ptyObj.SupplementWindowWeaponSaveAndSubmitRCPtyVal,115)
+              call WaittillPropertyChange(SerialObj,"Enabled","True","7000") 
+                 
+              If (SerialObj.Enabled = True And ArticleObj.Enabled = True And BrandObj.Enabled = True And PropertyNameObj.Enabled = True) Then                   
+                    Call FnRecordResults("[Property Tab] fields are enabled and editable ","Pass","")                    
+                    Else
+                    Call FnRecordResults("[Property Tab] fields are not enabled","Fail","")
+              End If
+                           
+              Set PropertySubmitBtnObj  = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.PropertySubmitRecordsCheckBtnPty,ptyObj.PropertySubmitRecordsCheckBtnPtyVal,7)   
+               If PropertySubmitBtnObj.Enabled = False then
+                      Call FnRecordResults("Submit Records Check Button is disabled","Pass","")
+                    Else 
+                       Call FnRecordResults("Submit Records Check Button is enabled","Fail","")
+               End If    
+              
+               If strDelete= "Yes" Then
+                     
+                       SerialObj.Keys("[End]")
+                       SerialObj.Keys("![Home][Del]")
+            
+                       Call FnSetDataClick(saveRecordObj)
+                     
+                       If(Aliases.WPFProcess.ExceptionCaptured.Exists) then
+                          Call FnRecordResults("[The Exception Captured] message pop up window occured","Pass","") 
+                          Set okbutton2Obj = Aliases.WPFProcess.ExceptionCaptured.FindChild(ptyObj.OKBtn2Pty,ptyObj.OKBtn2PtyVal,115)
+                          Call FnSetDataClick(okbutton2Obj)                        
+                       End If 
+                   
+                       ElseIf strFill = "Yes" Then 
+                            
+                            call FnSetDataKeys(SerialObj,strEdit) 
+                            'SerialObj.Keys(strEdit)                               
+                            Call FnSetDataClick(saveRecordObj)
+                            call CheckStringInGrid(PropertyGridObj,strEdit)
+                           
+                            Else
+                   
+                             SerialObj.Keys("[End]")
+                             SerialObj.Keys("![Home][Del]")
+                             SerialObj.Keys(strEdit)
+                             Call FnSetDataClick(savebtnObj)
+                             call CheckStringInGrid(PropertyGridObj,strEdit)
+                  End If  
+               
+               
+           End Select
+              
+           set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+           Call FnSetDataClickButton(SupplementWindowExitButtonObj)
+         Else
+           Call FnRecordResults("[Supplement Window not found] ","Fail","") 
+        End If
+    Else
+      Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  set propertytabObj = Nothing
+  set PropertyGridObj = Nothing
+  set editbtnObj = Nothing
+  set SerialObj = Nothing
+  set ArticleObj = Nothing
+  set BrandObj = Nothing
+  set PropertyNameObj = Nothing
+  set savebtnObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing
+  set PropertySubmitBtnObj = Nothing
+  set saveRecordObj = Nothing
+  set WeaponGridObj = Nothing
+  set weapontabObj = Nothing
+  set MakeObj = Nothing
+  set CaliberObj = Nothing
+  set WeaponTypeObj = Nothing
+  set WeaponSubmitBtnObj = Nothing
+  set okbutton2Obj = Nothing
+  set VehicleSubmitBtnObj = Nothing
+  set licensePlateObj = Nothing
+  set makeYearObj = Nothing
+  set VINboxObj = Nothing
+  set stateBoxObj = Nothing
+  set modelObj = Nothing
+  set makeBoxObj = Nothing
+  set VehicleGridObj = Nothing
+  set lastnameObj = Nothing
+  set fnameObj = Nothing
+  set dobObj = Nothing
+  set OLNObj = Nothing
+  set Phonenoobj = Nothing
+  set GridObj = Nothing
+  
+End Function
+
+'closes the supplimentary form 
+Function FnCloseSupplimentaryFormForm()
+  set ptyObj = project.Variables.PropertyHolder
+  If Aliases.InformCadProc.IncidentViewerForm.Exists Then
+      set SupplementWindowTabObj = Aliases.WPFProcess.IncidentSupplementForm
+      If SupplementWindowTabObj.Exists Then
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+      call FnSetDataClickButton(SupplementWindowExitButtonObj)     
+      End If
+                  
+  End If
+            
+End Function
+
+' Function Name : VehicleInfoObject ()
+' Details/Define :  This function adds Single parameter in the SupplementVehicle window
+' Author Name with Date: sathish Dec 9 /2013
+'Parameter LicPlatNo,VehicleMakeYear,VinTextBox
+Sub VehicleInfoObject(byval ParameterName,byval InputData)
+    set SupplementVehicleFormwnd = GetLogicalObject("IncidentSupplementVehicleForm") 
+ 
+   If WaitTillObjExists(GlobalVariableMainWindowDelay, SupplementVehicleFormwnd) = 1 then
+   
+      select case ParameterName
+     
+      Case "LicPlatNo"        
+        set PlatNoTxtPtyObj = GetLogicalObject("SIVehicleLicPlateNoTxt") 
+        Call FnSetDataText(PlatNoTxtPtyObj, InputData)
+      
+      Case "VinBox"   
+        set VINboxObj = GetLogicalObject("SIVehicleVINBox") 
+        Call FnSetDataText(VINboxObj, InputData)
+         
+      Case "VehicleMakeYear"  
+        set makeYearObj = GetLogicalObject("SIVehicleMakeYear")
+        Call FnSetDataText(makeYearObj, InputData)
+     
+      Case Else
+       Call FnRecordResults("[ParameterName not found] ","Fail","")
+      
+end select
+      
+   set savebtnWithRecordObj = GetLogicalObject("savebtnWithRecordCheckObj") 
+      Call FnSetDataClick(savebtnWithRecordObj)
+  
+  Else
+        Call FnRecordResults("[Incident Supplement Vehicle Form Window not found] ","Fail","")
+  End If
+  
+    set ParameterName = Nothing 
+    set InputData = Nothing 
+    set  SupplementVehicleFormwnd = Nothing 
+    set savebtnWithRecordObj = Nothing 
+
+End Sub
+
+' Function Name : SaveSupplementVehicleInfo()
+' Parameters : necessary fileds- make year, model, LicensePlate no,state, VIN
+'Parameters Towedby,VehicleLicPlateNo,VehicleLicenseState,VehicleLicensePlateYear,VehicleLicensePlateType,VehicleVIN
+' Details/Define :  This function adds the vehicle  supplement info and saves it without records check 
+' Author Name with Date: sathish Dec 9 /2013
+
+Sub SaveSupplementVehicleInfo(byval strTowedby,byval strLicensePlatNo,byVal strState,ByVal strLicensePlatYear,ByVal LicensePlattype,ByVal strVIN)
+
+
+   If WaitTillObjExists(GlobalVariableMainWindowDelay, Aliases.InformCadProc.IncidentViewerForm) = 1 then
+   
+        set SupplementWindowTabObj = Aliases.InformCadProc.IncidentViewerForm.VBObject("cmdShowIncidentSupplementInfo")
+
+        If(SupplementWindowTabObj.Exists) Then
+        call SupplementWindowTabObj.Click
+        else 
+        Call FnRecordResults("[Supplement tab not found] ","Fail","")
+        End If
+
+      
+        set TowedbyVehicleObj = GetLogicalObject("TowedbyVehicleTxtPtyObj") 
+        Call FnSetDataText(TowedbyVehicleObj, strTowedby)
+    
+        set PlatNoTxtPtyObj = GetLogicalObject("SIVehicleLicPlateNoTxt") 
+        Call FnSetDataText(PlatNoTxtPtyObj, strLicensePlatNo)
+      
+        set SIVehicleLICStateBoxObj = GetLogicalObject("SIVehicleLICStateBox") 
+        Call FnSetDataClickItem(SIVehicleLICStateBoxObj, strState)
+      
+           
+        set LicensePlatYearObj = GetLogicalObject("SIVehicleLicensePlateYear") 
+        Call FnSetDataText(LicensePlatYearObj, strLicensePlatYear)
+                    
+               
+        set LicensePlateTypeObj = GetLogicalObject("SILicensePlateType") 
+        Call FnSetDataClickItem(LicensePlateTypeObj, LicensePlattype)
+        
+        set VINboxObj = GetLogicalObject("SIVehicleVINBox") 
+        Call FnSetDataText(VINboxObj, strVIN)
+
+        set savebtnWithRecordObj = GetLogicalObject("savebtnWithRecordCheckObj") 
+        Call FnSetDataClick(savebtnWithRecordObj)
+
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+   
+  set SupplementWindowTabObj = Nothing
+  Set addBtnObj = Nothing
+  Set makeYearObj = Nothing
+  Set makeBoxObj = Nothing
+  Set modelObj = Nothing
+  Set licensePlateObj = Nothing
+  Set stateBoxObj = Nothing
+  Set VINboxObj = Nothing
+  Set savebtnObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing 
+  set PlatNoTxtPtyObj = nothing
+End Sub 
+
+'This Fuction Fills all Physical Characteristic of person in supplemental information window
+'Author: Manjunath July 30 2014
+'Parameters: StrPhysicalChar should be passed "|" separated in the order "Age|Weight|Height|Race|Gender|Build|Hair|Eyes|facial"
+'StrPersonalData should be passed "|" separated in the order "OLN|OLS|SSN"
+Sub EnterPhysicalCharAndPersonalDataInSIWnd(byval StrPhysicalChar, byval StrPersonalData)
+
+  PhysicalCharArray = Split(StrPhysicalChar,"|")
+  PersonalDataArray = Split(StrPersonalData,"|")
+   If WaitTillObjExists(10000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      If lcase(PhysicalCharArray(0)) <> "empty" Then
+            'set SuplimentPersonAgeTxtObj = GetLogicalObject("SuplimentPersonAgeTxtObj") 
+            Call SetText(SuplimentPersonAgeTxtObj, PhysicalCharArray(0))
+      End If
+      Call SetText("SuplimentPersonWeightTxtObj", PhysicalCharArray(1))
+      Call SendKeys("SuplimentPersonHeightTxtObj", PhysicalCharArray(2))  
+      Call ClickItem("SuplimentPersonRaceObj", PhysicalCharArray(3))  
+      Call ClickItem("SuplimentPersonGenderObj", PhysicalCharArray(4))  
+      Call SetText("SuplimentPersonBuildObj", PhysicalCharArray(5)) 
+      Call ClickItem("SuplimentPersonHairObj", PhysicalCharArray(6))
+      Call ClickItem("SuplimentPersonEyesObj", PhysicalCharArray(7))
+      Call SetText("SuplimentPersonFacialObj", PhysicalCharArray(8)) 
+       'Personal Data
+      Call SetText("SuplimentPersonOLNObj", PersonalDataArray(0))  
+      Call ClickItem("SuplimentPersonOLSObj", PersonalDataArray(1))
+      Call SetText("SuplimentPersonSSNObj", PersonalDataArray(2)) 
+ 
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+
+End Sub
+
+'This Fuction Fills all Person Description in supplemental information window
+'Author: Manjunath July 30 2014
+'Parameters: StrPersonDescription should be passed "|" separated in the order "Shirt|Pants|Shoes|Hat|Glasses|Jacket|Flight Direction|Flight Mode|Weapon"
+Sub EnterPersonDescriptionInSIWnd(byval StrPersonDescription)
+  PersonDescriptionArray = Split(StrPersonDescription,"|")
+    If WaitTillObjExists(10000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      Call SetText("SuplimentPersonShirtTxtObj", PersonDescriptionArray(0))
+      Call SetText("SuplimentPersonPantsTxtObj", PersonDescriptionArray(1))
+      Call SetText("SuplimentPersonShoesTxtObj", PersonDescriptionArray(2))  
+      Call SetText("SuplimentPersonHatTxtObj", PersonDescriptionArray(3))  
+      Call SetText("SuplimentPersonGlassesTxtObj", PersonDescriptionArray(4))  
+      Call SetText("SuplimentPersonJacketTxtObj", PersonDescriptionArray(5)) 
+      Call SetText("SuplimentPersonFlightDirectionTxtObj", PersonDescriptionArray(6))
+      Call SetText("SuplimentPersonFlightModeTxtObj", PersonDescriptionArray(7))
+      Call SetText("SuplimentPersonWeaponTxtObj", PersonDescriptionArray(8))
+
+    Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+    End If
+
+End Sub
+
+'This Fuction Fills all Address Details of person in supplemental information window
+'Author: Manjunath July 30 2014
+Sub EnterPersonAddressDetailsInSIWnd(byval StrStreet,byval StrApt, byval StrCity, byval StrState, byval StrZip, byval StrPhone)
+    
+    If WaitTillObjExists(10000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      Call SetText("SuplimentPersonStreetTxtObj", StrStreet)
+      Call SetText("SuplimentPersonAptTxtObj", StrApt)
+      Call SetText("SuplimentPersonCityTxtObj", StrCity)  
+      Call ClickItem("SuplimentPersonStateTxtObj", StrState)  
+      Call SetText("SuplimentPersonZipTxtObj", StrZip)  
+      Call SetText("SuplimentPersonPhoneTxtObj", StrPhone) 
+    Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+    End If
+
+End Sub
+'This Fuction Fills details like AgeMin,AgeMax,WeightMin,WeightMax,HeightMin,HeightMax of person in supplemental information window
+'Author: Manjunath August 1 2014
+Sub EnterPhysicalCharAdditionalDetailsInSIWnd(byval AgeMin, byval AgeMax, byval WeightMin, byval WeightMax, byval HeightMin, byval HeightMax)
+    
+    If WaitTillObjExists(10000, Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+        Call SendKeys("SuplimentPersonAgeMinTxtObj", AgeMin)
+        Call SendKeys("SuplimentPersonAgeMaxTxtObj", AgeMax)
+        Call SendKeys("SuplimentPersonWeightMinTxtObj", WeightMin)  
+        Call SendKeys("SuplimentPersonWeightMaxTxtObj", WeightMax)  
+        Call SendKeys("SuplimentPersonHeightMinTxtObj", HeightMin)  
+        Call SendKeys("SuplimentPersonHeightMaxTxtObj", HeightMax) 
+      Else
+          Call FnRecordResults("[Supplement Window not found] ","Fail","")
+      End If 
+
+End Sub
+
+Sub VerifySupplementInfoTabValues(byval StrObjLogicalName,byval ExpectedValue)
+
+      set SupplementTabObject = GetLogicalObject(StrObjLogicalName) 
+      If WaitTillObjExists(10000, SupplementTabObject) = 1 then
+           ActualValue = SupplementTabObject.Item(0, 0).Value.OleValue
+    
+           If Instr(lcase(Trim(ActualValue)),lcase(Trim(ExpectedValue))) Then
+               Call FnRecordResults("[Property Values] are matching","Pass","") 
+           Else
+                Call FnRecordResults("[Property Values] are not matching","Fail","")
+           End If
+     
+      Else
+          Call FnRecordResults("[Object] Not Found","Fail","")
+      End If
+End Sub
+
+
+Function AddSupplementWindowPersonDataPrimary(byval strFisrtName,byval strLastName,byVal strDOB, byVal strInvolvementType,byval strAdddtional)
+  'Creating the object reference for PropertyHolder class 
+  set ptyObj = Project.Variables.PropertyHolder
+  'call WaitTillObjectExists(5000,Aliases.WPFProcess.IncidentSupplementForm)
+  If Aliases.WPFProcess.IncidentSupplementForm.Exists then
+    set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+           call FnSetDataKeys(SupplementWindowTabObj,"[Right]")
+      End If
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+       If strLastName<>"" Then     
+        Set lastnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonLastNamePty,ptyObj.SIPersonLastNamePtyVal,7)
+        Call FnSetDataText(lastnameObj, strLastName)
+      End If
+      
+      If strFisrtName<>"" Then
+        Set fnameObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonFirstNamePty,ptyObj.SIPersonFirstNamePtyVal,7)
+        Call FnSetDataText(fnameObj, strFisrtName)
+      End If
+      
+      If strDOB<>"" Then
+        set dobObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonDOBPty,ptyObj.SIPersonDOBPtyVal,7)
+        Call FnSetDataKeys(dobObj, strDOB)
+      End If
+      
+     
+      If strInvolvementType<>"" Then     
+        'Set involvementTypeObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIPersonInvolvementTypePty,ptyObj.SIPersonInvolvementTypePtyVal,7)
+        
+        Call selectDropDownItem("involvementTypeObj",strInvolvementType)
+      End If
+      
+      'This field is addtionally added in case if any field has to be added in future.
+      If strAdddtional <>"" Then        
+      End If
+
+      
+      set saveRecordObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SaveRecordCheckBtnPty,ptyObj.SaveRecordCheckBtnPtyVal, 115)
+      Call FnSetDataClick(saveRecordObj)
+      
+       If(Aliases.RecordsCheck.dlgRecordsCheck.Exists) Then
+
+           Call FnRecordResults("[The Error message] Last Name Missing Exists","Pass","")
+           set errorWndOkBtn = Aliases.RecordsCheck.dlgRecordsCheck.FindChild(ptyObj.SIErrorOKBtnPty,ptyObj.SIErrorOKBtnPtyVal,7)
+           call FnSetDataClickButton(errorWndOkBtn)  
+       End If
+
+      
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+        call FnSetDataClickButton(SupplementWindowExitButtonObj) 
+        
+      set EctExitSaveButtonObj = Aliases.InformCadProc.FindChild(ptyObj.CallTakingIncedentExitBtnPty, ptyObj.CallTakingIncedentExitBtnPtyVal,5)
+        Call FnSetDataClick(EctExitSaveButtonObj) 
+
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  
+  set ptyObj = Nothing
+  Set involvementTypeObj = Nothing
+  Set lastnameObj = Nothing
+  Set fnameObj = Nothing
+  set dobObj = Nothing
+  set OLNObj = Nothing
+  set saveRecordObj = Nothing
+  set errorWndOkBtn = Nothing
+  set SupplementWindowTabObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing
+  set EctExitSaveButtonObj = Nothing
+
+End Function
+
+'Sheeba 328466
+
+Function EnterAndSaveAllVehicleSupplementInfo(byVal strVehicleInfo, byVal strCharacteristics)
+'byval strMakeYear,byval strMake,byval strLicensePlate,byVal strState,byVal strVIN, byVal strLicPlateType, byVal strLicPlateYear, byVal strModel, byVal strStyle, byVal strColor1, byVal strColor2, byVal strCharacteristics)
+  set ptyObj = Project.Variables.PropertyHolder
+   If WaitTillObjExists(5000,Aliases.WPFProcess.IncidentSupplementForm) = 1 then
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5)
+      If(SupplementWindowTabObj.Exists) Then
+            call FnMoveWindowToStandardPosition ("SUPPLIMENTWINDOW")
+      End If
+'ArrStrDateTime = split(DateTime, ",")
+            'DateTime = ArrStrDateTime(0)&"," & ArrStrDateTime(1)
+      ArrVehicleInfo = split(strVehicleInfo, ",")
+      strMakeYear = ArrVehicleInfo(0)
+      strMake = ArrVehicleInfo(1)
+      strLicensePlate = ArrVehicleInfo(2)
+      strState = ArrVehicleInfo(3)
+      strVIN = ArrVehicleInfo(4)
+      strLicPlateType = ArrVehicleInfo(5)
+      strLicPlateYear = ArrVehicleInfo(6)
+      strModel = ArrVehicleInfo(7)
+      strStyle = ArrVehicleInfo(8)
+      strColor1 = ArrVehicleInfo(9)
+      strColor2 = ArrVehicleInfo(10)
+      'strCharacteristics = ArrVehicleInfo(11)      
+      
+      Set addBtnObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.AddBtnsupplementPty,ptyObj.AddBtnsupplementPtyVal,5)
+      Call FnSetDataClick(addBtnObj)
+      
+      Set makeYearObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleMakeYearPty,ptyObj.SIVehicleMakeYearPtyVal,115)
+      Call FnSetDataText(makeYearObj, strMakeYear)
+      
+      Set makeBoxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleMakePty,ptyObj.SIVehicleMakePtyVal,115)
+      Call FnSetDataClickItem(makeBoxObj, strMake)      
+ 
+      Set licensePlateObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlatePty,ptyObj.SIVehicleLicensePlatePtyVal,115)
+      Call FnSetDataText(licensePlateObj, strLicensePlate)
+      
+      Set stateBoxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicenseStatePty,ptyObj.SIVehicleLicenseStatePtyVal,115)
+      Call FnSetDataClickItem(stateBoxObj, strState)
+      
+      Set VINboxObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleVINPty,ptyObj.SIVehicleVINPtyVal,115)
+      Call FnSetDataText(VINboxObj, strVIN)
+      
+      Set LicPlateTypeObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlateTypePty,ptyObj.SIVehicleLicensePlateTypePtyVal,115)
+      Call FnSetDataClickItem(LicPlateTypeObj, strLicPlateType)
+      
+      Set LicPlateYearObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleLicensePlateYearPty,ptyObj.SIVehicleLicensePlateYearPtyVal,115)
+      Call FnSetDataText(LicPlateYearObj, strLicPlateYear)    
+      
+      Set VehicleModelObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleModelPty,ptyObj.SIVehicleModelPtyVal,115)
+      Call FnSetDataText(VehicleModelObj, strModel)
+      
+      Set StyleObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleStylePty,ptyObj.SIVehicleStylePtyVal,115)
+      Call FnSetDataText(StyleObj, strStyle)
+      
+      Set Color1Obj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleColor1Pty,ptyObj.SIVehicleColor1PtyVal,115)
+      Call FnSetDataText(Color1Obj, strColor1)
+      
+      Set Color2Obj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleColor2Pty,ptyObj.SIVehicleColor2PtyVal,115)
+      Call FnSetDataText(Color2Obj, strColor2)                                                                                                                                          
+      
+      Set CharacteristicsObj = Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleCharacteristicsPty,ptyObj.SIVehicleCharacteristicsPtyVal,115)
+      Call FnSetDataText(CharacteristicsObj, strCharacteristics)                                                                                             
+      
+      set SupplementWindowTabObj = Aliases.WPFProcess.FindChild(ptyObj.SupplementWindowTabPty,ptyObj.SupplementWindowTabPtyVal,5) 
+      Set savebtnObj = SupplementWindowTabObj.FindChild(ptyObj.SISaveBtnPty,ptyObj.SISaveBtnPtyVal, 10)
+      Call FnSetDataClick(savebtnObj)
+      
+      Set GridObj =   Aliases.WPFProcess.IncidentSupplementForm.FindChild(ptyObj.SIVehicleGridPty,ptyObj.SIVehicleGridPtyVal,10)
+      flag = CheckStringInGrid (GridObj, strLicensePlate)                                            
+      If flag = 0 then
+      Call FnRecordResults ("Info " &strLicensePlate& " not found in Vehicle Tab", "Fail" , "")
+      End if
+      
+      set SupplementWindowExitButtonObj =  SupplementWindowTabObj.FindChild(ptyObj.SupplementWindowExitButtonPty,ptyObj.SupplementWindowExitButtonPtyVal,5)
+      Call FnSetDataClickButton(SupplementWindowExitButtonObj)
+      
+  Else
+        Call FnRecordResults("[Supplement Window not found] ","Fail","")
+  End If
+  set ptyObj = Nothing
+  set SupplementWindowTabObj = Nothing
+  Set addBtnObj = Nothing
+  Set makeYearObj = Nothing
+  Set makeBoxObj = Nothing
+  Set modelObj = Nothing
+  Set licensePlateObj = Nothing
+  Set stateBoxObj = Nothing
+  Set VINboxObj = Nothing
+  Set LicPlateTypeObj = Nothing
+  Set LicPlateYearObj = Nothing
+  Set VehicleModelObj = Nothing
+  Set StyleObj = Nothing
+  Set Color1Obj = Nothing
+  Set Color2Obj = Nothing
+  Set CharacteristicsObj = Nothing  
+  Set savebtnObj = Nothing
+  set SupplementWindowExitButtonObj = Nothing 
+End Function
+

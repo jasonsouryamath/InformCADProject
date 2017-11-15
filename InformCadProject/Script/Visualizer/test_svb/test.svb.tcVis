@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{42D2222C-ACA2-405F-8E67-05D5C42EB839}" version="2">
+	<data key="{268CC28F-608B-4B89-A11A-2D23CB980EEB}">
+		<item typeId="{87B03792-E854-4F5D-9F33-165F1F874209}" version="2" lineNo="4" kind="0" dateTime="43048.1919675926" objectName="triTech_VisiCAD_App_WPF.InformCadControlPanel.windowMainHeaderWindow.Grid.MainHeader.Grid.Grid2.MainToolBar.StackPanel.Button" objectLeft="632" objectTop="34" objectRight="683" objectBottom="85" clickPointX="-40" clickPointY="-14" imageFileName="tcvi7763945333800.png" storageFileName="" needUpdate="False" rectColor="255" />
+		<item typeId="{87B03792-E854-4F5D-9F33-165F1F874209}" version="2" lineNo="6" kind="0" dateTime="43048.1921527778" objectName="layoutWindow.comboboxProblemNature" objectLeft="14" objectTop="255" objectRight="245" objectBottom="277" clickPointX="-157" clickPointY="-157" imageFileName="tcvi7765571833807.png" storageFileName="" needUpdate="False" rectColor="255" />
+		<item typeId="{87B03792-E854-4F5D-9F33-165F1F874209}" version="2" lineNo="7" kind="0" dateTime="43048.1923032407" objectName="layoutWindow.comboboxCity" objectLeft="14" objectTop="142" objectRight="245" objectBottom="163" clickPointX="-157" clickPointY="-157" imageFileName="tcvi77668640338012.png" storageFileName="" needUpdate="False" rectColor="255" />
+	</data>
+</Root>

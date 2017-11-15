@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" version="11.40">
+	<children>
+		<child name="CadComCacheRelatedFunctions" key="{017DFCCD-75F2-44B5-B3F1-45A9323C53E0}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\CadComCacheRelatedFunctions.svb" />
+		</child>
+		<child name="CautionNote" key="{4C1186CD-D3AF-44F9-AD4D-A2D35E48D02A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\CautionNote.svb" />
+		</child>
+		<child name="CommonFunctions" key="{56D355C1-A450-45E8-8964-8A86B350023B}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\CommonFunctions.svb" />
+		</child>
+		<child name="DataBaseRelatedFunctions" key="{81322662-3CD7-4109-A1EE-A40567E04EB8}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\DataBaseRelatedFunctions.svb" />
+		</child>
+		<child name="DNCommonFunctions" key="{9EC843D8-124A-49C9-8E41-E71B65679689}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="DNCommonFunctions.svb" />
+		</child>
+		<child name="DNDriverScript" key="{47D44E0C-76C1-4F9E-85C7-CF7487382091}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="DNDriverScript.svb" />
+		</child>
+		<child name="DNEventHandler" key="{A4A52D81-5344-4BBB-82C3-16DCBA31F2FF}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="DNEventHandler.svb" />
+		</child>
+		<child name="DNIncidentQueue" key="{882B691D-87E6-4A21-9389-A764C69FEE6C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="DNIncidentQueue.svb" />
+		</child>
+		<child name="DNUnitQueue" key="{EA0A4C6C-4E61-440E-8BB2-E485E4DE3AE2}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="DNUnitQueue.svb" />
+		</child>
+		<child name="EctAndIncidentViewer" key="{9C407498-D61F-4EAC-96B9-4F308887556C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\EctAndIncidentViewer.svb" />
+		</child>
+		<child name="GeneralFunctions" key="{0843E169-1AAE-4351-980C-8A9F0E3F05D7}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\GeneralFunctions.svb" />
+		</child>
+		<child name="GlobalVariables" key="{5DA1F9D6-EDE7-42F6-AE7D-1AA0D146F8F4}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\GlobalVariables.svb" />
+		</child>
+		<child name="KeyWordFunctions" key="{E47A0EB6-ADB1-4703-9F87-3C520028216A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\KeyWordFunctions.svb" />
+		</child>
+		<child name="LogicalNavigationKeys" key="{BB8C911E-5B53-4972-97F4-547B1577908D}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\LogicalNavigationKeys.svb" />
+		</child>
+		<child name="LogicalObjects" key="{2D466C3B-010F-4793-808F-B0E81549CB33}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\LogicalObjects.svb" />
+		</child>
+		<child name="Messages" key="{B272539A-41DF-40B5-95D1-54DF05FEB74A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\Messages.svb" />
+		</child>
+		<child name="Navigation" key="{ABA66F9B-14CD-4E22-88DA-5E9E5F0D8967}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\Navigation.svb" />
+		</child>
+		<child name="OCRRelated" key="{7DEE1E91-7F62-4459-8E5A-5425E9626D90}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\OCRRelated.svb" />
+		</child>
+		<child name="Operations" key="{F750267E-A6AD-4739-86BB-291740FE9849}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\Operations.svb" />
+		</child>
+		<child name="Prerequisite" key="{45AEC4EF-C641-4DC3-8A53-57690BC3361F}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\Prerequisite.svb" />
+		</child>
+		<child name="Product_Administration" key="{5CBEB7DA-71C6-4478-B482-ED7DBF280FA4}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\Product_Administration.svb" />
+		</child>
+		<child name="PropertyHolderLibrary" key="{296E5CCC-5023-4461-B4F3-9E489E0D0CF0}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\PropertyHolderLibrary.svb" />
+		</child>
+		<child name="Recommendations" key="{92F63E43-D817-4127-99C3-E94825E1F60A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\Recommendations.svb" />
+		</child>
+		<child name="ScheduleCallTaking" key="{B497AD01-328C-4FAC-9525-7E546B5E6B39}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\ScheduleCallTaking.svb" />
+		</child>
+		<child name="SI_Utility" key="{32BC9C9D-F2B3-4930-9ECF-7D06F3F275E6}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\SI_Utility.svb" />
+		</child>
+		<child name="StandardInterface" key="{4C515890-DD3B-4C14-9ED7-C2D80685A57C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\StandardInterface.svb" />
+		</child>
+		<child name="StandardInterFace_IQ" key="{1843F4E4-4307-4F57-9CBE-9DC0FB18FD15}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\StandardInterFace_IQ.svb" />
+		</child>
+		<child name="SupplimentInformation" key="{DE41DE06-4531-4EEB-B00C-9836C747B997}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\SupplimentInformation.svb" />
+		</child>
+		<child name="UnitandIncidentManagement" key="{3F30C996-CFD8-4060-94C9-0A0C42236CA2}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\UnitandIncidentManagement.svb" />
+		</child>
+		<child name="UtilityFunctions" key="{DD068DD1-A205-4720-92DF-E196431337CB}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\UtilityFunctions.svb" />
+		</child>
+		<child name="VisiCadBrowser" key="{9D36D17C-C9AB-4343-9143-41FA9698891E}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\VisiCadBrowser.svb" />
+		</child>
+		<child name="VisiNetMobileClient" key="{43CE5EE1-556B-4D8D-A4FE-472B8144FE04}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\Classic_Libraries\VisiNetMobileClient.svb" />
+		</child>
+		<child name="test" key="{268CC28F-608B-4B89-A11A-2D23CB980EEB}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="test.svb" />
+		</child>
+		<child name="Unit1" key="{17105C50-8F17-4812-9496-50B8A9A612A5}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Unit1.svb" />
+		</child>
+		<child name="testthis" key="{647EA080-D4E0-4CFC-AA1A-8CDACEEEC878}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="testthis.svb" />
+		</child>
+	</children>
+	<folders>
+		<folder caption="DotNetFeature" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{882B691D-87E6-4A21-9389-A764C69FEE6C}" />
+				<ref key="{EA0A4C6C-4E61-440E-8BB2-E485E4DE3AE2}" />
+			</references>
+		</folder>
+		<folder caption="ClassicCad" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{E47A0EB6-ADB1-4703-9F87-3C520028216A}" />
+				<ref key="{45AEC4EF-C641-4DC3-8A53-57690BC3361F}" />
+				<ref key="{81322662-3CD7-4109-A1EE-A40567E04EB8}" />
+				<ref key="{5DA1F9D6-EDE7-42F6-AE7D-1AA0D146F8F4}" />
+				<ref key="{B272539A-41DF-40B5-95D1-54DF05FEB74A}" />
+				<ref key="{017DFCCD-75F2-44B5-B3F1-45A9323C53E0}" />
+				<ref key="{296E5CCC-5023-4461-B4F3-9E489E0D0CF0}" />
+				<ref key="{32BC9C9D-F2B3-4930-9ECF-7D06F3F275E6}" />
+				<ref key="{4C515890-DD3B-4C14-9ED7-C2D80685A57C}" />
+				<ref key="{9C407498-D61F-4EAC-96B9-4F308887556C}" />
+				<ref key="{BB8C911E-5B53-4972-97F4-547B1577908D}" />
+				<ref key="{F750267E-A6AD-4739-86BB-291740FE9849}" />
+				<ref key="{DE41DE06-4531-4EEB-B00C-9836C747B997}" />
+				<ref key="{43CE5EE1-556B-4D8D-A4FE-472B8144FE04}" />
+				<ref key="{5CBEB7DA-71C6-4478-B482-ED7DBF280FA4}" />
+				<ref key="{ABA66F9B-14CD-4E22-88DA-5E9E5F0D8967}" />
+				<ref key="{DD068DD1-A205-4720-92DF-E196431337CB}" />
+				<ref key="{4C1186CD-D3AF-44F9-AD4D-A2D35E48D02A}" />
+				<ref key="{92F63E43-D817-4127-99C3-E94825E1F60A}" />
+				<ref key="{7DEE1E91-7F62-4459-8E5A-5425E9626D90}" />
+				<ref key="{B497AD01-328C-4FAC-9525-7E546B5E6B39}" />
+				<ref key="{0843E169-1AAE-4351-980C-8A9F0E3F05D7}" />
+				<ref key="{2D466C3B-010F-4793-808F-B0E81549CB33}" />
+				<ref key="{3F30C996-CFD8-4060-94C9-0A0C42236CA2}" />
+				<ref key="{56D355C1-A450-45E8-8964-8A86B350023B}" />
+				<ref key="{9D36D17C-C9AB-4343-9143-41FA9698891E}" />
+				<ref key="{1843F4E4-4307-4F57-9CBE-9DC0FB18FD15}" />
+			</references>
+		</folder>
+	</folders>
+</Root>

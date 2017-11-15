@@ -1,0 +1,3319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="5" SaveImages="0">
+	<Storages Current="0">
+		<Child Name="Default Configuration" />
+	</Storages>
+	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
+		<Children>
+			<Child Name="Sys" Key="{16D8F4C6-4258-4DEF-B343-ABF4EA6FD77B}">
+				<Properties>
+					<Property Name="Name">
+						<Value PropertyType="0" Value="Sys" Type="5" />
+					</Property>
+					<Property Name="Id">
+						<Value PropertyType="0" Value="-1" Type="0" />
+					</Property>
+				</Properties>
+				<Children>
+					<Child Name="InformCadMainScreen" Key="{CF61D365-B3BA-41E8-9FA8-1D4BE9CD730A}" Description="Process name - commonfunction ">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="commonfunction" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="EctForm" Key="{85A641B5-EBF5-445F-88A5-A855C84A8D21}" Description="Calltaking form">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmShowRip" Type="5" />
+									</Property>
+									<Property Name="Caption">
+										<Value PropertyType="0" Value="Call Taking- Incident *" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="GeoLocatorForm" Key="{F480187B-59CB-4651-AD0F-4D765B6B5414}" Description="Geo locator window ">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Geo-Locator" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReasonForPriorityIncOrDec" Key="{AF9CC545-40C0-4641-964E-50864FC59CD3}" Description="Reason for Priority Up/DownGrade">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Reason for Priority Up/DownGrade" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="UnitInfoForm" Key="{831087D3-7B4F-4087-99C6-0F167B1DF397}" Description="Unit details form">
+								<Properties>
+									<Property Name="Caption">
+										<Value PropertyType="0" Value="Unit/Vehicle Information" Type="5" />
+									</Property>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="PowerLineSearchWindow" Key="{A30F7257-6805-4C6A-9C93-6CF58D16A705}">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmBrowser" Type="5" />
+									</Property>
+									<Property Name="Caption">
+										<Value PropertyType="1" LocalVariable="WindowProperty" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="UnitDetailsFrm" Key="{9D75D693-CB1D-4866-8523-435BC5018EAA}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Unit/Vehicle Information" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ViewControllerForm" Key="{2EE43C04-8A8F-41BE-AAAB-7758DF1A8576}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="View Controller" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ResponseReconfig_Incident" Key="{B42CFB59-394A-49FB-AECA-4F78611FC2E7}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Response Reconfigure - Incident ID*" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgMissingFile" Key="{FB360E06-7D3F-461A-963B-2CFBBD6EDE08}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Missing File" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="AddtionalCapabiScreen" Key="{5B917965-D982-45F9-AA7C-27B37115B5A2}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="*" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Add Additional Capabilities - Incident ID *" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="AdditionalResourcesAct" Key="{D38C0677-72D4-4700-91C2-B97084031C99}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="*" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Add Additional Resources - Incident ID *" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="OffDutyScreen" Key="{24A7798E-3E14-4A5E-B17B-A38B57CC6881}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="0" Type="0" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="IncidentViewerForm" Key="{3A205465-FDF5-4F6D-A156-326A07464797}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Incident Viewer- Incident ID*" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReassignCallForm" Key="{FD7C1DEC-E7E2-413C-8BED-42A04DB38F5D}">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCloseCall" Type="5" />
+									</Property>
+									<Property Name="Caption">
+										<Value PropertyType="0" Value="Reassign Vehicle" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="DuplicateCallWarningForm" Key="{2DA97BB0-86FC-4F5B-BAF8-A09FF0148241}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Warning of Duplicate Call" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ResponseClosingForm" Key="{0BE45E96-3931-47DC-9A51-CFB2B43A794D}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Response Closing" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="InititalAssign" Key="{4FFA71AB-337F-49EA-A43B-4373D2512E84}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Initial Assignment - *" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="pnlUpper" Key="{BEC4FDF6-5702-494E-A444-EA55379E563F}" ParallelWalk="True">
+										<Properties>
+											<Property Name="NativeVBObject.Name">
+												<Value PropertyType="0" Value="pnlUpper" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="spnAlarm" Key="{CECAC8D4-C801-45D1-8BD3-9FD168431989}" ParallelWalk="True">
+												<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+												<Properties>
+													<Property Name="NativeVBObject.Name">
+														<Value PropertyType="0" Value="spnAlarm" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="CaseNumberWindow" Key="{526B84A8-2D26-4622-9DF1-34DC4C81027B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Case Numbers" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmCallSelection" Key="{8BF62209-AA3E-4C50-B53E-FE3CA0CA385E}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCallSelection" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="picCallSelection" Key="{60096C98-9D4E-41FF-9EDD-31FDB3AF7BBD}" ParallelWalk="True">
+										<Properties>
+											<Property Name="NativeVBObject.Name">
+												<Value PropertyType="0" Value="picCallSelection" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="frmResponseAreaSelector" Key="{CF378E34-5310-431C-933F-63F579385A2B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmResponseAreaSelector" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="GreaterAlaramWndow" Key="{37D6D5BB-B537-461B-85C4-BEFEA5E262BD}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Greater Alarm -*" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="AddAgencyAssignmentForm" Key="{55AC405C-A5C0-4AC4-90E7-112117B69F8C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Add Agency*" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgWpfProcess" Key="{F270D473-232C-46E4-8332-2B5BA831A9E5}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ExceptionCaptured" Key="{AFDD4A48-ACF7-4B03-8614-34543B6DE2EF}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Exception captured" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ResponsePageGroup" Key="{8175958D-AA4A-4A66-8799-F9651F77CD5E}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Response Group Page" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReturnTripCancellationPopUp" Key="{E65F174A-F837-4A24-8043-3C3443B959CE}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Return Trip Cancellation" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="UnitSelectorForm" Key="{0B57ABA6-ACA2-47A6-B7B4-2CBD7611E2DD}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Unit Selector" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmPage" Key="{857DB049-0D06-4A5D-978C-393BF92B5E24}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmPage" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="PermitSummary" Key="{B39A57CE-46D3-4EE3-AB3F-6CB1D186FFD0}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmShowPermit" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Permit Summary" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SelectPremise" Key="{BD0408BB-DE8F-4769-8994-0E36611216A1}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="VBObject(&quot;frmSelectPremise&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="CheckNamesForm" Key="{8F2BB776-6281-4C8C-9675-3DEDCE9ADFB8}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Check Names" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="CommonFunctionSniffer" Key="{27A2843B-C3BD-4335-8BA1-053748A1D350}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="SnifferMainForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReportViewerForm" Key="{ABDC6B44-1BFE-4004-BCA9-8D82C049220D}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Report Viewer&#32;&#32;&#32;&#32;Snapshot" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgRemovePatient" Key="{D1D88BB2-F72D-4E83-8813-6752BB8A4B15}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Remove Patient" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SecondaryLocationInfoWnd" Key="{B766190E-C45A-4EB0-B39B-57ABC9FB40F1}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmSecLocation" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Secondary Location Information" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="UpdateAddressInformation_new" Key="{D8C57FCB-4D84-41E0-BB82-2E57E727C33C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Update Address Information" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="AddressVerificationOverrideDlg_new" Key="{CF50E9C0-A602-42FA-A8C3-AB91025566A1}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Address Verification Override" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="RecurringTripsCancellation" Key="{7AE7D882-3AC9-4F6C-A6F7-E8C8E957FF0D}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCancelTrip" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Recurring Trips Cancellation" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="RotationServiceRequestForm_new" Key="{94BD278E-2B0D-46EC-B7E6-819FF0AAE917}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmProviderRequest" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ExceptionReportingForm" Key="{6DFE02B5-C384-4EC9-877F-A975D7131066}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Exception Reporting" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="DispatchLevelWnd" Key="{9D725C68-5DC0-4E55-B7A8-402902452108}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Dispatch Level" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="OOSWnd" Key="{3E9584BA-F04D-4C7B-9CEF-3434019FF76A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmOOS" Type="5" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="VBObject(&quot;frmOOS&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgMobile" Key="{B7D126BF-AB0F-497B-BC36-9F7BCEB3D1DF}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Mobile" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PowerLineProc" Key="{F667EAAB-141B-45B5-B648-9CDB150F2B2A}" Description="Power line window process">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="CommandLine" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="PowerLineForm" Key="{64D50430-2439-43C5-B4C8-27D4B55D3E53}">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCommandLine" Type="5" />
+									</Property>
+									<Property Name="Index">
+										<Value PropertyType="0" Value="1" Type="0" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ProcClsClass" Key="{2821619F-577C-4F14-96C2-ADCEFD3AEAB3}" Description="CISCLASS">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="CISCLASS" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ProtoColEmergencyWindow" Key="{C9701F9D-26C5-4259-A939-398516F3C32C}" Description="ProtoColEmergencyWidnow">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCIS" Type="5" />
+									</Property>
+									<Property Name="Caption">
+										<Value PropertyType="0" Value="Protocol (*)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ExitProtocolDlg" Key="{65CC1494-9D31-45D5-9CC6-57C91445D494}" Description="Exit protocol dialog apears on clicking on exit button in protocol emergency screen">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Exit Protocol" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ProtocolSummary" Key="{EB82F5A3-A155-4484-8EBE-94A500F85562}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmProtocolSummary" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Protocol Summary" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ProcVisicad" Key="{3B5CC858-666A-4599-860B-46A6A5A0D2A9}">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="Visicad" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="SelectStation" Key="{1719530F-EB77-4601-A3C4-8ACC05C8F3EF}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Select A Station/Post For *" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="DepartSceneForm" Key="{6500B796-E1FC-4B47-A5E8-B76ECF9AA647}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Depart scene For *" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="TransportDestinationWindow" Key="{1518BA5B-16D3-48D7-9181-88F3FC980EF2}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Reason for Transport Destination Change" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="PriorityWindow" Key="{5B682E27-0081-406F-AF57-8F2165BE4C0E}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Reason for Priority Up/DownGrade" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="GeoLocatorWnd" Key="{A9F756C7-FE06-4EDA-9E10-894D7CC87000}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Geo-Locator" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmActiveQ" Key="{88E94F20-7166-41A8-B8CB-8778ECF09E94}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmActiveQ" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="picItems" Key="{0E9A1D31-9932-465E-A0DC-C02CA0C28E91}" ParallelWalk="True">
+										<Properties>
+											<Property Name="NativeVBObject.Name">
+												<Value PropertyType="0" Value="picItems" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="FormToolsLauncher" Key="{7CB4C80D-99B2-4ECD-8947-B217E36F94E5}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmToolsLauncher" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReportsLauncherForm" Key="{F01094A4-6F76-4C09-AB5C-B4896CD33FCF}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="VisiCAD Reports" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="EDITMGR" Key="{EBB6B4BD-CF88-4A4F-9ADB-DB4B969973E4}">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="EDITMGR" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="IncidentEditorForm" Key="{57C41DE3-21C3-4B2B-AB3B-42422802C54A}">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmIncidentEditor" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReOpenCommentDialog" Key="{27377930-5C08-4E50-8880-5AC4E2A54479}">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmReOpenCommentDialog" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReasonReopenIncidentForm" Key="{0EB47985-D7C0-4C2C-B635-8160866C695D}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Reason for Re-Opening the Incident" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SearchIncident" Key="{97F8974F-7533-4D1E-9581-161CEB941706}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmSearch" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Search" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="explorer" Key="{5E203B47-2C18-4469-A5C1-A4134DA8EABA}">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="explorer" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndShell_TrayWnd" Key="{C19D8731-3542-4AD1-8E1D-96605946DC74}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="Shell_TrayWnd" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="ReBarWindow32" Key="{F4AB2352-9B2C-41A0-9B0B-8BB7D468F837}">
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="ReBarWindow32" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="MSTaskSwWClass" Key="{88541850-BD7C-4DA9-A492-C6E49398741F}">
+												<Properties>
+													<Property Name="WndClass">
+														<Value PropertyType="0" Value="MSTaskSwWClass" Type="5" />
+													</Property>
+													<Property Name="WndCaption">
+														<Value PropertyType="0" Value="Running applications" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="MSTaskListWClass" Key="{413C3F1F-A206-4FD7-B33B-B31E1F012801}">
+														<Properties>
+															<Property Name="WndClass">
+																<Value PropertyType="0" Value="MSTaskListWClass" Type="5" />
+															</Property>
+															<Property Name="WndCaption">
+																<Value PropertyType="0" Value="Running applications" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="BOLO" Key="{BD64D364-495D-4130-BDDF-EE4132DA04EF}">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="BOLO" Type="5" />
+							</Property>
+							<Property Name="FullName">
+								<Value PropertyType="0" Value="Sys.Process(&quot;BOLO&quot;)" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="BOLOEntryForm" Key="{B6C0352B-BCD1-4E1C-A096-3BBC73B99DB2}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="BOLO Entry" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="BOLOSearchForm" Key="{626D0BDE-BA9A-49AC-A418-1AC0EEC106C0}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="BOLO Search" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="BOLOSearchResults" Key="{E0DE3C93-7BD1-4858-B8EE-C02486176807}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="BOLO Search Results" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ScheduleCallTaking" Key="{CCB33933-4316-4BCC-A152-557828C8CB61}" ParallelWalk="True">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="PRESCHEDULE" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="FormPatientSearch" Key="{F318062B-6FCC-45FD-AA3F-AE8F64F2F758}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmPatientSearch" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="windowScheduledCallTaking" Key="{678CC3A8-7E98-44E6-9041-7AD0CE1776C5}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmPrescheduledcall" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="GeoLocator" Key="{25906678-C0E9-45C4-8BDC-A6784F5AE726}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Geo-Locator" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgForYourInformation" Key="{B3A8A011-A252-4594-95AF-F160E6110103}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="For your information" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="AdditionalLegsForm" Key="{E5B1B7A8-70F9-4EBD-9EDC-14929E512923}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Additional Legs" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="PopUpReturnTripCreatedECT" Key="{84C05777-2613-46F4-B8D0-FB77AD6CBDDC}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Return Trip Created" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="PopUpUnSavedTripInformation" Key="{6BC803BE-AA9C-4F85-AF9E-A363E1368097}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="UnSaved Trip Information" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="PopUpPatientInformation" Key="{BB9F7413-EC58-4366-872B-18E3EC04CA64}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Item cannot be deleted." Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="MultiTripBookingForm" Key="{F715CA24-F033-4903-8951-79BC18C00A33}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Multi-Trip Booking" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmQuickPage" Key="{155DA1A5-ECAD-4D46-B370-478CEDA9DF16}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Response Group Page" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgDateWarning" Key="{0DF80BEA-F6FD-4D7C-B9E0-B7F55C0F2659}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Date Warning" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="CautionNoteUtility" Key="{1B736C49-BA92-48AF-B540-0704FA8C89DF}" ParallelWalk="True">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="CautionNoteUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="CautionNoteWindow" Key="{B0BE485A-90E3-4BF4-84D3-4AAEAE561E9B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCaution" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="GeoLocatorForm" Key="{45FCEE70-B660-475B-9EAE-92D62D9697A0}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Geo-Locator" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="FormCaution" Key="{F49952D1-7096-4FC8-93BC-5CAFA748CA90}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Caution Note and Permit Utility*" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgCautionNote" Key="{D724BB9B-477D-413E-B9A5-D1570EC1B5D0}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Caution Note" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmPermitEntry" Key="{3FA1E590-5FE9-4D4F-850F-1675F65A3A29}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmPermitEntry" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgBlockRange" Key="{F032A1EA-754D-4BCB-80CF-918C8CB9E45C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Block Range" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmResponseAreaSelector" Key="{21BE40FB-CFD1-4158-BDEC-BCE4743B1179}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmResponseAreaSelector" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="More than one Response Area for this address" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="TriTech_Launch" Key="{A8E4D98C-C1CF-4677-87F0-DF9ED731378E}" ParallelWalk="True">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="TriTech.Launch" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="dlgCantSyncronize" Key="{6EC9885C-5295-4C9E-BD95-18CDFEB87F79}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Can&apos;t Syncronize" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="btnYes" Key="{1AFEE257-2D46-4707-B206-4A53C80793BD}" ParallelWalk="True">
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="*Yes" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="dlgUnableToContinue" Key="{7C6F9EED-26C3-4479-9FBD-CFF01885CF74}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Unable to Continue" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="btnOK" Key="{36D5C0D5-EE78-4922-9E87-2C6B15B2FCF6}" ParallelWalk="True">
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="OK" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="QCExplorer" Key="{BCEDBC7D-9EF1-4833-A7D6-F15E6A563293}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="QCExplorer" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndApplication" Key="{E3ABA461-3E8C-42E0-AB85-655EF7BC3D86}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="TApplication" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="HP Quality Center 10.00" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="VisiNetMap" Key="{076F8EF9-4F4D-4292-958E-36A034202DE7}" ParallelWalk="True">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="VisiNetMap" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="VisiNetMapMainMDIForm" Key="{513D6736-EC23-4D15-9677-329089021188}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="WinFormsObject(&quot;VisiNetMapMainMDIForm&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="VisiNetMapMainMDIForm_new" Key="{F66298DC-9E93-4DF0-89A9-9525A8677CDE}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="VisiNetMapMainMDIForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="MultiAgencyProblemUtilityProc" Key="{F2E36A7F-AF43-47D7-A9D9-70E32BE256D4}" ParallelWalk="True">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="MAPROBXREF" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="MAProbForm" Key="{9A870297-71A6-4C8C-8579-166FC28120B8}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmMAProbXRef" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="CrossReferenceTab" Key="{F1AAA95F-6286-4B8F-BC52-C7488AC6057E}" ParallelWalk="True">
+										<Properties>
+											<Property Name="NativeVBObject.Name">
+												<Value PropertyType="0" Value="SSTab1" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="HierarchyCrossReferenceForm" Key="{F7FD19ED-0646-4F08-955B-551B03503E09}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmHierarchyCrossReference" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgMultiAgencyProblemUtility" Key="{4DF79C53-8450-4F30-AD0E-64F25069B181}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Multi-Agency Problem Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ModfySysInfo" Key="{F47A7D30-FC69-41BE-9EFD-B97B6A084810}" ParallelWalk="True">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ModfyInf" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ModifysystemInfo_new" Key="{2D8D7979-4284-453E-90D5-014F18DBBE2D}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Modify System Information" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="TSSIntRecordsCheck" Key="{DFD9B462-E087-45B6-B52B-D85B06882FFE}" ParallelWalk="True">
+						<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="TSSIntRecordsCheck" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="InquiryResults" Key="{FEBC266F-9525-4D66-A137-940B79419494}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Records Inquiry Results" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgRecordsCheck" Key="{9B9D5889-BC43-49ED-BBC6-AEC2C46FA6FF}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Records Check" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="RecordsCheckForm" Key="{62AB450F-92F0-4B74-8EA9-09FAFC691D7F}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="VBObject(&quot;frmMain&quot;)" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Records Check" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="VMClient" Key="{3EE25958-BDF4-4F2C-AB66-CA2879EFB9C7}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="VMClient" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="VMForm" Key="{18306B99-55FB-4CC7-8224-E5AD50E4FF5A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Inform Mobile*" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="MdiClient_new" Key="{53A1F987-EBCA-4368-AD03-9EA4AF39E737}" ParallelWalk="True">
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="*MDICLIENT*" Type="5" />
+											</Property>
+											<Filter FilterMode="1" FilterString="6171736F010000000400000072006F006F007400010000000400000072006F006F00740001000000260000007B00370044003400420030004500350030002D0032003500370033002D0034003100360042002D0042003100320034002D004100460035003200380036003100370046004500370034007D00010000000400000072006F006F00740003000000070000006300680069006C0064002000300001000000260000007B00340035003400370038003800370044002D0030004300320044002D0034003400360037002D0042004600450033002D004100310034003500330035003300300034003000460039007D00090000006F007000650072006100740069006F006E000000000001000000070000006300680069006C0064002000310001000000260000007B00340035003400370038003800370044002D0030004300320044002D0034003400360037002D0042004600450033002D004100310034003500330035003300300034003000460039007D0002000000070000006300680069006C0064002000310002000000040000006C0065006600740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D00050000007200690067006800740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D000200000005000000720069006700680074000100000005000000760061006C0075006500010000001400000043006F006E00730074005300740072003A002A004D006400690043006C00690065006E0074002A0000000000040000006C006500660074000100000005000000760061006C0075006500010000000E0000004400690073007000560061006C00750065003A004E0061006D00650000000000070000006300680069006C0064002000300003000000050000007200690067006800740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D00090000006F007000650072006100740069006F006E00010000000A0000007300740064006F00700065007100750061006C00040000006C0065006600740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D000200000005000000720069006700680074000100000005000000760061006C0075006500010000001400000043006F006E00730074005300740072003A002A004D004400490043004C00490045004E0054002A0000000000040000006C006500660074000100000005000000760061006C007500650001000000120000004400690073007000560061006C00750065003A0057006E00640043006C0061007300730000000000" />
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ResponsePlanManager" Key="{77141375-AC93-4844-946A-38425FAC5CC3}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RPlnBldr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ResponsePlanManagerWnd" Key="{1E136AD6-4685-489B-ABA2-892BF4F9D92B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="RespPlanBldr" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ColumnSetup" Key="{31AE2B0D-8F3D-480C-96C2-36B341DA5C3C}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ColumnSetup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ColumnSetupForm" Key="{E80A5473-1840-4AF0-912F-1867769C8DEF}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="ThunderRT6FormDC" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Column Setup" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="OutofServiceRMProc" Key="{60F98243-AD8E-4388-96EC-3CB38032F4B9}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="OOS_Bldr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="OutofServiceRM" Key="{1E81A098-E1B7-4979-9DA5-FC12520CF600}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="OOS_Bldr" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ActivityLogViewer" Key="{F84F588A-82A5-4121-8511-4EBA70A1B735}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ActivityLogViewer" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="frmActivity" Key="{3795BEA6-7990-4A43-BE02-93E5F1A545BD}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmActivity" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="MessageSetUpUtility" Key="{759ECBF7-FEE1-4D18-94CB-26AE3B5F81C2}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="MsgSetupUtil" Type="5" />
+							</Property>
+							<Property Name="Name">
+								<Value PropertyType="0" Value="Process(&quot;MsgSetupUtil&quot;)" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="MessageSetUpUtility" Key="{E320A4BB-D9E2-4C96-8618-5724F053D57A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmMsgSetupUtil" Type="5" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="VBObject(&quot;frmMsgSetupUtil&quot;)" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Messaging Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PremiseUtility" Key="{F254B840-CC87-48C4-81ED-658E0016A97D}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="PremiseUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="PremiseForm" Key="{BF89A8F2-FD66-4EDF-9608-6560A06E6D40}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="FrmPremise" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ResponsePlanForm" Key="{F2717C5E-5B29-491C-A1B0-F27C52BE458B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmResponsePlan" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmAddDialog" Key="{9C6F4220-170C-42B1-A5D0-B86B35B88ED1}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="VBObject(&quot;frmAddDialog&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SearchPremiseWnd" Key="{D51E37F4-2180-4163-B2E3-2AAF3D6AD4E7}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmSearchPremise" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Premise Search" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="GeoLocatorWnd" Key="{2FF2ABDC-C187-4650-866D-370B7BF226AB}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="GeoLocator" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ResponseAreaSelector" Key="{D46C3754-C8AA-4D5B-AB9D-80E9852CF742}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmResponseAreaSelector" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ResponseGroupPaging" Key="{BB1DF448-3617-48C3-847C-97095046F81F}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ResponseGroupPaging" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ResponseGroupPagingSetUpUtility" Key="{F0F8E072-DB73-4BCE-A006-409C2DAFC364}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Response Group Paging Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ResponseAreaBuilderProc" Key="{11A22D72-9479-4ACA-80FB-9A8CA05D6120}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RA_Bldr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ResponseAreaBuilder" Key="{5DA0DDB1-A1DD-4B5B-858F-CC2156E27AE3}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="RA_Bldr" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ProblemUtilityProc" Key="{A956A7ED-C0FA-4F96-8F4D-FE3EB6936CF3}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ProbMgr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ProblemUtility" Key="{FFC338BD-5387-4D74-950A-10C093091D13}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="ProbMgr" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Problem (Incident Subtype) Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PagingUtilsWindow" Key="{7CE7653A-4FF5-4177-86A8-AFA651F7989B}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="PageUtil" Type="5" />
+							</Property>
+							<Property Name="Name">
+								<Value PropertyType="0" Value="Process(&quot;PageUtil&quot;)" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="PagingAndDailingSetUpForm" Key="{36FEBF0F-2852-4566-AF28-B64673E3192B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Paging and Dialing Setup" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="DispatchRuleSetupUtility" Key="{2C362BCE-5E64-488F-A1A7-5B88E5B1CB0B}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="DispatchRuleSetup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="DispatchRuleSetupUtilityWnd" Key="{F08B03F6-0011-4B13-8F01-6C9A36787195}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmDispatchRuleSetup" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="CommandLine" Key="{8B61C50F-08EF-4911-87FD-EED2708EE5F6}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="cmd" Type="5" />
+							</Property>
+						</Properties>
+					</Child>
+					<Child Name="SCTScreenConfigWnd" Key="{B67DAC19-58DC-4994-87E3-9E0DAD746FA2}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="SCTConfig" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="SCTScreenConfigurationForm" Key="{B5B275F6-AA08-499E-84A8-43713DE9AEC3}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Scheduled Call Screen Configuration" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="PopUpSaveChanges" Key="{7B8CB095-F172-4864-B672-7A432B31D276}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Save Changes" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PersonnelManagerProc" Key="{46399DBD-23BB-4296-80D2-95D68DBC240F}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="PRSNLMGR" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="PersonnelManagerForm" Key="{3706CE83-C189-4691-9634-8E67B88F71F9}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="PrsnlMgr" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="FacilityStatus" Key="{895EFEE0-9D7B-4062-9E5B-B4D74F86786D}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="FacilityStatus" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="FacilityStatusForm" Key="{365626F5-CD2E-4383-A594-87A6EF3A6903}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Facility Warning Status" Type="5" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="VBObject(&quot;frmFacilityStatus&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="GeoLocatorForm" Key="{C29EB901-F568-40CA-8C9B-0651733C9D13}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="GeoLocator" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Geo-Locator" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="browser" Key="{D82D434B-2D7F-4970-9D03-F21A9CC61D28}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ObjectType">
+								<Value PropertyType="0" Value="Browser" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="pageVisinetBrowser54550360Login" Key="{5AFF4506-DBCA-431F-A685-FA1E2D1387D2}" ParallelWalk="True">
+								<Properties>
+									<Property Name="ObjectType">
+										<Value PropertyType="0" Value="Page" Type="5" />
+									</Property>
+									<Property Name="URL">
+										<Value PropertyType="0" Value="http://*/VisiNetBrowser/Login.aspx*" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="UnitQueue" Key="{3B29EC1A-7077-4C43-9E7E-CEC4E1CAA604}" ParallelWalk="True">
+								<Properties>
+									<Property Name="ObjectType">
+										<Value PropertyType="0" Value="Page" Type="5" />
+									</Property>
+									<Property Name="URL">
+										<Value PropertyType="0" Value="http://*/VisiNetBrowser/Queues/UnitQueue.aspx" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="Search" Key="{F13A3DDD-D6DA-44FC-A19D-914286F34E75}" ParallelWalk="True">
+								<Properties>
+									<Property Name="ObjectType">
+										<Value PropertyType="0" Value="Page" Type="5" />
+									</Property>
+									<Property Name="URL">
+										<Value PropertyType="0" Value="http://*/VisiNetBrowser/Search/LocateResource.aspx" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="StatusSetupWnd" Key="{933231A9-6E8A-4C2F-907C-BC24F6DE3BD0}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="StatusSetup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="StatusSetup_new" Key="{B4125D21-FE08-44A3-83A9-8C2DAFED853A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="Form1" Type="5" />
+									</Property>
+									<Property Name="RecordCaption">
+										<Value PropertyType="0" Value="Status Setup" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="StreetFinderSetup" Key="{ACBB398B-7553-4EC7-9584-E7E014522752}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="StreetFinderSetup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="frmStreetFinderSetup_new" Key="{91B43253-3D2F-40D0-B19E-732955AD087C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="StreetFinder Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="TimerAndWarningSetUpUtilityWnd" Key="{0ECAAE9D-C6A7-43FB-ABF5-21E8158BEF19}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="TWSetupUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="TimerAndWarningSetUpUtilityForm" Key="{1B51A4F4-7AA8-44A8-B187-C3047E10E36A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Timers And Warnings Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="UnitCrossStaff" Key="{53A14E69-EA5E-42A3-B788-D6556D22069A}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="UnitCrossStaff" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="UnitCrossStaffingUtilityForm" Key="{9D3E47D2-8E24-4376-8422-2EAB1AD94A04}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmUnit" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ROSTER" Key="{57C207D9-6E19-452B-B1C3-90DE35CA55C8}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ROSTER" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="frmRosterSchedule" Key="{FA6857D8-A899-4FB7-9598-924B8A8BA2A5}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmRosterSchedule" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="frmEditRoster" Key="{AD1094D6-869A-44EF-9556-81AACEA3CFD1}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmEditRoster" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="AssignPersonnelForm" Key="{F823B676-A644-4F63-8E95-9D5F0A2A5014}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmAssgnPers" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="RosterSetupUtility" Key="{D01C710C-C797-468F-84CD-98BC95CC808E}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RosterSetupUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="RosterSetupUtilityForm_new" Key="{B4E54688-A0FB-4485-951E-63E2C58D05E8}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Roster Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="CalTakS" Key="{2B960EB5-0C52-4481-926C-EB58393E0641}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="CalTakS" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="AssignLayout" Key="{B53DFAC5-E98E-43C1-8B9A-6D78E5B10FD0}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmAssign2Agency" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Assign Layout to Agency Type" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="CTFrameUtilityForm_new" Key="{D2037AEC-7045-4231-86CE-95925C01EFF7}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCTFrameUtility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ExplorerSetupUtility" Key="{FB5A366F-3759-4899-9C55-8DADE67FEDEA}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ExplorerSetupUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ModFyInf" Key="{7182754A-0843-4F2C-900A-6A21FB3C4442}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="ModFyInf" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="GEO Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ModFyInf_new" Key="{78F77E95-305E-4AE7-BCC5-0D3252C562E4}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Explorer Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="WpfProcess" Key="{B96326D3-A4B3-4783-990C-EDB16D1539F7}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="InformCadControlPanel" Key="{BE16CFB0-E9B5-4318-ADB0-B2D4F80CB210}" Description="Inform cad main screen panel">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Inform CAD" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="windowMainHeaderWindow" Key="{FE38D476-E2A4-465D-B6D2-88A7F9619CC3}">
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.General.MainHeaderWindow" Type="5" />
+											</Property>
+											<Property Name="WPFControlOrdinalNo">
+												<Value PropertyType="0" Value="1" Type="0" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="Grid" Key="{AE20FA40-DB8C-425E-B173-49F45DE833C0}">
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Controls.Grid" Type="5" />
+													</Property>
+													<Property Name="WPFControlOrdinalNo">
+														<Value PropertyType="0" Value="1" Type="0" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="MainHeader" Key="{213199B6-4914-40A7-9035-3C3422C96D4F}">
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.General.View.MainHeader" Type="5" />
+															</Property>
+															<Property Name="WPFControlText">
+																<Value PropertyType="0" Value="" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="Grid" Key="{D9A0F6DE-77D5-4517-BF26-6BAACB8528CA}">
+																<Properties>
+																	<Property Name="ClrFullClassName">
+																		<Value PropertyType="0" Value="System.Windows.Controls.Grid" Type="5" />
+																	</Property>
+																	<Property Name="WPFControlOrdinalNo">
+																		<Value PropertyType="0" Value="1" Type="0" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="Grid" Key="{1612EE3B-A336-455B-8349-E6E93DA5B7CC}">
+																		<Properties>
+																			<Property Name="ClrFullClassName">
+																				<Value PropertyType="0" Value="System.Windows.Controls.Grid" Type="5" />
+																			</Property>
+																			<Property Name="WPFControlOrdinalNo">
+																				<Value PropertyType="0" Value="2" Type="0" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="Grid" Key="{794CDC1B-8081-4029-8BE7-EC11B846C037}">
+																				<Properties>
+																					<Property Name="ClrFullClassName">
+																						<Value PropertyType="0" Value="System.Windows.Controls.Grid" Type="5" />
+																					</Property>
+																					<Property Name="WPFControlOrdinalNo">
+																						<Value PropertyType="0" Value="1" Type="0" />
+																					</Property>
+																				</Properties>
+																				<Children>
+																					<Child Name="notificationMainUserControl" Key="{BC3B8030-B837-433A-812D-AA2F9C3A6A4F}">
+																						<Properties>
+																							<Property Name="NativeClrObject.Name">
+																								<Value PropertyType="0" Value="notificationMainUserControl" Type="5" />
+																							</Property>
+																						</Properties>
+																					</Child>
+																				</Children>
+																			</Child>
+																		</Children>
+																	</Child>
+																	<Child Name="Grid2" Key="{A21E698C-D579-44D1-BC46-C6DEB4565215}" ParallelWalk="True">
+																		<Properties>
+																			<Property Name="ClrFullClassName">
+																				<Value PropertyType="0" Value="System.Windows.Controls.Grid" Type="5" />
+																			</Property>
+																			<Property Name="WPFControlOrdinalNo">
+																				<Value PropertyType="0" Value="1" Type="0" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="MainToolBar" Key="{E4515BED-6D7B-47EF-99CB-2B9ED39EA425}" ParallelWalk="True">
+																				<Properties>
+																					<Property Name="Uid">
+																						<Value PropertyType="0" Value="generalViewMainToolBar" Type="5" />
+																					</Property>
+																				</Properties>
+																				<Children>
+																					<Child Name="StackPanel" Key="{D2DABEE6-810D-4F97-9B03-A5EAFD523435}" ParallelWalk="True">
+																						<Properties>
+																							<Property Name="ClrFullClassName">
+																								<Value PropertyType="0" Value="System.Windows.Controls.StackPanel" Type="5" />
+																							</Property>
+																							<Property Name="WPFControlOrdinalNo">
+																								<Value PropertyType="0" Value="1" Type="0" />
+																							</Property>
+																						</Properties>
+																						<Children>
+																							<Child Name="Menu" Key="{C13AA513-0F68-40EF-A07D-A7DD446ACEA5}" ParallelWalk="True">
+																								<Properties>
+																									<Property Name="Uid">
+																										<Value PropertyType="0" Value="menuUtilityButtons" Type="5" />
+																									</Property>
+																								</Properties>
+																							</Child>
+																							<Child Name="Button" Key="{88C0DD6A-8249-4F7E-9410-559918D92163}" ExtendedFind="True" ParallelWalk="True">
+																								<Image FileName="-1715432266" Left="632" Top="34" Right="683" Bottom="85" />
+																								<Properties>
+																									<Property Name="Uid">
+																										<Value PropertyType="0" Value="buttonECT" Type="5" />
+																									</Property>
+																								</Properties>
+																							</Child>
+																						</Children>
+																					</Child>
+																				</Children>
+																			</Child>
+																		</Children>
+																	</Child>
+																</Children>
+															</Child>
+														</Children>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="LoginWindow" Key="{5DAE466D-1030-4ED3-9893-B0C158C34459}">
+								<Properties>
+									<Property Name="RootVisual.ClrClassName">
+										<Value PropertyType="0" Value="LoginWindow" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Login" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="LoginWindow" Key="{929CBC3D-6591-47BF-847F-BFD56459F070}" ParallelWalk="True">
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.Persons.LoginWindow" Type="5" />
+											</Property>
+											<Property Name="WPFControlOrdinalNo">
+												<Value PropertyType="0" Value="1" Type="0" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="Grid" Key="{1E48681C-DDDD-4305-BB3A-DD63198BA77F}" ParallelWalk="True">
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Controls.Grid" Type="5" />
+													</Property>
+													<Property Name="WPFControlOrdinalNo">
+														<Value PropertyType="0" Value="1" Type="0" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="Rectangle" Key="{6A61EB38-C146-4E95-B8BA-77455DCE230B}" ParallelWalk="True">
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="System.Windows.Shapes.Rectangle" Type="5" />
+															</Property>
+															<Property Name="WPFControlOrdinalNo">
+																<Value PropertyType="0" Value="1" Type="0" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="comboBoxPersonnel" Key="{6C4990C9-8997-43AA-A94D-5F3D828EA43D}" ParallelWalk="True">
+														<Properties>
+															<Property Name="NativeClrObject.Name">
+																<Value PropertyType="0" Value="comboBoxPersonnel" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="MessageForm" Key="{3F786F30-6D8B-458C-910D-917A938EFA1C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="MessageForm" Type="5" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="WinFormsObject(&quot;MessageForm&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="QuickMailRoomForm" Key="{0B945FE2-65DF-4D94-90DA-8D817A4EE39A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="QuickMailRoomForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="IncidentSupplementForm" Key="{5028B2C4-CFD2-4437-BD35-C5CCE6BCF6E6}">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Supplemental Information (ID*" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="MailRoomForm" Key="{F6018A60-56E8-4DB3-B3F8-66A070D1D1BC}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="MailRoomForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="DNUnitQueue" Key="{E16580A2-2BB3-4EB2-B5CD-1E68B511D38C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="WPFObject(&quot;HwndSource: windowInfragisticsUnitQueue&quot;)" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="windowInfragisticsUnitQueue" Key="{D142E1B9-BF49-4453-89A7-7BA1CFBB8C72}" ParallelWalk="True">
+										<Image FileName="-1882040638" Left="8" Top="31" Right="809" Bottom="541" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.Queue.View.InfragisticsQueueWindow" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="TabGroupPaneee09255d90d2497f9bcb0fd19bc73904" Key="{8FFA5387-7804-4309-AEBE-189349B981CE}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-1882040638" Left="8" Top="31" Right="793" Bottom="502" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="MultiUnitStatusTabGroup" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="Menu" Key="{D2EC9005-DA48-471D-BEA8-D368BEE4A5FA}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-1882040638" Left="399" Top="62" Right="545" Bottom="79" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="System.Windows.Controls.Menu" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="root" Key="{B9A555A3-38A2-41A4-9B33-E4A4B499AA16}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-1210003789" Left="16" Top="58" Right="785" Bottom="494" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="root" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="Zd936935ae09046bf88299b00fdca382a" Key="{D07D7B13-2886-472D-A9C8-F7EA97862901}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-688834908" Left="8" Top="31" Right="1024" Bottom="485" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="Zd936935ae09046bf88299b00fdca382a" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="Menu" Key="{E9EED217-1D0F-4D93-A40E-7525342C80AE}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-688834908" Left="630" Top="62" Right="776" Bottom="79" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="System.Windows.Controls.Menu" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="TabGroupPanedf02977ea3c44e43a0fd0d87beb1b737" Key="{370465AE-8AF6-43BD-B9AE-902B1EE1EDD2}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="1072591175" Left="8" Top="31" Right="793" Bottom="291" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="TabGroupPanedf02977ea3c44e43a0fd0d87beb1b737" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="ButtonMultiUnitStatusChange" Key="{891C2D86-696E-4365-A909-0399F49B9652}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1072591175" Left="379" Top="61" Right="535" Bottom="80" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="ButtonMultiUnitStatusChange" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="SelectNamesForm" Key="{EA8A3C3B-8EF9-4B3E-8738-AB0A057DF116}" ParallelWalk="True">
+								<Properties>
+									<Property Name="ClrFullClassName">
+										<Value PropertyType="0" Value="TriTech.VisiCAD.App.Mail.SelectNamesForm" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Select Names" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SelectIncidentForm" Key="{810B4DA2-FC2B-4DF3-8CBE-174E9DC068FF}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Select Incident" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="WindowSaveAs" Key="{64E2FA49-26D6-4FED-8E57-16EBD3E8E6D5}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Save As" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="WindowsOpenForm" Key="{A36FB52F-4FC5-45B9-91E0-6CF4845DBC1B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Open" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="InsertHyperlinkAttachmentForm" Key="{0711854F-F341-428B-879D-E606016A89D8}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Attach Hyperlink" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="InsertFileAttachmentForm" Key="{26FD206E-D575-47C8-8ABD-5B12369DAB62}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Attach File" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="MoveFolderForm" Key="{2352926B-2B7E-4A71-A709-D79B30621E70}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Move Message" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="NotificationDetailsWindow" Key="{945C05D3-2A6A-4AD9-885B-D9710CBAB88B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="DetailsWindow" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="WorkSpace" Key="{50012FD4-C754-4ADF-BBB2-60E58770678B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="RootVisual.Name">
+										<Value PropertyType="0" Value="windowWorkspace" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Workspace" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="windowWorkspace" Key="{E4D2D350-F842-45E9-8147-AE81CAC60CD2}" ParallelWalk="True">
+										<Image FileName="711666042" Left="10" Top="33" Right="1447" Bottom="789" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.General.Workspace" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="TabControl" Key="{86FCB10D-99D2-4D31-970C-A49E7DFEC4AE}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="711666042" Left="10" Top="33" Right="1431" Bottom="750" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Controls.TabControl" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="CommitBtn" Key="{CDE9C51A-92D2-400F-B87F-B9A52282B3B1}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="711666042" Left="387" Top="714" Right="484" Bottom="734" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="System.Windows.Controls.Button" Type="5" />
+															</Property>
+															<Property Name="WPFControlText">
+																<Value PropertyType="0" Value="Co_mmit" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="Commit" Key="{E9784859-AE1F-4ADD-8344-E122548871F3}" ExtendedFind="True" ParallelWalk="True">
+																<Image FileName="711666042" Left="387" Top="714" Right="484" Bottom="734" />
+																<Properties>
+																	<Property Name="WPFControlName">
+																		<Value PropertyType="0" Value="StateShade" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="ConfigurationWindow" Key="{F18C83CD-DEB8-41C4-BEBC-C8FDA9175AA0}" ParallelWalk="True">
+								<Children>
+									<Child Name="windowWorkspace" Key="{FF102A9D-82FC-4C4B-94C5-FB9DCF3E7DAD}" ParallelWalk="True">
+										<Image FileName="-79079516" Left="8" Top="31" Right="1449" Bottom="821" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.General.Workspace" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="TabControl" Key="{44CA4457-0767-41BF-8A17-BD0CCA546DD0}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-79079516" Left="8" Top="31" Right="1433" Bottom="782" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Controls.TabControl" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="ButtonCancel" Key="{E8866C44-BF72-4C51-9045-3B0921574E12}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-79079516" Left="567" Top="742" Right="668" Bottom="766" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="System.Windows.Controls.Button" Type="5" />
+															</Property>
+															<Property Name="WPFControlText">
+																<Value PropertyType="0" Value="_Cancel" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="StateShade" Key="{F4B020C7-F34F-4293-89D5-93B2F91DFD94}" ExtendedFind="True" ParallelWalk="True">
+																<Image FileName="-79079516" Left="567" Top="742" Right="668" Bottom="766" />
+																<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+																<Properties>
+																	<Property Name="WPFControlName">
+																		<Value PropertyType="0" Value="StateShade" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
+													<Child Name="ListViewUnits" Key="{AA7C0722-5F00-4F47-AF61-646FF8AAD244}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="914250580" Left="169" Top="118" Right="670" Bottom="735" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="ListViewUnits" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="ListViewItem" Key="{FF97A48D-FD61-4CF5-AD59-2D910790B5FF}" ExtendedFind="True" ParallelWalk="True">
+																<Image FileName="488198560" Left="163" Top="132" Right="799" Bottom="151" />
+																<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+																<Properties>
+																	<Property Name="ClrFullClassName">
+																		<Value PropertyType="0" Value="System.Windows.Controls.ListViewItem" Type="5" />
+																	</Property>
+																	<Property Name="WPFControlText">
+																		<Value PropertyType="0" Value="" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
+													<Child Name="ButtonCoMmit" Key="{A53B6E0E-D2AA-40FE-AB5D-8CC09DF8685A}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="2041379946" Left="457" Top="742" Right="558" Bottom="766" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="System.Windows.Controls.Button" Type="5" />
+															</Property>
+															<Property Name="WPFControlText">
+																<Value PropertyType="0" Value="Co_mmit" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="listBoxDispositions" Key="{AF37B434-D74A-4356-8E64-FC225F1DE1DD}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="255391059" Left="189" Top="137" Right="440" Bottom="288" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="listBoxDispositions" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="CheckboxCallComplete" Key="{36413563-949C-4E78-9EB7-A79359E59A76}" ExtendedFind="True" ParallelWalk="True">
+																<Image FileName="255391059" Left="193" Top="139" Right="418" Bottom="156" />
+																<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+																<Properties>
+																	<Property Name="ClrFullClassName">
+																		<Value PropertyType="0" Value="System.Windows.Controls.CheckBox" Type="5" />
+																	</Property>
+																	<Property Name="WPFControlText">
+																		<Value PropertyType="0" Value=".CALL COMPLETE" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
+													<Child Name="Button" Key="{79B766B9-2CB8-4F95-B5F1-F8DC41F8594D}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-1034609650" Left="316" Top="398" Right="389" Bottom="422" />
+														<Properties>
+															<Property Name="Uid">
+																<Value PropertyType="0" Value="buttonSave" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="NotificationWizardForm" Key="{BBF75E99-237B-4F0C-A2C3-FAA585D1AAA5}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="NotificationWizardForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ConfigurationWindow_new" Key="{FF34BA4D-EA9A-4D4D-B0E9-18E2BFD4E38F}" ParallelWalk="True">
+								<Properties>
+									<Property Name="RootVisual.ClrClassName">
+										<Value PropertyType="0" Value="ConfigurationWindow" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="ConfigurationWindow" Key="{D070FD7D-E56F-4D9B-8D6A-8D68FCB669C9}" ParallelWalk="True">
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.Configuration.ConfigurationWindow" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="SelectIncidentForm_new" Key="{6522C0AB-FEA0-47AC-9BC2-CA551DA30460}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="SelectIncidentForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ReportViewerForm" Key="{DEDB9A72-CE48-46C8-B542-0F0D679539A4}" ParallelWalk="True">
+								<Properties>
+									<Property Name="RootVisual.Name">
+										<Value PropertyType="0" Value="ReportViewer" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SelectNamesForm_new" Key="{DB689797-B154-4B35-89BE-BD8533F106CD}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="SelectNamesForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgExceptionCaptured" Key="{742A0207-7E4F-416C-918B-878780BE7749}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Exception captured" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="dlgWPFprocess1" Key="{05285211-6936-4317-98E6-72B1206B4ADF}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF" Type="5" />
+									</Property>
+									<Filter FilterMode="1" FilterString="6171736F010000000400000072006F006F007400010000000400000072006F006F00740001000000260000007B00370044003400420030004500350030002D0032003500370033002D0034003100360042002D0042003100320034002D004100460035003200380036003100370046004500370034007D00010000000400000072006F006F00740003000000070000006300680069006C0064002000300001000000260000007B00340035003400370038003800370044002D0030004300320044002D0034003400360037002D0042004600450033002D004100310034003500330035003300300034003000460039007D00090000006F007000650072006100740069006F006E000000000001000000070000006300680069006C0064002000310001000000260000007B00340035003400370038003800370044002D0030004300320044002D0034003400360037002D0042004600450033002D004100310034003500330035003300300034003000460039007D0002000000070000006300680069006C0064002000310003000000090000006F007000650072006100740069006F006E00010000000A0000007300740064006F00700065007100750061006C00050000007200690067006800740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D00040000006C0065006600740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D000200000005000000720069006700680074000100000005000000760061006C0075006500010000002000000043006F006E00730074005300740072003A0054007200690054006500630068002E0056006900730069004300410044002E004100700070002E0057005000460000000000040000006C006500660074000100000005000000760061006C007500650001000000140000004400690073007000560061006C00750065003A0057006E006400430061007000740069006F006E0000000000070000006300680069006C0064002000300003000000090000006F007000650072006100740069006F006E00010000000A0000007300740064006F00700065007100750061006C00050000007200690067006800740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D00040000006C0065006600740001000000260000007B00410035003500310045004500430038002D0046003400360032002D0034004400330042002D0039003700300030002D003000410031003700360035003600320030004400380038007D000200000005000000720069006700680074000100000005000000760061006C0075006500010000002000000043006F006E00730074005300740072003A0054007200690054006500630068002E0056006900730069004300410044002E004100700070002E0057005000460000000000040000006C006500660074000100000005000000760061006C007500650001000000140000004400690073007000560061006C00750065003A0057006E006400430061007000740069006F006E0000000000" />
+								</Properties>
+							</Child>
+							<Child Name="CheckNamesForm1" Key="{1126548D-B9F4-4E08-8CAB-E8D39FBBDD40}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="CheckNamesForm" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="DNIncidentQueue1" Key="{6BB56B21-B228-4DAE-9C38-8E2CF06A5906}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="WPFObject(&quot;HwndSource: windowInfragisticsIncidentQueue&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="HwndSource_PopupRoot" Key="{BCE45A03-7961-4E5F-AB81-164A98D93A4C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="WPFObject(&quot;MultiUnitStatusDrpDwnPane&quot;)" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="MultiUnitStatusChangeDropDown" Key="{3A8356EE-4CCE-4040-B4A2-5F30DF35CFA9}" ParallelWalk="True">
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="System.Windows.Controls.Primitives.PopupRoot" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="MultiUnitStatusChangeTabGroup" Key="{7E3FB2EF-A421-4071-9039-B10130D25A66}" ExtendedFind="True" ParallelWalk="True">
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Documents.NonLogicalAdornerDecorator" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="PowerLineForm" Key="{671B8DDE-8452-4A4B-B6F8-EC0D724A734E}" ParallelWalk="True">
+								<Properties>
+									<Property Name="RootVisual.Name">
+										<Value PropertyType="0" Value="PowerlineWindow" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="* PowerLine" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="UctForm" Key="{9B13C0AE-3C1E-4493-A4FA-FB4CF0345CFC}" ParallelWalk="True">
+								<Image FileName="-151150687" Left="2" Top="2" Right="798" Bottom="598" />
+								<Properties>
+									<Property Name="RootVisual.ClrClassName">
+										<Value PropertyType="0" Value="LayoutWindow" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="LayoutWindow" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="Layout" Key="{C3AD0748-78BC-4CCC-A2C6-386EF2572745}" ParallelWalk="True">
+										<Image FileName="-151150687" Left="10" Top="33" Right="807" Bottom="630" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.UCT.View.LayoutWindow" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="BtnSaveExit" Key="{F66C806E-C90D-49D6-A28C-59EA48614937}" ParallelWalk="True">
+												<Image FileName="1264788844" Left="134" Top="533" Right="245" Bottom="553" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Controls.Button" Type="5" />
+													</Property>
+													<Property Name="WPFControlText">
+														<Value PropertyType="0" Value="Save/Exit" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="NatureProblem" Key="{3B17F529-86C8-47C5-A97D-92B955D72579}" ParallelWalk="True">
+												<Image FileName="1264788844" Left="16" Top="281" Right="243" Bottom="298" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="comboboxProblemNature" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="AddressTextBox" Key="{8E3BAC86-5DCC-47B9-A72A-13E1E38AA3B0}" ParallelWalk="True">
+												<Image FileName="-151150687" Left="16" Top="124" Right="243" Bottom="138" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="textboxAddressLocation" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="textboxAddressLocation" Key="{07045234-F59C-40AA-A9DD-699BB14B0A27}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="686650206" Left="16" Top="101" Right="243" Bottom="114" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="textboxAddressLocation" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="EnterAddressBox" Key="{E042FD4C-BD2A-48F9-9B8A-34A0F82D8FA4}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="60670456" Left="16" Top="101" Right="243" Bottom="114" />
+														<Properties>
+															<Property Name="Name">
+																<Value PropertyType="0" Value="WPFObject(&quot;textBoxField&quot;)" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="comboboxProblemNature" Key="{F5818ED6-4EB1-4F66-A7C0-4053B05E3F38}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="1456971869" Left="16" Top="257" Right="243" Bottom="275" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="comboboxProblemNature" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="comboboxCity" Key="{92F8AB1D-AC36-4814-A99F-411F7278A2BB}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-1416447433" Left="14" Top="142" Right="245" Bottom="163" />
+												<TypeInfo Item0="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="comboboxCity" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="ButtonSaveExit" Key="{761CB543-B1C3-41A5-94AD-ADED037CF49A}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="1505141277" Left="134" Top="537" Right="245" Bottom="557" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Controls.Button" Type="5" />
+													</Property>
+													<Property Name="WPFControlText">
+														<Value PropertyType="0" Value="Save/Exit" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="BtnSaveExit" Key="{5BD1DB7C-8C73-4363-86AB-6A59DEC88311}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1505141277" Left="134" Top="537" Right="245" Bottom="557" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="StateShade" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="ProblemNature" Key="{B4A68B38-76BE-465E-B196-EF9A2C4EB60E}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="2076727393" Left="16" Top="283" Right="243" Bottom="300" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="comboboxProblemNatureByCode" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="HwndSource_PopupRoot2" Key="{2067069D-B806-4BB2-9D0B-06FAB645CB6D}" ParallelWalk="True">
+								<Properties>
+									<Property Name="RootVisual.ClrClassName">
+										<Value PropertyType="0" Value="0" Type="0" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="0" Type="0" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="PopupRoot" Key="{54F73D85-89F4-4166-A3AA-18495C268D77}" ParallelWalk="True">
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="System.Windows.Controls.Primitives.PopupRoot" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="NonLogicalAdornerDecorator" Key="{B4BF3A90-4EA0-40F0-A587-C40EA12A031D}" ExtendedFind="True" ParallelWalk="True">
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Documents.NonLogicalAdornerDecorator" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="ComboBoxPopup" Key="{540722A4-544A-48C2-857B-7BD262BB4ECE}" ParallelWalk="True">
+								<Properties>
+									<Property Name="ClrFullClassName">
+										<Value PropertyType="0" Value="System.Windows.Interop.HwndSource" Type="5" />
+									</Property>
+									<Property Name="Enabled">
+										<Value PropertyType="0" Value="True" Type="6" />
+									</Property>
+									<Property Name="Height">
+										<Value PropertyType="0" Value="360" Type="0" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="WPFObject(&quot;HwndSource: PopupRoot&quot;, &quot;&quot;)" Type="5" />
+									</Property>
+									<Property Name="Visible">
+										<Value PropertyType="0" Value="True" Type="6" />
+									</Property>
+									<Property Name="Width">
+										<Value PropertyType="0" Value="230" Type="0" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="PopUpRoot" Key="{ED336D72-36AA-4E2F-9E33-2C9EC398CBD9}" ParallelWalk="True">
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="System.Windows.Controls.Primitives.PopupRoot" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ProblemNatureDrpDwn" Key="{88CD737C-C730-483F-912E-E9A891B68348}" ExtendedFind="True" ParallelWalk="True">
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Documents.NonLogicalAdornerDecorator" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="ModalWndDialog" Key="{866C73FE-87D7-4497-A04A-369834194044}" ParallelWalk="True">
+								<Image FileName="212922141" Left="2" Top="2" Right="673" Bottom="243" />
+								<Properties>
+									<Property Name="RootVisual.ClrClassName">
+										<Value PropertyType="0" Value="PopupRoot" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="PopupRoot" Key="{C986DD40-BD87-4E6E-8350-60150EDC6D42}" ParallelWalk="True">
+										<Image FileName="212922141" Left="2" Top="2" Right="674" Bottom="243" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="System.Windows.Controls.Primitives.PopupRoot" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ReasonDrpDwn" Key="{85F4A87D-C44F-41B8-ADF2-3C6074AD770B}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="212922141" Left="24" Top="128" Right="651" Bottom="164" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="ReasonsControl" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="SaveButton" Key="{1910F6A3-7734-4B62-BF66-23264FD5FF90}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="359063588" Left="417" Top="189" Right="527" Bottom="221" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="SaveButton" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="SaveBtn" Key="{887BCC8B-A46C-466B-B31C-2FADC7CE729D}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="359063588" Left="417" Top="189" Right="527" Bottom="221" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="StateShade" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="Statnmgr" Key="{2F9DD931-70B0-412E-AF15-DF008C053548}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="Statnmgr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="frmStatnMgr" Key="{A7EDCA6F-B79D-4988-9587-61CD0A5B4B91}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmStatnMgr" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ReportSnapShot" Key="{55F7633D-0444-4D04-9BEA-7DCD689E657F}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="SnapShot" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="SnapShotReportForm" Key="{7A81279F-F887-4211-8CF5-73D7F38490EE}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Snapshot Report" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SnapShotDetailForm" Key="{82B72C4E-3655-4A41-8F52-ABF733BE324A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="SnapShot" Type="5" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="VBObject(&quot;frmSSDetail&quot;)" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="HydrantManagerWindow" Key="{AFDAAB44-C6D3-4855-9404-4E2542CA5CDC}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="MkHydrnt" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="HydrantManagerForm" Key="{69B64A13-DE4E-4355-AA80-76A6F7160690}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Hydrant Manager" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ControlDispatchSetup" Key="{731AC364-47C0-48A6-A217-094F2AC7C66A}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="CtrlDispatchSetup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ControllingDispatcherSetupForm" Key="{38ED9261-0D71-497E-9F7B-F2554C5D42E3}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Controlling Dispatcher Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PasswordSecurityAssignmentManagerWnd" Key="{F885AB99-BBAD-4E0C-AE55-DD84EC59ACC5}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="PswdUtil" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="FormPasswordSecurityAssignmentManager" Key="{39E84728-0AED-4DDE-A900-A2DB18CE838A}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Password/Security Assignment Manager" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PopupListUtility" Key="{E0539B29-AB1E-4AD6-8751-9F78EC056AD4}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ListUtil" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="PopupListUtilityForm" Key="{178266F3-C5B4-4542-A848-C1BC4D05DAC9}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="ListUtil" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PriorityBuilder" Key="{D1939327-B60F-4EBC-A2DE-B42DE50B5CCE}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="PriBldr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="riorityBuilderWnd" Key="{785CF6AC-4544-4BCE-93D8-84B73FFA3B23}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Priority Builder" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="RotationOrderUtility" Key="{31E33728-5672-4718-9D58-B97B17E8A2A8}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RotationOrderUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="RotationOrderForm" Key="{A0B19C1D-58EA-4899-8343-498FC963EAC4}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Rotation Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="RotationProviderReport" Key="{17B0B2AB-0575-4977-97DE-46B3428F30A2}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RotationProviderReport" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="RotationProviderReportForm" Key="{AE562C0A-C06B-40B5-A28C-56DCBBC9E21B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Rotation Provider Report" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PublicHolidays" Key="{9BF1005E-B5C9-42ED-A419-B72817C75B56}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="PublicHolidays" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="PublicHolidaysWnd" Key="{43FC23A2-68B1-41C0-811B-D47BFF401400}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Public Holiday Module" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="ProtocolUtilityWnd" Key="{54AD2633-01C7-4EF5-ABDF-7A82BDF32930}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="CISMgr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="FormProtocolUtility" Key="{2254491B-B962-49DB-8BF8-A3B98BDE0D30}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="CIS" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Protocol Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="FailBranchListingForm" Key="{EBE6E040-C544-4CFE-994C-05E6D21B5D6C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Fail Branch Listing" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="SearchForm" Key="{C357CC96-B56D-4D95-888B-E0474237652C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Search Caller Instruction" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="ProtocolUtilityDispatcherInstructionSearchForm" Key="{694BA133-877A-4E77-8A07-AF808C339BC1}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Search Dispatcher Instruction" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="RotationProviderUtility" Key="{153BBCD4-27B7-482F-81A6-27A60E851C18}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RotationProviderUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="RotationProviderUtilityForm" Key="{0221FF7F-BBAA-45AB-AE4F-C8D978E8BBB3}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Rotation Provider Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="RosterShiftBuilder" Key="{EE07A64E-3B7E-427C-801F-0946845BC484}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RosterShiftBuilder" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="RosterShiftBuilderWnd" Key="{CDBBAEF5-DB24-450C-9AB1-4FC5C9CA8F63}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmRosterShiftBuilder" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Roster Template Builder" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="MessageAuditUtility" Key="{DDB6A3B6-FD69-4BDC-8DA5-64D01848CD43}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="MessageAuditUtility" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="MsgAuditUtilForm" Key="{2AFA009A-1D71-44C6-989B-F673577EE233}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Message Audit Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="CardFile" Key="{E21C8339-E3D0-4928-A8DE-0CC06C65384D}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="CardFile" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="frmRolodexBuilder" Key="{3BA3CABC-F400-41CB-98EF-F7F5855E02B6}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmRolodexBuilder" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="VehicleManagerWindow_new" Key="{A6EF36DF-A55A-4C39-8934-D8EC930A8AD7}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="UnitMgr" Type="5" />
+							</Property>
+							<Property Name="Name">
+								<Value PropertyType="0" Value="Process(&quot;UnitMgr&quot;)" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="VehicleManagerForm" Key="{3C244194-54B2-4BF1-9D6F-259C836350CA}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Vehicle Manager" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="PermissionSecurityMgr" Key="{201726C2-1413-4F73-8CE6-F83C81E8DB06}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="ModSecur" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="ModSecur" Key="{8C73F2DB-0E60-4877-A33D-FF26CE5FD5C0}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="ModSecur" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="StreetAlias" Key="{2849C1A4-DBCE-4A2C-8CA4-A38E77285B2A}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="StreetAlias" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="frmStreetAlias" Key="{84A85486-BF8A-414A-8EC4-474FC65583CC}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmStreetAlias" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="OfflineIncidentEntry" Key="{EC55C47D-623B-4AC4-BDC4-67C5698E4812}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="OfflineIncidentEntry" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="IncidentEntryWnd" Key="{82A4241B-796D-4DE1-A8E0-06F8BA5CA8E7}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmIncidentEntry" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Off-Line Incident Entry" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="UnableToSaveCall" Key="{18EFE330-A706-43A7-9E36-F2E9F0289179}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Unable to Save Call" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="IHsetup" Key="{AC76E20F-DE07-4993-84B1-AFBBCE8BFD78}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="IHsetup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="LoginForm" Key="{DF900BBF-1D74-41D6-A81F-3D99D7620651}" ParallelWalk="True">
+								<Properties>
+									<Property Name="Caption">
+										<Value PropertyType="0" Value="InHouse Setup Login" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="SSM_Planner" Key="{F205230D-81A5-40CF-B3F3-3A72FE2246ED}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="SSM_Bldr" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="SSMPlannerWindow" Key="{6140D953-22F6-4DED-95FC-23379757E8C2}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="SSMPlanner" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="Commandsetup" Key="{080839AA-03AC-424B-B12F-370533AA0CED}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="Commandsetup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="PowerLineCommandSetupUtility" Key="{83DC95B6-41CF-4F60-A0F7-E27CFCAC6D1B}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeVBObject.Name">
+										<Value PropertyType="0" Value="frmCommandSetup" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="NumberSetUpUtility" Key="{4FDF59FD-7006-42B7-9B70-885FBCAAB652}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="Incdstup" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="NumberSetUpWnd" Key="{2BB5B01D-CCC5-4C95-97D4-DEC1F677A158}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Number Setup Utility" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="VMLaunch" Key="{DE4A5851-5509-4CB4-845B-D04B073F8E51}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="VMLaunch" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="MobileUpdateNotification" Key="{90C1DB9E-6017-489B-BF77-E71ABA2F12A4}" ParallelWalk="True">
+								<Properties>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Inform Mobile Update" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+				</Children>
+			</Child>
+		</Children>
+	</Nodes>
+	<LogicalNodes Name="Aliases" Owner="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
+		<Child Name="InformCadProc" Owner="{CF61D365-B3BA-41E8-9FA8-1D4BE9CD730A}">
+			<Child Name="EctForm" Owner="{85A641B5-EBF5-445F-88A5-A855C84A8D21}" />
+			<Child Name="GeoLocatorForm" Owner="{F480187B-59CB-4651-AD0F-4D765B6B5414}" />
+			<Child Name="ReasonForPriorityIncOrDec" Owner="{AF9CC545-40C0-4641-964E-50864FC59CD3}" />
+			<Child Name="UnitInfoFormold" Owner="{831087D3-7B4F-4087-99C6-0F167B1DF397}" />
+			<Child Name="PowerLineSearchWindow" Owner="{A30F7257-6805-4C6A-9C93-6CF58D16A705}" />
+			<Child Name="UnitInfoForm" Owner="{9D75D693-CB1D-4866-8523-435BC5018EAA}" />
+			<Child Name="ViewControllerForm" Owner="{2EE43C04-8A8F-41BE-AAAB-7758DF1A8576}" />
+			<Child Name="ResponseReconfig_Incident" Owner="{B42CFB59-394A-49FB-AECA-4F78611FC2E7}" />
+			<Child Name="dlgMissingFile" Owner="{FB360E06-7D3F-461A-963B-2CFBBD6EDE08}" />
+			<Child Name="AddtionalCapabiScreen" Owner="{5B917965-D982-45F9-AA7C-27B37115B5A2}" />
+			<Child Name="AdditionalResourceScreen" Owner="{D38C0677-72D4-4700-91C2-B97084031C99}" />
+			<Child Name="OffDutyScreen" Owner="{24A7798E-3E14-4A5E-B17B-A38B57CC6881}" />
+			<Child Name="IncidentViewerForm" Owner="{3A205465-FDF5-4F6D-A156-326A07464797}" />
+			<Child Name="IncidentSupplementForm" Owner="{5028B2C4-CFD2-4437-BD35-C5CCE6BCF6E6}" />
+			<Child Name="ReassignCallForm" Owner="{FD7C1DEC-E7E2-413C-8BED-42A04DB38F5D}" />
+			<Child Name="DuplicateCallWarningForm" Owner="{2DA97BB0-86FC-4F5B-BAF8-A09FF0148241}" />
+			<Child Name="ResponseClosingForm" Owner="{0BE45E96-3931-47DC-9A51-CFB2B43A794D}" />
+			<Child Name="InititalAssign" Owner="{4FFA71AB-337F-49EA-A43B-4373D2512E84}">
+				<Child Name="pnlUpper" Owner="{BEC4FDF6-5702-494E-A444-EA55379E563F}">
+					<Child Name="spnAlarm" Owner="{CECAC8D4-C801-45D1-8BD3-9FD168431989}" />
+				</Child>
+			</Child>
+			<Child Name="CaseNumberWindow" Owner="{526B84A8-2D26-4622-9DF1-34DC4C81027B}" />
+			<Child Name="frmResponseAreaSelector" Owner="{CF378E34-5310-431C-933F-63F579385A2B}" />
+			<Child Name="NotificationDetailsWindow" Owner="{945C05D3-2A6A-4AD9-885B-D9710CBAB88B}" />
+			<Child Name="GreaterAlaramWndow" Owner="{37D6D5BB-B537-461B-85C4-BEFEA5E262BD}" />
+			<Child Name="QuickMailRoomForm" Owner="{0B945FE2-65DF-4D94-90DA-8D817A4EE39A}" />
+			<Child Name="MailRoomForm" Owner="{F6018A60-56E8-4DB3-B3F8-66A070D1D1BC}" />
+			<Child Name="ConfigurationWindow" Owner="{F18C83CD-DEB8-41C4-BEBC-C8FDA9175AA0}">
+				<Child Name="windowWorkspace" Owner="{FF102A9D-82FC-4C4B-94C5-FB9DCF3E7DAD}">
+					<Child Name="TabControl" Owner="{44CA4457-0767-41BF-8A17-BD0CCA546DD0}">
+						<Child Name="ButtonCancel" Owner="{E8866C44-BF72-4C51-9045-3B0921574E12}">
+							<Child Name="StateShade" Owner="{F4B020C7-F34F-4293-89D5-93B2F91DFD94}" />
+						</Child>
+						<Child Name="ListViewUnits" Owner="{AA7C0722-5F00-4F47-AF61-646FF8AAD244}">
+							<Child Name="ListViewItem" Owner="{FF97A48D-FD61-4CF5-AD59-2D910790B5FF}" />
+						</Child>
+						<Child Name="ButtonCoMmit" Owner="{A53B6E0E-D2AA-40FE-AB5D-8CC09DF8685A}" />
+						<Child Name="listBoxDispositions" Owner="{AF37B434-D74A-4356-8E64-FC225F1DE1DD}">
+							<Child Name="CheckboxCallComplete" Owner="{36413563-949C-4E78-9EB7-A79359E59A76}" />
+						</Child>
+						<Child Name="Button" Owner="{79B766B9-2CB8-4F95-B5F1-F8DC41F8594D}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="AddAgencyAssignmentForm" Owner="{55AC405C-A5C0-4AC4-90E7-112117B69F8C}" />
+			<Child Name="MessageForm" Owner="{3F786F30-6D8B-458C-910D-917A938EFA1C}" />
+			<Child Name="dlgWpfProcess" Owner="{F270D473-232C-46E4-8332-2B5BA831A9E5}" />
+			<Child Name="ExceptionCaptured" Owner="{AFDD4A48-ACF7-4B03-8614-34543B6DE2EF}" />
+			<Child Name="SelectNamesForm" Owner="{EA8A3C3B-8EF9-4B3E-8738-AB0A057DF116}" />
+			<Child Name="SelectIncidentForm" Owner="{810B4DA2-FC2B-4DF3-8CBE-174E9DC068FF}" />
+			<Child Name="ResponsePageGroup" Owner="{8175958D-AA4A-4A66-8799-F9651F77CD5E}" />
+			<Child Name="ReturnTripCancellationPopUp" Owner="{E65F174A-F837-4A24-8043-3C3443B959CE}" />
+			<Child Name="InsertFileAttachmentForm" Owner="{26FD206E-D575-47C8-8ABD-5B12369DAB62}" />
+			<Child Name="WindowsOpenForm" Owner="{A36FB52F-4FC5-45B9-91E0-6CF4845DBC1B}" />
+			<Child Name="MoveFolderForm" Owner="{2352926B-2B7E-4A71-A709-D79B30621E70}" />
+			<Child Name="UnitSelectorForm" Owner="{0B57ABA6-ACA2-47A6-B7B4-2CBD7611E2DD}" />
+			<Child Name="WindowSaveAs" Owner="{64E2FA49-26D6-4FED-8E57-16EBD3E8E6D5}" />
+			<Child Name="InsertHyperlinkAttachmentForm" Owner="{0711854F-F341-428B-879D-E606016A89D8}" />
+			<Child Name="Paging" Owner="{857DB049-0D06-4A5D-978C-393BF92B5E24}" />
+			<Child Name="PermitSummary" Owner="{B39A57CE-46D3-4EE3-AB3F-6CB1D186FFD0}" />
+			<Child Name="SelectPremise" Owner="{BD0408BB-DE8F-4769-8994-0E36611216A1}" />
+			<Child Name="CheckNamesForm" Owner="{8F2BB776-6281-4C8C-9675-3DEDCE9ADFB8}" />
+			<Child Name="CommonFunctionSniffer" Owner="{27A2843B-C3BD-4335-8BA1-053748A1D350}" />
+			<Child Name="ReportViewerForm" Owner="{ABDC6B44-1BFE-4004-BCA9-8D82C049220D}" />
+			<Child Name="dlgRemovePatient" Owner="{D1D88BB2-F72D-4E83-8813-6752BB8A4B15}" />
+			<Child Name="SecondaryLocationInfoWnd" Owner="{B766190E-C45A-4EB0-B39B-57ABC9FB40F1}" />
+			<Child Name="UpdateAddressInformation" Owner="{D8C57FCB-4D84-41E0-BB82-2E57E727C33C}" />
+			<Child Name="AddressVerificationOverrideDlg" Owner="{CF50E9C0-A602-42FA-A8C3-AB91025566A1}" />
+			<Child Name="RecurringTripsCancellation" Owner="{7AE7D882-3AC9-4F6C-A6F7-E8C8E957FF0D}" />
+			<Child Name="RotationServiceRequestForm" Owner="{94BD278E-2B0D-46EC-B7E6-819FF0AAE917}" />
+			<Child Name="ExceptionReportingForm" Owner="{6DFE02B5-C384-4EC9-877F-A975D7131066}" />
+			<Child Name="DispatchLevelWnd" Owner="{9D725C68-5DC0-4E55-B7A8-402902452108}" />
+			<Child Name="OOSWnd" Owner="{3E9584BA-F04D-4C7B-9CEF-3434019FF76A}" />
+			<Child Name="dlgMobile" Owner="{B7D126BF-AB0F-497B-BC36-9F7BCEB3D1DF}" />
+			<Child Name="frmCallSelection" Owner="{8BF62209-AA3E-4C50-B53E-FE3CA0CA385E}">
+				<Child Name="picCallSelection" Owner="{60096C98-9D4E-41FF-9EDD-31FDB3AF7BBD}" />
+			</Child>
+			<Child Name="InformCadControlPanel" Owner="{BE16CFB0-E9B5-4318-ADB0-B2D4F80CB210}">
+				<Child Name="windowMainHeaderWindow" Owner="{FE38D476-E2A4-465D-B6D2-88A7F9619CC3}" />
+			</Child>
+		</Child>
+		<Child Name="PowerLineProc" Owner="{F667EAAB-141B-45B5-B648-9CDB150F2B2A}">
+			<Child Name="PowerLineForm" Owner="{64D50430-2439-43C5-B4C8-27D4B55D3E53}" />
+		</Child>
+		<Child Name="ClsClassProc" Owner="{2821619F-577C-4F14-96C2-ADCEFD3AEAB3}">
+			<Child Name="ProtoColEmergencyWindow" Owner="{C9701F9D-26C5-4259-A939-398516F3C32C}" />
+			<Child Name="ExitProtocolDlg" Owner="{65CC1494-9D31-45D5-9CC6-57C91445D494}" />
+			<Child Name="ProtocolSummary" Owner="{EB82F5A3-A155-4484-8EBE-94A500F85562}" />
+		</Child>
+		<Child Name="ProcVisicad" Owner="{3B5CC858-666A-4599-860B-46A6A5A0D2A9}">
+			<Child Name="SelectStation" Owner="{1719530F-EB77-4601-A3C4-8ACC05C8F3EF}" />
+			<Child Name="DepartSceneForm" Owner="{6500B796-E1FC-4B47-A5E8-B76ECF9AA647}" />
+			<Child Name="TransportDestinationWindow" Owner="{1518BA5B-16D3-48D7-9181-88F3FC980EF2}" />
+			<Child Name="PriorityWindow" Owner="{5B682E27-0081-406F-AF57-8F2165BE4C0E}" />
+			<Child Name="GeoLocatorWnd" Owner="{A9F756C7-FE06-4EDA-9E10-894D7CC87000}" />
+			<Child Name="frmActiveQ" Owner="{88E94F20-7166-41A8-B8CB-8778ECF09E94}">
+				<Child Name="picItems" Owner="{0E9A1D31-9932-465E-A0DC-C02CA0C28E91}" />
+			</Child>
+			<Child Name="FormToolsLauncher" Owner="{7CB4C80D-99B2-4ECD-8947-B217E36F94E5}" />
+			<Child Name="ReportsLauncherForm" Owner="{F01094A4-6F76-4C09-AB5C-B4896CD33FCF}" />
+		</Child>
+		<Child Name="EDITMGR" Owner="{EBB6B4BD-CF88-4A4F-9ADB-DB4B969973E4}">
+			<Child Name="IncidentEditorForm" Owner="{57C41DE3-21C3-4B2B-AB3B-42422802C54A}" />
+			<Child Name="ReOpenCommentDialog" Owner="{27377930-5C08-4E50-8880-5AC4E2A54479}" />
+			<Child Name="ReasonReopenIncidentForm" Owner="{0EB47985-D7C0-4C2C-B635-8160866C695D}" />
+			<Child Name="SearchIncident" Owner="{97F8974F-7533-4D1E-9581-161CEB941706}" />
+		</Child>
+		<Child Name="explorer" Owner="{5E203B47-2C18-4469-A5C1-A4134DA8EABA}">
+			<Child Name="wndShell_TrayWnd" Owner="{C19D8731-3542-4AD1-8E1D-96605946DC74}">
+				<Child Name="ReBarWindow32" Owner="{F4AB2352-9B2C-41A0-9B0B-8BB7D468F837}">
+					<Child Name="MSTaskSwWClass" Owner="{88541850-BD7C-4DA9-A492-C6E49398741F}">
+						<Child Name="MSTaskListWClass" Owner="{413C3F1F-A206-4FD7-B33B-B31E1F012801}" />
+					</Child>
+				</Child>
+			</Child>
+		</Child>
+		<Child Name="BOLO" Owner="{BD64D364-495D-4130-BDDF-EE4132DA04EF}">
+			<Child Name="BOLOEntryForm" Owner="{B6C0352B-BCD1-4E1C-A096-3BBC73B99DB2}" />
+			<Child Name="BOLOSearchForm" Owner="{626D0BDE-BA9A-49AC-A418-1AC0EEC106C0}" />
+			<Child Name="BOLOSearchResults" Owner="{E0DE3C93-7BD1-4858-B8EE-C02486176807}" />
+		</Child>
+		<Child Name="ScheduleCallTaking" Owner="{CCB33933-4316-4BCC-A152-557828C8CB61}">
+			<Child Name="FormPatientSearch" Owner="{F318062B-6FCC-45FD-AA3F-AE8F64F2F758}" />
+			<Child Name="windowScheduledCallTaking" Owner="{678CC3A8-7E98-44E6-9041-7AD0CE1776C5}" />
+			<Child Name="GeoLocator" Owner="{25906678-C0E9-45C4-8BDC-A6784F5AE726}" />
+			<Child Name="dlgConfirmationWnd" Owner="{B3A8A011-A252-4594-95AF-F160E6110103}" />
+			<Child Name="AdditionalLegsForm" Owner="{E5B1B7A8-70F9-4EBD-9EDC-14929E512923}" />
+			<Child Name="PopUpReturnTripCreated" Owner="{84C05777-2613-46F4-B8D0-FB77AD6CBDDC}" />
+			<Child Name="PopUpUnSavedTripInformation" Owner="{6BC803BE-AA9C-4F85-AF9E-A363E1368097}" />
+			<Child Name="PopUpPatientInformation" Owner="{BB9F7413-EC58-4366-872B-18E3EC04CA64}" />
+			<Child Name="MultiTripBookingForm" Owner="{F715CA24-F033-4903-8951-79BC18C00A33}" />
+			<Child Name="frmQuickPage" Owner="{155DA1A5-ECAD-4D46-B370-478CEDA9DF16}" />
+			<Child Name="dlgDateWarning" Owner="{0DF80BEA-F6FD-4D7C-B9E0-B7F55C0F2659}" />
+		</Child>
+		<Child Name="CautionNoteUtility" Owner="{1B736C49-BA92-48AF-B540-0704FA8C89DF}">
+			<Child Name="CautionNoteWindow" Owner="{B0BE485A-90E3-4BF4-84D3-4AAEAE561E9B}" />
+			<Child Name="GeoLocatorForm" Owner="{45FCEE70-B660-475B-9EAE-92D62D9697A0}" />
+			<Child Name="FormCaution" Owner="{F49952D1-7096-4FC8-93BC-5CAFA748CA90}" />
+			<Child Name="dlgCautionNote" Owner="{D724BB9B-477D-413E-B9A5-D1570EC1B5D0}" />
+			<Child Name="PermitEntry" Owner="{3FA1E590-5FE9-4D4F-850F-1675F65A3A29}" />
+			<Child Name="dlgBlockRange" Owner="{F032A1EA-754D-4BCB-80CF-918C8CB9E45C}" />
+			<Child Name="frmResponseAreaSelector" Owner="{21BE40FB-CFD1-4158-BDEC-BCE4743B1179}" />
+		</Child>
+		<Child Name="TriTech_Launch" Owner="{A8E4D98C-C1CF-4677-87F0-DF9ED731378E}">
+			<Child Name="dlgCantSyncronize" Owner="{6EC9885C-5295-4C9E-BD95-18CDFEB87F79}">
+				<Child Name="btnYes" Owner="{1AFEE257-2D46-4707-B206-4A53C80793BD}" />
+			</Child>
+			<Child Name="dlgUnableToContinue" Owner="{7C6F9EED-26C3-4479-9FBD-CFF01885CF74}">
+				<Child Name="btnOK" Owner="{36D5C0D5-EE78-4922-9E87-2C6B15B2FCF6}" />
+			</Child>
+		</Child>
+		<Child Name="QCExplorer" Owner="{BCEDBC7D-9EF1-4833-A7D6-F15E6A563293}">
+			<Child Name="wndApplication" Owner="{E3ABA461-3E8C-42E0-AB85-655EF7BC3D86}" />
+		</Child>
+		<Child Name="VisiNetMap" Owner="{076F8EF9-4F4D-4292-958E-36A034202DE7}">
+			<Child Name="VisiNetMapMainMDIForm" Owner="{F66298DC-9E93-4DF0-89A9-9525A8677CDE}" />
+		</Child>
+		<Child Name="MultiAgencyProblemUtilityProc" Owner="{F2E36A7F-AF43-47D7-A9D9-70E32BE256D4}">
+			<Child Name="MAProbForm" Owner="{9A870297-71A6-4C8C-8579-166FC28120B8}">
+				<Child Name="CrossReferenceTab" Owner="{F1AAA95F-6286-4B8F-BC52-C7488AC6057E}" />
+			</Child>
+			<Child Name="HierarchyCrossReferenceForm" Owner="{F7FD19ED-0646-4F08-955B-551B03503E09}" />
+			<Child Name="dlgMultiAgencyProblemUtility" Owner="{4DF79C53-8450-4F30-AD0E-64F25069B181}" />
+		</Child>
+		<Child Name="ModfySysInfo" Owner="{F47A7D30-FC69-41BE-9EFD-B97B6A084810}">
+			<Child Name="ModifysystemInfo" Owner="{2D8D7979-4284-453E-90D5-014F18DBBE2D}" />
+		</Child>
+		<Child Name="RecordsCheck" Owner="{DFD9B462-E087-45B6-B52B-D85B06882FFE}">
+			<Child Name="InquiryResults" Owner="{FEBC266F-9525-4D66-A137-940B79419494}" />
+			<Child Name="dlgRecordsCheck" Owner="{9B9D5889-BC43-49ED-BBC6-AEC2C46FA6FF}" />
+			<Child Name="RecordsCheckForm" Owner="{62AB450F-92F0-4B74-8EA9-09FAFC691D7F}" />
+		</Child>
+		<Child Name="VMClient" Owner="{3EE25958-BDF4-4F2C-AB66-CA2879EFB9C7}">
+			<Child Name="VMForm" Owner="{18306B99-55FB-4CC7-8224-E5AD50E4FF5A}">
+				<Child Name="MdiClient" Owner="{53A1F987-EBCA-4368-AD03-9EA4AF39E737}" />
+			</Child>
+		</Child>
+		<Child Name="ResponsePlanManager" Owner="{77141375-AC93-4844-946A-38425FAC5CC3}">
+			<Child Name="ResponsePlanManagerWnd" Owner="{1E136AD6-4685-489B-ABA2-892BF4F9D92B}" />
+		</Child>
+		<Child Name="ColumnSetup" Owner="{31AE2B0D-8F3D-480C-96C2-36B341DA5C3C}">
+			<Child Name="ColumnSetupForm" Owner="{E80A5473-1840-4AF0-912F-1867769C8DEF}" />
+		</Child>
+		<Child Name="OutofServiceRMProc" Owner="{60F98243-AD8E-4388-96EC-3CB38032F4B9}">
+			<Child Name="OutofServiceRM" Owner="{1E81A098-E1B7-4979-9DA5-FC12520CF600}" />
+		</Child>
+		<Child Name="ActivityLogViewer" Owner="{F84F588A-82A5-4121-8511-4EBA70A1B735}">
+			<Child Name="ActivityLogViewerWnd" Owner="{3795BEA6-7990-4A43-BE02-93E5F1A545BD}" />
+		</Child>
+		<Child Name="MessageSetUpUtility" Owner="{759ECBF7-FEE1-4D18-94CB-26AE3B5F81C2}">
+			<Child Name="FormMessageSetUpUtility" Owner="{E320A4BB-D9E2-4C96-8618-5724F053D57A}" />
+		</Child>
+		<Child Name="PremiseUtility" Owner="{F254B840-CC87-48C4-81ED-658E0016A97D}">
+			<Child Name="PremiseForm" Owner="{BF89A8F2-FD66-4EDF-9608-6560A06E6D40}" />
+			<Child Name="ResponsePlanForm" Owner="{F2717C5E-5B29-491C-A1B0-F27C52BE458B}" />
+			<Child Name="frmAddDialog" Owner="{9C6F4220-170C-42B1-A5D0-B86B35B88ED1}" />
+			<Child Name="SearchPremiseWnd" Owner="{D51E37F4-2180-4163-B2E3-2AAF3D6AD4E7}" />
+			<Child Name="GeoLocatorWnd" Owner="{2FF2ABDC-C187-4650-866D-370B7BF226AB}" />
+			<Child Name="ResponseAreaSelector" Owner="{D46C3754-C8AA-4D5B-AB9D-80E9852CF742}" />
+		</Child>
+		<Child Name="ResponseGroupPaging" Owner="{BB1DF448-3617-48C3-847C-97095046F81F}">
+			<Child Name="ResponseGroupPagingSetUpUtility" Owner="{F0F8E072-DB73-4BCE-A006-409C2DAFC364}" />
+		</Child>
+		<Child Name="ResponseAreaBuilderProc" Owner="{11A22D72-9479-4ACA-80FB-9A8CA05D6120}">
+			<Child Name="ResponseAreaBuilder" Owner="{5DA0DDB1-A1DD-4B5B-858F-CC2156E27AE3}" />
+		</Child>
+		<Child Name="ProblemUtilityProc" Owner="{A956A7ED-C0FA-4F96-8F4D-FE3EB6936CF3}">
+			<Child Name="ProblemUtility" Owner="{FFC338BD-5387-4D74-950A-10C093091D13}" />
+		</Child>
+		<Child Name="PagingUtilsWindow" Owner="{7CE7653A-4FF5-4177-86A8-AFA651F7989B}">
+			<Child Name="PagingAndDailingSetUpForm" Owner="{36FEBF0F-2852-4566-AF28-B64673E3192B}" />
+		</Child>
+		<Child Name="DispatchRuleSetupUtility" Owner="{2C362BCE-5E64-488F-A1A7-5B88E5B1CB0B}">
+			<Child Name="DispatchRuleSetupUtilityWnd" Owner="{F08B03F6-0011-4B13-8F01-6C9A36787195}" />
+		</Child>
+		<Child Name="CommandLine" Owner="{8B61C50F-08EF-4911-87FD-EED2708EE5F6}" />
+		<Child Name="SCTScreenConfigWnd" Owner="{B67DAC19-58DC-4994-87E3-9E0DAD746FA2}">
+			<Child Name="SCTScreenConfigurationForm" Owner="{B5B275F6-AA08-499E-84A8-43713DE9AEC3}" />
+			<Child Name="PopUpSaveChanges" Owner="{7B8CB095-F172-4864-B672-7A432B31D276}" />
+		</Child>
+		<Child Name="PersonnelManagerProc" Owner="{46399DBD-23BB-4296-80D2-95D68DBC240F}">
+			<Child Name="PersonnelManagerForm" Owner="{3706CE83-C189-4691-9634-8E67B88F71F9}" />
+		</Child>
+		<Child Name="FacilityStatus" Owner="{895EFEE0-9D7B-4062-9E5B-B4D74F86786D}">
+			<Child Name="FacilityStatusForm" Owner="{365626F5-CD2E-4383-A594-87A6EF3A6903}" />
+			<Child Name="GeoLocatorForm" Owner="{C29EB901-F568-40CA-8C9B-0651733C9D13}" />
+		</Child>
+		<Child Name="browser" Owner="{D82D434B-2D7F-4970-9D03-F21A9CC61D28}">
+			<Child Name="LoginPage" Owner="{5AFF4506-DBCA-431F-A685-FA1E2D1387D2}" />
+			<Child Name="UnitQueue" Owner="{3B29EC1A-7077-4C43-9E7E-CEC4E1CAA604}" />
+			<Child Name="Search" Owner="{F13A3DDD-D6DA-44FC-A19D-914286F34E75}" />
+		</Child>
+		<Child Name="StatusSetupWnd" Owner="{933231A9-6E8A-4C2F-907C-BC24F6DE3BD0}">
+			<Child Name="StatusSetup" Owner="{B4125D21-FE08-44A3-83A9-8C2DAFED853A}" />
+		</Child>
+		<Child Name="StreetFinderSetup" Owner="{ACBB398B-7553-4EC7-9584-E7E014522752}">
+			<Child Name="frmStreetFinderSetup" Owner="{91B43253-3D2F-40D0-B19E-732955AD087C}" />
+		</Child>
+		<Child Name="TimerAndWarningSetUpUtilityWnd" Owner="{0ECAAE9D-C6A7-43FB-ABF5-21E8158BEF19}">
+			<Child Name="TimerAndWarningSetUpUtilityForm" Owner="{1B51A4F4-7AA8-44A8-B187-C3047E10E36A}" />
+		</Child>
+		<Child Name="UnitCrossStaff" Owner="{53A14E69-EA5E-42A3-B788-D6556D22069A}">
+			<Child Name="UnitCrossStaffingUtilityForm" Owner="{9D3E47D2-8E24-4376-8422-2EAB1AD94A04}" />
+		</Child>
+		<Child Name="ROSTER" Owner="{57C207D9-6E19-452B-B1C3-90DE35CA55C8}">
+			<Child Name="RosterScheduleForm" Owner="{FA6857D8-A899-4FB7-9598-924B8A8BA2A5}" />
+			<Child Name="ShiftInformationForm" Owner="{AD1094D6-869A-44EF-9556-81AACEA3CFD1}" />
+			<Child Name="AssignPersonnelForm" Owner="{F823B676-A644-4F63-8E95-9D5F0A2A5014}" />
+		</Child>
+		<Child Name="RosterSetupUtility" Owner="{D01C710C-C797-468F-84CD-98BC95CC808E}">
+			<Child Name="RosterSetupUtilityForm" Owner="{B4E54688-A0FB-4485-951E-63E2C58D05E8}" />
+		</Child>
+		<Child Name="CalTakS" Owner="{2B960EB5-0C52-4481-926C-EB58393E0641}">
+			<Child Name="AssignLayout" Owner="{B53DFAC5-E98E-43C1-8B9A-6D78E5B10FD0}" />
+			<Child Name="CTFrameUtilityForm" Owner="{D2037AEC-7045-4231-86CE-95925C01EFF7}" />
+		</Child>
+		<Child Name="ExplorerSetupUtility" Owner="{FB5A366F-3759-4899-9C55-8DADE67FEDEA}">
+			<Child Name="ModFyInf" Owner="{7182754A-0843-4F2C-900A-6A21FB3C4442}" />
+			<Child Name="ModFyInf_new" Owner="{78F77E95-305E-4AE7-BCC5-0D3252C562E4}" />
+		</Child>
+		<Child Name="WpfProcess" Owner="{B96326D3-A4B3-4783-990C-EDB16D1539F7}">
+			<Child Name="InformCadControlPanel" Owner="{BE16CFB0-E9B5-4318-ADB0-B2D4F80CB210}">
+				<Child Name="windowMainHeaderWindow" Owner="{FE38D476-E2A4-465D-B6D2-88A7F9619CC3}">
+					<Child Name="Grid" Owner="{AE20FA40-DB8C-425E-B173-49F45DE833C0}">
+						<Child Name="MainHeader" Owner="{213199B6-4914-40A7-9035-3C3422C96D4F}">
+							<Child Name="Grid" Owner="{D9A0F6DE-77D5-4517-BF26-6BAACB8528CA}">
+								<Child Name="Grid" Owner="{1612EE3B-A336-455B-8349-E6E93DA5B7CC}">
+									<Child Name="Grid" Owner="{794CDC1B-8081-4029-8BE7-EC11B846C037}">
+										<Child Name="notificationMainUserControl" Owner="{BC3B8030-B837-433A-812D-AA2F9C3A6A4F}" />
+									</Child>
+								</Child>
+								<Child Name="Grid2" Owner="{A21E698C-D579-44D1-BC46-C6DEB4565215}">
+									<Child Name="MainToolBar" Owner="{E4515BED-6D7B-47EF-99CB-2B9ED39EA425}">
+										<Child Name="StackPanel" Owner="{D2DABEE6-810D-4F97-9B03-A5EAFD523435}">
+											<Child Name="Menu" Owner="{C13AA513-0F68-40EF-A07D-A7DD446ACEA5}" />
+											<Child Name="Button" Owner="{88C0DD6A-8249-4F7E-9410-559918D92163}" />
+										</Child>
+									</Child>
+								</Child>
+							</Child>
+						</Child>
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="LoginWindow" Owner="{5DAE466D-1030-4ED3-9893-B0C158C34459}">
+				<Child Name="LoginWindow" Owner="{929CBC3D-6591-47BF-847F-BFD56459F070}">
+					<Child Name="Grid" Owner="{1E48681C-DDDD-4305-BB3A-DD63198BA77F}">
+						<Child Name="Rectangle" Owner="{6A61EB38-C146-4E95-B8BA-77455DCE230B}" />
+						<Child Name="comboBoxPersonnel" Owner="{6C4990C9-8997-43AA-A94D-5F3D828EA43D}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="MessageForm" Owner="{3F786F30-6D8B-458C-910D-917A938EFA1C}" />
+			<Child Name="QuickMailRoomForm" Owner="{0B945FE2-65DF-4D94-90DA-8D817A4EE39A}" />
+			<Child Name="IncidentSupplementForm" Owner="{5028B2C4-CFD2-4437-BD35-C5CCE6BCF6E6}" />
+			<Child Name="MailRoomForm" Owner="{F6018A60-56E8-4DB3-B3F8-66A070D1D1BC}" />
+			<Child Name="DNUnitQueue" Owner="{E16580A2-2BB3-4EB2-B5CD-1E68B511D38C}">
+				<Child Name="windowInfragisticsUnitQueue" Owner="{D142E1B9-BF49-4453-89A7-7BA1CFBB8C72}">
+					<Child Name="MultiUnitStatusChangeTabGroup" Owner="{8FFA5387-7804-4309-AEBE-189349B981CE}">
+						<Child Name="Menu" Owner="{D2EC9005-DA48-471D-BEA8-D368BEE4A5FA}" />
+						<Child Name="root" Owner="{B9A555A3-38A2-41A4-9B33-E4A4B499AA16}" />
+					</Child>
+					<Child Name="Zd936935ae09046bf88299b00fdca382a" Owner="{D07D7B13-2886-472D-A9C8-F7EA97862901}">
+						<Child Name="Menu" Owner="{E9EED217-1D0F-4D93-A40E-7525342C80AE}" />
+					</Child>
+					<Child Name="TabGroupPanedf02977ea3c44e43a0fd0d87beb1b737" Owner="{370465AE-8AF6-43BD-B9AE-902B1EE1EDD2}">
+						<Child Name="ButtonMultiUnitStatusChange" Owner="{891C2D86-696E-4365-A909-0399F49B9652}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="WindowSaveAs" Owner="{64E2FA49-26D6-4FED-8E57-16EBD3E8E6D5}" />
+			<Child Name="WindowsOpenForm" Owner="{A36FB52F-4FC5-45B9-91E0-6CF4845DBC1B}" />
+			<Child Name="InsertHyperlinkAttachmentForm" Owner="{0711854F-F341-428B-879D-E606016A89D8}" />
+			<Child Name="InsertFileAttachmentForm" Owner="{26FD206E-D575-47C8-8ABD-5B12369DAB62}" />
+			<Child Name="MoveFolderForm" Owner="{2352926B-2B7E-4A71-A709-D79B30621E70}" />
+			<Child Name="NotificationDetailsWindow" Owner="{945C05D3-2A6A-4AD9-885B-D9710CBAB88B}" />
+			<Child Name="WorkSpace" Owner="{50012FD4-C754-4ADF-BBB2-60E58770678B}">
+				<Child Name="windowWorkspace" Owner="{E4D2D350-F842-45E9-8147-AE81CAC60CD2}">
+					<Child Name="CommitBtn" Owner="{CDE9C51A-92D2-400F-B87F-B9A52282B3B1}">
+						<Child Name="Commit" Owner="{E9784859-AE1F-4ADD-8344-E122548871F3}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="NotificationWizardForm" Owner="{BBF75E99-237B-4F0C-A2C3-FAA585D1AAA5}" />
+			<Child Name="CheckNamesForm3" Owner="{8F2BB776-6281-4C8C-9675-3DEDCE9ADFB8}" />
+			<Child Name="ConfigurationWindow" Owner="{FF34BA4D-EA9A-4D4D-B0E9-18E2BFD4E38F}">
+				<Child Name="ConfigurationWindow" Owner="{D070FD7D-E56F-4D9B-8D6A-8D68FCB669C9}" />
+			</Child>
+			<Child Name="SelectIncidentForm" Owner="{6522C0AB-FEA0-47AC-9BC2-CA551DA30460}" />
+			<Child Name="ReportViewerForm" Owner="{DEDB9A72-CE48-46C8-B542-0F0D679539A4}" />
+			<Child Name="SelectNamesForm" Owner="{DB689797-B154-4B35-89BE-BD8533F106CD}" />
+			<Child Name="ExceptionCaptured" Owner="{742A0207-7E4F-416C-918B-878780BE7749}" />
+			<Child Name="dlgWPFprocess" Owner="{05285211-6936-4317-98E6-72B1206B4ADF}" />
+			<Child Name="CheckNamesForm" Owner="{1126548D-B9F4-4E08-8CAB-E8D39FBBDD40}" />
+			<Child Name="DNIncidentQueue" Owner="{6BB56B21-B228-4DAE-9C38-8E2CF06A5906}" />
+			<Child Name="HwndSource_PopupRoot" Owner="{BCE45A03-7961-4E5F-AB81-164A98D93A4C}">
+				<Child Name="MultiUnitStatusChangeDropDown" Owner="{3A8356EE-4CCE-4040-B4A2-5F30DF35CFA9}">
+					<Child Name="MultiUnitStatusChangeTabGroup" Owner="{7E3FB2EF-A421-4071-9039-B10130D25A66}" />
+				</Child>
+			</Child>
+			<Child Name="PowerLineForm" Owner="{671B8DDE-8452-4A4B-B6F8-EC0D724A734E}" />
+			<Child Name="UctForm" Owner="{9B13C0AE-3C1E-4493-A4FA-FB4CF0345CFC}">
+				<Child Name="Layout" Owner="{C3AD0748-78BC-4CCC-A2C6-386EF2572745}">
+					<Child Name="AddressTextBox" Owner="{8E3BAC86-5DCC-47B9-A72A-13E1E38AA3B0}" />
+					<Child Name="BtnSaveExit" Owner="{F66C806E-C90D-49D6-A28C-59EA48614937}" />
+					<Child Name="NatureProblem" Owner="{3B17F529-86C8-47C5-A97D-92B955D72579}" />
+					<Child Name="textboxAddressLocation" Owner="{07045234-F59C-40AA-A9DD-699BB14B0A27}">
+						<Child Name="EnterAddressBox" Owner="{E042FD4C-BD2A-48F9-9B8A-34A0F82D8FA4}" />
+					</Child>
+					<Child Name="comboboxProblemNature" Owner="{F5818ED6-4EB1-4F66-A7C0-4053B05E3F38}" />
+					<Child Name="comboboxCity" Owner="{92F8AB1D-AC36-4814-A99F-411F7278A2BB}" />
+					<Child Name="ButtonSaveExit" Owner="{761CB543-B1C3-41A5-94AD-ADED037CF49A}">
+						<Child Name="BtnSaveExit" Owner="{5BD1DB7C-8C73-4363-86AB-6A59DEC88311}" />
+					</Child>
+					<Child Name="ProblemNature" Owner="{B4A68B38-76BE-465E-B196-EF9A2C4EB60E}" />
+				</Child>
+			</Child>
+			<Child Name="HwndSource_PopupRoot2" Owner="{2067069D-B806-4BB2-9D0B-06FAB645CB6D}">
+				<Child Name="PopupRoot" Owner="{54F73D85-89F4-4166-A3AA-18495C268D77}">
+					<Child Name="NonLogicalAdornerDecorator" Owner="{B4BF3A90-4EA0-40F0-A587-C40EA12A031D}" />
+				</Child>
+			</Child>
+			<Child Name="ProblemNatureDrpDwn" Owner="{88CD737C-C730-483F-912E-E9A891B68348}" />
+			<Child Name="ModalWndDialog" Owner="{866C73FE-87D7-4497-A04A-369834194044}">
+				<Child Name="PopupRoot" Owner="{C986DD40-BD87-4E6E-8350-60150EDC6D42}">
+					<Child Name="ReasonDrpDwn" Owner="{85F4A87D-C44F-41B8-ADF2-3C6074AD770B}" />
+					<Child Name="SaveButton" Owner="{1910F6A3-7734-4B62-BF66-23264FD5FF90}">
+						<Child Name="SaveBtn" Owner="{887BCC8B-A46C-466B-B31C-2FADC7CE729D}" />
+					</Child>
+				</Child>
+			</Child>
+		</Child>
+		<Child Name="Statnmgr" Owner="{2F9DD931-70B0-412E-AF15-DF008C053548}">
+			<Child Name="frmStatnMgr" Owner="{A7EDCA6F-B79D-4988-9587-61CD0A5B4B91}" />
+		</Child>
+		<Child Name="ReportSnapShot" Owner="{55F7633D-0444-4D04-9BEA-7DCD689E657F}">
+			<Child Name="SnapShotReportForm" Owner="{7A81279F-F887-4211-8CF5-73D7F38490EE}" />
+			<Child Name="SnapShotDetailForm" Owner="{82B72C4E-3655-4A41-8F52-ABF733BE324A}" />
+		</Child>
+		<Child Name="HydrantManagerWindow" Owner="{AFDAAB44-C6D3-4855-9404-4E2542CA5CDC}">
+			<Child Name="HydrantManagerForm" Owner="{69B64A13-DE4E-4355-AA80-76A6F7160690}" />
+		</Child>
+		<Child Name="ControlDispatchSetup" Owner="{731AC364-47C0-48A6-A217-094F2AC7C66A}">
+			<Child Name="ControllingDispatcherSetupForm" Owner="{38ED9261-0D71-497E-9F7B-F2554C5D42E3}" />
+		</Child>
+		<Child Name="PasswordSecurityAssignmentManagerWnd" Owner="{F885AB99-BBAD-4E0C-AE55-DD84EC59ACC5}">
+			<Child Name="FormPasswordSecurityAssignmentManager" Owner="{39E84728-0AED-4DDE-A900-A2DB18CE838A}" />
+		</Child>
+		<Child Name="PopupListUtility" Owner="{E0539B29-AB1E-4AD6-8751-9F78EC056AD4}">
+			<Child Name="PopupListUtilityForm" Owner="{178266F3-C5B4-4542-A848-C1BC4D05DAC9}" />
+		</Child>
+		<Child Name="PriorityBuilder" Owner="{D1939327-B60F-4EBC-A2DE-B42DE50B5CCE}">
+			<Child Name="PriorityBuilderWnd" Owner="{785CF6AC-4544-4BCE-93D8-84B73FFA3B23}" />
+		</Child>
+		<Child Name="RotationSetupUtility" Owner="{31E33728-5672-4718-9D58-B97B17E8A2A8}">
+			<Child Name="RotationSetupUtilityForm" Owner="{A0B19C1D-58EA-4899-8343-498FC963EAC4}" />
+		</Child>
+		<Child Name="RotationProviderReport" Owner="{17B0B2AB-0575-4977-97DE-46B3428F30A2}">
+			<Child Name="RotationProviderReportForm" Owner="{AE562C0A-C06B-40B5-A28C-56DCBBC9E21B}" />
+		</Child>
+		<Child Name="PublicHolidays" Owner="{9BF1005E-B5C9-42ED-A419-B72817C75B56}">
+			<Child Name="PublicHolidaysWnd" Owner="{43FC23A2-68B1-41C0-811B-D47BFF401400}" />
+		</Child>
+		<Child Name="ProtocolUtilityWnd" Owner="{54AD2633-01C7-4EF5-ABDF-7A82BDF32930}">
+			<Child Name="FormProtocolUtility" Owner="{2254491B-B962-49DB-8BF8-A3B98BDE0D30}" />
+			<Child Name="FailBranchListingForm" Owner="{EBE6E040-C544-4CFE-994C-05E6D21B5D6C}" />
+			<Child Name="SearchForm" Owner="{C357CC96-B56D-4D95-888B-E0474237652C}" />
+			<Child Name="ProtocolUtilityDispatcherInstructionSearchForm" Owner="{694BA133-877A-4E77-8A07-AF808C339BC1}" />
+		</Child>
+		<Child Name="RotationProviderUtility" Owner="{153BBCD4-27B7-482F-81A6-27A60E851C18}">
+			<Child Name="RotationProviderUtilityForm" Owner="{0221FF7F-BBAA-45AB-AE4F-C8D978E8BBB3}" />
+		</Child>
+		<Child Name="RosterShiftBuilder" Owner="{EE07A64E-3B7E-427C-801F-0946845BC484}">
+			<Child Name="RosterShiftBuilderWnd" Owner="{CDBBAEF5-DB24-450C-9AB1-4FC5C9CA8F63}" />
+		</Child>
+		<Child Name="MessageAuditUtility" Owner="{DDB6A3B6-FD69-4BDC-8DA5-64D01848CD43}">
+			<Child Name="MsgAuditUtilForm" Owner="{2AFA009A-1D71-44C6-989B-F673577EE233}" />
+		</Child>
+		<Child Name="CardFile" Owner="{E21C8339-E3D0-4928-A8DE-0CC06C65384D}">
+			<Child Name="CardFileWindow" Owner="{3BA3CABC-F400-41CB-98EF-F7F5855E02B6}" />
+		</Child>
+		<Child Name="VehicleManagerWindow" Owner="{A6EF36DF-A55A-4C39-8934-D8EC930A8AD7}">
+			<Child Name="VehicleManagerForm" Owner="{3C244194-54B2-4BF1-9D6F-259C836350CA}" />
+		</Child>
+		<Child Name="PermissionSecurityMgr" Owner="{201726C2-1413-4F73-8CE6-F83C81E8DB06}">
+			<Child Name="ModSecur" Owner="{8C73F2DB-0E60-4877-A33D-FF26CE5FD5C0}" />
+		</Child>
+		<Child Name="StreetAliasUtility" Owner="{2849C1A4-DBCE-4A2C-8CA4-A38E77285B2A}">
+			<Child Name="StreetAliasForm" Owner="{84A85486-BF8A-414A-8EC4-474FC65583CC}" />
+		</Child>
+		<Child Name="OfflineIncidentEntry" Owner="{EC55C47D-623B-4AC4-BDC4-67C5698E4812}">
+			<Child Name="IncidentEntryWnd" Owner="{82A4241B-796D-4DE1-A8E0-06F8BA5CA8E7}" />
+			<Child Name="UnableToSaveCallWnd" Owner="{18EFE330-A706-43A7-9E36-F2E9F0289179}" />
+		</Child>
+		<Child Name="IHsetup" Owner="{AC76E20F-DE07-4993-84B1-AFBBCE8BFD78}">
+			<Child Name="LoginForm" Owner="{DF900BBF-1D74-41D6-A81F-3D99D7620651}" />
+		</Child>
+		<Child Name="SSM_Planner" Owner="{F205230D-81A5-40CF-B3F3-3A72FE2246ED}">
+			<Child Name="SSMPlannerWindow" Owner="{6140D953-22F6-4DED-95FC-23379757E8C2}" />
+		</Child>
+		<Child Name="Commandsetup" Owner="{080839AA-03AC-424B-B12F-370533AA0CED}">
+			<Child Name="PowerLineCommandSetupUtility" Owner="{83DC95B6-41CF-4F60-A0F7-E27CFCAC6D1B}" />
+		</Child>
+		<Child Name="NumberSetUpUtility" Owner="{4FDF59FD-7006-42B7-9B70-885FBCAAB652}">
+			<Child Name="NumberSetUpWnd" Owner="{2BB5B01D-CCC5-4C95-97D4-DEC1F677A158}" />
+		</Child>
+		<Child Name="VMLaunch" Owner="{DE4A5851-5509-4CB4-845B-D04B073F8E51}">
+			<Child Name="MobileUpdateNotification" Owner="{90C1DB9E-6017-489B-BF77-E71ABA2F12A4}" />
+		</Child>
+	</LogicalNodes>
+	<TypeInfo StoreCodeCompletion="0">
+		<Child Hash="0" Key="{4BDCEC91-10A1-450C-898B-8F42F359CBFC}">
+			<Data Properties="62A9C3C97ED9EF4090A42AB727342F33UFFFFFFFFFFFFFFFFV4ZZZL" />
+		</Child>
+	</TypeInfo>
+</Root>
