@@ -2297,6 +2297,27 @@
 													</Property>
 												</Properties>
 											</Child>
+											<Child Name="ButtonCancelIncident" Key="{D917708A-0711-42A3-A218-9E05BF2052E2}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="1515814736" Left="14" Top="515" Right="125" Bottom="535" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Controls.Button" Type="5" />
+													</Property>
+													<Property Name="WPFControlText">
+														<Value PropertyType="0" Value="Cancel Incident" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="SaveBtn" Key="{F364A74D-5202-46DD-8395-53B60064E2B3}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1515814736" Left="14" Top="515" Right="125" Bottom="535" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="StateShade" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
 										</Children>
 									</Child>
 								</Children>
@@ -3216,6 +3237,9 @@
 						<Child Name="BtnSaveExit" Owner="{5BD1DB7C-8C73-4363-86AB-6A59DEC88311}" />
 					</Child>
 					<Child Name="ProblemNature" Owner="{B4A68B38-76BE-465E-B196-EF9A2C4EB60E}" />
+					<Child Name="ButtonCancelIncident" Owner="{D917708A-0711-42A3-A218-9E05BF2052E2}">
+						<Child Name="SaveBtn" Owner="{F364A74D-5202-46DD-8395-53B60064E2B3}" />
+					</Child>
 				</Child>
 			</Child>
 			<Child Name="HwndSource_PopupRoot2" Owner="{2067069D-B806-4BB2-9D0B-06FAB645CB6D}">
