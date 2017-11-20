@@ -41,6 +41,18 @@ Function VerifyInicdentStatusInIncidentQueue(byval incidentId, byval expectedSta
 
 End Function
 
+Function DoubleClickonInc
+
+If Aliases.WpfProcess.DNIncidentQueue.exists Then    
+      Aliases.WpfProcess.DNIncidentQueue.activate 
+      set pty = Project.Variables.PropertyHolder
+      set incboxobj = Aliases.WpfProcess.DNIncidentQueue.FindChild(pty.IncidentQBoxPty,pty.IncidentQBoxPtyVal,30,true)
+      'call incboxobj.SetFocus
+      call incboxobj.DblClick()
+       Call WaitTillObjExists(6000,Aliases.WpfProcess.UctForm)
+       Aliases.WpfProcess.UctForm.Maximize
+End If
+End Function 
 
 ' Function Name: DoubleClickonIncidentinIncidentQueue
 ' Parameters : IncidentID.CompletedID
