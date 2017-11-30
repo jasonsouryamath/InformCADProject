@@ -1673,6 +1673,16 @@
 																										<Value PropertyType="0" Value="buttonECT" Type="5" />
 																									</Property>
 																								</Properties>
+																								<Children>
+																									<Child Name="UCTbtn" Key="{204884CD-58AB-4810-9211-84DE46636DB2}" ExtendedFind="True" ParallelWalk="True">
+																										<Image FileName="838766199" Left="643" Top="45" Right="672" Bottom="74" />
+																										<Properties>
+																											<Property Name="ClrFullClassName">
+																												<Value PropertyType="0" Value="System.Windows.Controls.Image" Type="5" />
+																											</Property>
+																										</Properties>
+																									</Child>
+																								</Children>
 																							</Child>
 																						</Children>
 																					</Child>
@@ -3157,7 +3167,9 @@
 									<Child Name="MainToolBar" Owner="{E4515BED-6D7B-47EF-99CB-2B9ED39EA425}">
 										<Child Name="StackPanel" Owner="{D2DABEE6-810D-4F97-9B03-A5EAFD523435}">
 											<Child Name="Menu" Owner="{C13AA513-0F68-40EF-A07D-A7DD446ACEA5}" />
-											<Child Name="Button" Owner="{88C0DD6A-8249-4F7E-9410-559918D92163}" />
+											<Child Name="Button" Owner="{88C0DD6A-8249-4F7E-9410-559918D92163}">
+												<Child Name="UCTbtn" Owner="{204884CD-58AB-4810-9211-84DE46636DB2}" />
+											</Child>
 										</Child>
 									</Child>
 								</Child>
