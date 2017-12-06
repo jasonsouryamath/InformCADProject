@@ -2328,6 +2328,24 @@
 													</Child>
 												</Children>
 											</Child>
+											<Child Name="CancelIncidentButton" Key="{672686DC-000B-4C30-BE24-8687347D1101}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="11666782" Left="1837" Top="1022" Right="1922" Bottom="1042" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="CancelIncidentButton" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="CancelBtn" Key="{BABC45D1-D374-45A8-AE1B-3B7B746466B0}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1243822276" Left="1837" Top="1022" Right="1922" Bottom="1042" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="StateShade" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
 										</Children>
 									</Child>
 								</Children>
@@ -3251,6 +3269,9 @@
 					<Child Name="ProblemNature" Owner="{B4A68B38-76BE-465E-B196-EF9A2C4EB60E}" />
 					<Child Name="ButtonCancelIncident" Owner="{D917708A-0711-42A3-A218-9E05BF2052E2}">
 						<Child Name="SaveBtn" Owner="{F364A74D-5202-46DD-8395-53B60064E2B3}" />
+					</Child>
+					<Child Name="CancelIncidentButton" Owner="{672686DC-000B-4C30-BE24-8687347D1101}">
+						<Child Name="CancelBtn" Owner="{BABC45D1-D374-45A8-AE1B-3B7B746466B0}" />
 					</Child>
 				</Child>
 			</Child>
