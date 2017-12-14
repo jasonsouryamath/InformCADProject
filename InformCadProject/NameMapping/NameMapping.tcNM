@@ -2346,6 +2346,24 @@
 													</Child>
 												</Children>
 											</Child>
+											<Child Name="SaveExitButton" Key="{575072E4-0E2F-4550-9CCA-2E33DD546F6E}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="995573060" Left="619" Top="566" Right="688" Bottom="586" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="SaveExitButton" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="SveBtn" Key="{9CD2B1A1-3EDB-461A-A4CF-22DBE33C97A7}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-677660209" Left="619" Top="566" Right="688" Bottom="586" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="StateShade" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
 										</Children>
 									</Child>
 								</Children>
@@ -3272,6 +3290,9 @@
 					</Child>
 					<Child Name="CancelIncidentButton" Owner="{672686DC-000B-4C30-BE24-8687347D1101}">
 						<Child Name="CancelBtn" Owner="{BABC45D1-D374-45A8-AE1B-3B7B746466B0}" />
+					</Child>
+					<Child Name="SaveExitButton" Owner="{575072E4-0E2F-4550-9CCA-2E33DD546F6E}">
+						<Child Name="SveBtn" Owner="{9CD2B1A1-3EDB-461A-A4CF-22DBE33C97A7}" />
 					</Child>
 				</Child>
 			</Child>
