@@ -2481,6 +2481,130 @@
 													</Child>
 												</Children>
 											</Child>
+											<Child Name="CancelDialogBox" Key="{BC4CB27C-958F-4793-85FC-475622E9E646}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-1227066793" Left="2" Top="2" Right="598" Bottom="372" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="PopupGridChild" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="HwndSource_windowUct" Key="{B31E6CB3-BFC2-4C15-B60E-A15415D68B84}" ParallelWalk="True">
+								<Image FileName="-522931987" Left="2" Top="2" Right="1934" Bottom="1054" />
+								<Properties>
+									<Property Name="RootVisual.Name">
+										<Value PropertyType="0" Value="windowUct" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="windowUct" Key="{0FFC8286-B5E6-41F7-849E-D6802EB9D4CE}" ParallelWalk="True">
+										<Image FileName="-1716909119" Left="10" Top="33" Right="1943" Bottom="1086" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="TriTech.VisiCAD.App.WPF.UCT.View.LayoutWindow" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="gridMainLayout" Key="{C9C80B1E-C21F-4E5F-A05A-F8D041C4E842}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-126183624" Left="10" Top="101" Right="1927" Bottom="1014" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="gridMainLayout" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="AlertBtn" Key="{FA9DA918-C604-4E3A-B3E8-42031B08F570}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-1033289425" Left="383" Top="128" Right="394" Bottom="139" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value PropertyType="0" Value="System.Windows.Controls.Image" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="textboxAddressLocation" Key="{047ED82E-6A09-41DF-AB3A-3BA0020719CC}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1955284914" Left="91" Top="160" Right="403" Bottom="183" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="textboxAddressLocation" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="textBoxField" Key="{804AEBF9-E719-4C69-910B-CA123D4D1232}" ExtendedFind="True" ParallelWalk="True">
+																<Image FileName="1955284914" Left="91" Top="160" Right="403" Bottom="174" />
+																<Properties>
+																	<Property Name="WPFControlName">
+																		<Value PropertyType="0" Value="textBoxField" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
+													<Child Name="comboboxProblemNature" Key="{A40B7DDF-E64E-4FF9-B1AE-DFB2E77620D2}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1955284914" Left="91" Top="393" Right="403" Bottom="416" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="comboboxProblemNature" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="gridCallTakingPanel" Key="{BCCD784E-EFD9-40BD-84E4-212EA3AAD83B}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1064891783" Left="11" Top="103" Right="425" Bottom="756" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="gridCallTakingPanel" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="summarypanel" Key="{16C72251-F0A1-4EF0-94D2-489BCA17361D}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-1798850615" Left="10" Top="33" Right="1606" Bottom="100" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="gridHeader" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="CancelIncidentButton" Key="{223043BA-BA7B-4C05-86ED-84C5B8FAE226}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-1198336502" Left="901" Top="766" Right="986" Bottom="786" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="CancelIncidentButton" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="CancelIncidentBtn" Key="{E7DDD41B-7A67-4941-9B25-A73A16DE0D6C}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="-1198336502" Left="901" Top="766" Right="986" Bottom="786" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="StateShade" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="SaveExitButton" Key="{CF0000EE-97B4-40EB-BD17-FE455D56E314}" ExtendedFind="True" ParallelWalk="True">
+												<Image FileName="-595273100" Left="819" Top="766" Right="888" Bottom="786" />
+												<Properties>
+													<Property Name="WPFControlName">
+														<Value PropertyType="0" Value="SaveExitButton" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="SaveBtn" Key="{9BF21749-FD52-452A-BA39-345F59B0A7F5}" ExtendedFind="True" ParallelWalk="True">
+														<Image FileName="1781483546" Left="819" Top="766" Right="888" Bottom="786" />
+														<Properties>
+															<Property Name="WPFControlName">
+																<Value PropertyType="0" Value="StateShade" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
 										</Children>
 									</Child>
 								</Children>
@@ -3308,7 +3432,21 @@
 					<Child Name="SaveButton" Owner="{1910F6A3-7734-4B62-BF66-23264FD5FF90}">
 						<Child Name="SaveBtn" Owner="{887BCC8B-A46C-466B-B31C-2FADC7CE729D}" />
 					</Child>
+					<Child Name="CancelDialogBox" Owner="{BC4CB27C-958F-4793-85FC-475622E9E646}" />
 				</Child>
+			</Child>
+			<Child Name="AlertBtn" Owner="{FA9DA918-C604-4E3A-B3E8-42031B08F570}" />
+			<Child Name="summarypanel" Owner="{16C72251-F0A1-4EF0-94D2-489BCA17361D}" />
+			<Child Name="CancelIncidentButton" Owner="{223043BA-BA7B-4C05-86ED-84C5B8FAE226}">
+				<Child Name="CancelIncidentBtn" Owner="{E7DDD41B-7A67-4941-9B25-A73A16DE0D6C}" />
+			</Child>
+			<Child Name="textboxAddressLocation" Owner="{047ED82E-6A09-41DF-AB3A-3BA0020719CC}">
+				<Child Name="textBoxField" Owner="{804AEBF9-E719-4C69-910B-CA123D4D1232}" />
+			</Child>
+			<Child Name="comboboxProblemNature" Owner="{A40B7DDF-E64E-4FF9-B1AE-DFB2E77620D2}" />
+			<Child Name="gridCallTakingPanel" Owner="{BCCD784E-EFD9-40BD-84E4-212EA3AAD83B}" />
+			<Child Name="SaveExitButton" Owner="{CF0000EE-97B4-40EB-BD17-FE455D56E314}">
+				<Child Name="SaveBtn" Owner="{9BF21749-FD52-452A-BA39-345F59B0A7F5}" />
 			</Child>
 		</Child>
 		<Child Name="Statnmgr" Owner="{2F9DD931-70B0-412E-AF15-DF008C053548}">
